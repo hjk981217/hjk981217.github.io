@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 웹표준 구현이 가능한 최신 브라우저로 브라우징할 수있도록 설정 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!-- 스마트기기에서 화면의 크기를 물리적 크기에 맞추어 출력 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- 스마트기기에서 화면을 풀스크린으로 보이기 위한 설정-->
+    <meta name="mobile-web-app-capable" content="yes"> <!-- 비ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- ios -->
+     <!-- 웹앱 또는 모바일 웹 사이트 등의 사이트 정보를 기록 -->
+    <meta name="title" content="대구소개"> <!--검색했을때 나오는 타이틀-->
+    <meta name="keyword" content="대구, 대구소개, 대구여행, 대구먹거리, 대구찾기"> <!--검색 키워드-->
+    <meta name="description" content="대구의 즐겁고, 자유로운 여행과 맛있는 먹거리를 소개합니다.">
+    <meta name="autor" content="kanghyunji">
+     <!-- 파비콘 설정 -->
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="shorticon icon" href="./img/favicon.png" type="image/x-icon">
+    
+    <!-- 플러그인의 연결방식 - CDN, 다운로드 받아 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>대구소개</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+<!--    <link rel="stylesheet" href="fonts.css">-->
+   <link rel="stylesheet" href="commom.css">
+    <style>
+        .contents_frame{width: 100%; height: 100%;}
+        .page{width: 100%; padding-top: 0;}
+        .tb_btn{display: block; width: 33.333%; line-height: 40px; text-align: center; color: #fff; font-size: 1.2em; position: absolute; top: 59px; z-index: 50; background: #8d8d8d;
+            text-decoration: none; font-family: "Sunflower";}
+        
+        #page1 .tb_btn{left: 0;}
+        #page2 .tb_btn{left: 33.333%; }
+        #page3 .tb_btn{left: 66.666%; }
+        
+        .page .tb_data{display: none; margin-top: 70px; padding-bottom: 20px;}
+        .page:target .tb_data{display: block;}
+        .page:target .tb_btn{background: #f6ff6d; text-decoration: none; border-bottom: 0;color: #383838;}
+        .page .tb_data h3{width: 200px; height: 30px; line-height: 35px; background-size: 30px;  background-repeat: no-repeat; background-position: left; margin-left: 10px; padding-left: 35px; color: #5aa2ff; font-family: "Sunflower";}
+        
+        #page1 .tb_data h3{background-image: url(./img/sb_icon.png);}
+        #page1 .tb_data ul {width: 100%; padding-top: 10px;}
+        #page1 .tb_data ul li{padding-bottom: 20px; width: 90%; margin-left: 50px;}
+        #page1 .tb_data h4{clear: both; font-size: 18px;}
+        #page1 .tb_data img{float: left; }
+        #page1 .tb_data p{width: 80%; font-size: 13px; position: relative; left: 20px;}
+        
+        
+        
+        #page2 .tb_data h3{background-image: url(./img/story_icon.png);}
+        #page2 .tb_data{width: 100%; margin: 10px; padding-top: 30px;}
+        #page2 .tb_data ul{text-align: center;}
+        #page2 .tb_data .le{width: 45%; float: left; margin-left: 10px; padding-top: 10px;}
+        #page2 .tb_data .right{width: 45%; float: left; padding-top: 10px;}
+        #page2 .tb_data li p{padding-top: 10px;}
+         
+        
+        #page3 .tb_data h3{background-image: url(./img/fd_icon.png);}
+        #page3 .tb_data ul{width: 100%; text-align: center; padding-top: 30px;}
+        #page3 .tb_data ul li{width: 50%; float: left;}
+        #page3 .tb_data ul li p{width: 100%; font-size: 14px; padding: 5px;}
+        
+        
+    </style>
+</head>
+<body>
+<!--   <h2>폰트어썸 이용하기</h2>
+    <a href=""><i class="fa fa-home"></i></a>
+    <h2>XE-ICON 이용하기</h2>
+    <a href=""><i class="xi-share-alt-o"></i></a> -->
+    <input type="checkbox" id="ck1" class="ck_item">
+    <div class="container">
+        <header class="hd">
+            <div class="abs_item">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.png" alt="로고">
+                </a>
+            </div>
+            <label for="ck1" class="lst_btn">목록</label>
+            <label for="ck2" class="share_btn">
+                <i class="xi-share-alt-o"></i>
+            </label>
+            <label for="ck3" class="order_btn">
+                <i class="xi-info-o"></i>
+            </label>
+            <a href="" class="login_btn">
+                <i class="xi-user-o"></i>
+            </a>
+        </header>
+        <main class="contents">
+           <div class="contents_frame">
+               <div class="page" id="page1">
+                   <a href="#page1" class="tb_btn">대구상징</a>
+                   <div class="tb_data">
+                     <h3>대구상징</h3>
+                      <ul>
+                          <li>
+                              <h4>심볼,로고</h4>
+                               <img src="./img/data1_img1.jpg" width="120" height="90" alt="대구심볼">
+                               <p>삼각형과 타원을 기본도형으로 해서 대구를 에워싸고 있는 '팔공산과 낙동강' 의 이미지를 형상화 한것</p>
+                          </li>
+                          <li>
+                              <h4>캐릭터</h4>
+                               <img src="./img/data1_img2.jpg" width="120" height="90" alt="캐릭터">
+                               <p>대구광역시의 캐릭터는 대구시의 이미지와 조화되게 형상화한 것으로서 섬유패션도시를 상징하는 [패션이]로 이름을 지었습니다.</p>
+                          </li>
+                          <li>
+                              <h4>브랜드 슬로건 "Colorful DAEGU"</h4>
+                               <img src="./img/data1_img3.gif" width="120" height="90" alt="브랜드슬로건">
+                               <p>색채가 “다양한, 다채로움”을 의미하여 젊고, 밝고, 멋지고, 화려하고, 활기찬 도시 이미지를 제공하여 다양한 모습의 발전적인 대구를 표현</p>
+                          </li>
+                      </ul>
+                    </div>
+               </div>
+               <div class="page" id="page2">
+                   <a href="#page2" class="tb_btn">대구스토리</a>
+                   <div class="tb_data">
+                      <h3>대구스토리</h3>
+                       <ul class="le">
+                          <li>
+                            <img src="./img/st_img1.gif" width="150" height="150" alt="팔공산">
+                            <p>산 중의 산 팔공산</p>
+                          </li>                          
+                          <li>
+                            <img src="./img/st_img3.gif" width="150" height="150" alt="예술의전당">
+                            <p>예술의 도시, 대구</p>
+                          </li>
+                          <li>
+                            <img src="./img/st_img5.gif" width="150" height="150" alt="섬유산업">
+                            <p>21세기 대구섬유산업</p>
+                          </li>
+                       </ul>
+                       <ul class="right">
+                           <li>
+                            <img src="./img/st_img2.gif" width="150" height="150" alt="비슬산">
+                            <p>숲의 도시, 대구</p>
+                          </li>
+                          <li>
+                            <img src="./img/st_img4.gif" width="150" height="150" alt="전통시장">
+                            <p>대구전통시장</p>
+                           </li>
+                           <li>
+                            <img src="./img/st_img6.gif" width="150" height="150" alt="종교">
+                            <p>종교의 성지, 대구</p>
+                        </li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="page" id="page3">
+                   <a href="#page3" class="tb_btn">대구푸드</a>
+                   <div class="tb_data">
+                       <h3>대구푸드</h3>
+                       <ul>
+                           <li>
+                               <img src="./img/fd_img1.gif" width="150" height="150" alt="곱창">
+                               <p>서민입맛대구 막창, 곱창</p>
+                           </li>
+                           <li>
+                               <img src="./img/fd_img2.gif" width="150" height="150" alt="분식">
+                               <p>자꾸 끌리는 추억의 맛대구 분식 열전</p>
+                           </li>
+                           <li>
+                               <img src="./img/fd_img3.gif" width="150" height="150" alt="커피">
+                               <p>커피가 향기로운 도시대구</p>
+                           </li>
+                           <li>
+                               <img src="./img/fd_img4.gif" width="150" height="150" alt="치킨">
+                               <p>치킨의 성지,대구</p>
+                           </li>
+                       </ul>
+                    </div>
+               </div>
+           </div>
+            <footer class="ft">
+                <ul class="fnb">
+                    <li class="item1"><a href="">이용약관</a></li>
+                    <li class="item2"><a href="">개인정보처리방침</a></li>
+                </ul>
+                <p class="copyright">&copy;All copyrights by hyunji_k</p>
+            </footer>
+        </main>
+    </div>
+<!--  aside.left>nav.gnb>ul>li.dep1.item$*3>label[for=ra1] -->
+    <aside class="left" id="collap">
+     
+      <div class="collap_wrap">
+           <label for="ck1" class="close_btn">닫기</label>
+           <div class="log_box">
+
+           </div>
+           <div class="breadcrumb">
+               대구소개
+           </div>
+            <nav class="gnb">
+               <input type="radio" name="rdo" id="ra0" class="ra_item" checked>
+                <ul>
+                    <li class="dep1 item1">
+                        <input type="radio" name="rdo" id="ra1" class="ra_item">
+                        <label for="ra1">대구소개</label>
+                        <ul class="sub">
+                            <li><a href="sub1.html#page1">대구상징</a></li>
+                            <li><a href="sub1.html#page2">대구스토리</a></li>
+                            <li><a href="sub1.html#page3">대구푸드</a></li>
+                        </ul>
+                    </li>
+                    <li class="dep1 item2">
+                       <input type="radio" name="rdo" id="ra2" class="ra_item">
+                        <label for="ra2">대구탐방</label>
+                        <ul class="sub">
+                            <li><a href="sub2.html#page1">추천여행</a></li>
+                            <li><a href="sub2.html#page2">맛집여행</a></li>
+                            <li><a href="sub2.html#page3">테마별여행</a></li>
+                        </ul>
+                    </li>
+                    <li class="dep1 item3">
+                       <input type="radio" name="rdo" id="ra3" class="ra_item">
+                        <label for="ra3">커뮤니티</label>
+                        <ul class="sub">
+                            <li><a href="sub3.html#page1">공지사항</a></li>
+                            <li><a href="sub3.html#page2">실시간SNS</a></li>
+                            <li><a href="sub3.html#page3">대구지도</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <input type="checkbox" id="ck2" class="ck_item">
+     <div class="sns_frame">
+         <ul class="sns_box">
+             <li class="item1">
+                 <a href=""><i class="xi-facebook"></i></a>
+            </li>
+             <li class="item2">
+                 <a href=""><i class="xi-instagram"></i></a>
+                 </li>
+             <li class="item3">
+                 <a href=""><i class="xi-twitter"></i></a>
+            </li>
+            <li class="item4">
+                 <a href=""><i class="xi-kakaotalk"></i></a>
+            </li>
+         </ul>
+         <label for="ck2" class="ck2_close"></label>
+     </div>
+     <input type="checkbox" id="ck3" class="ck_item">
+     <div class="order_frame">
+         <div class="order_box">
+             <img src="./img/mobile_introl.jpg" alt="모바일주문안내">
+        </div>
+        <label for="ck3" class="ck3_close"></label>
+     </div>
+</body>
+</html>

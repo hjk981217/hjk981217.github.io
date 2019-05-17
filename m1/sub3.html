@@ -34,32 +34,45 @@
 <!--    <link rel="stylesheet" href="fonts.css">-->
    <link rel="stylesheet" href="commom.css">
     <style>
+        .contents_frame{width: 100%; height: 100%;}
+        .page{width: 100%; padding-top: 0;}
+        .tb_btn{display: block; width: 33.333%; line-height: 40px; text-align: center; color: #fff; font-size: 1.2em; position: absolute; top: 59px; z-index: 50; background: #8d8d8d;
+            text-decoration: none; font-family: "Sunflower";}
+        #page1 .tb_btn{left: 0;}
+        #page2 .tb_btn{left: 33.333%;}
+        #page3 .tb_btn{left: 66.666%;}
+        .page .tb_data{display: none; margin-top: 50px; padding-bottom: 20px;}
+        .page:target .tb_data{display: block;}
+        .page:target .tb_btn{background: #f6ff6d; text-decoration: none; border-bottom: 0;color: #383838;}
        
-        .main_box{width: 100%; height: 100%;}
-        .main_box li{float: left; background-position: right bottom; }
-        .main_box li.item1{width: 100%; height: 60%; background: #4f9af9; background-repeat: no-repeat;
-            background-image: url(./img/group_1.png); background-size: 220px auto; background-position: 50px 120px;}
-        .main_box li.item2{clear: both; width: 50%; height: 40%; background: #4c80c2; background-repeat: no-repeat;
-            background-image: url(./img/group_2.png); background-size: 120px auto; background-position: center 120px;}
-        .main_box li.item3{width: 50%; height: 40%; background: #5cb531; background-repeat: no-repeat;
-            background-image: url(./img/group_3.png); background-size: 120px auto; background-position: center 120px;}
-        .main_box li a h3{color: #fff; text-indent: 15px;}
-        .main_box li a p{color: #efefef; padding-left: 20px;}
-        .main_box li.item1 a{position: absolute; right: 50px; top: 120px;}
-        .thum_tit, .thum_com{font-family: "Sunflower",sans-serif;}
+        #page1 .tb_data{padding: 10px;}
+        #page1 .tb_data ul li{clear: left; padding-top: 20px; padding-bottom: 20px; margin-left: 2%;}
+        #page1 .tb_data ul li img{float: left;}
+        #page1 .tb_data ul li p{font-size: 12px; position: relative; top: 25px; left: 10px}
         
-        .main_tit{font-family: "Sunflower",sans-serif; font-size: 1.4em; text-indent: 24px; line-height: 40px; 
-            color:#6c6c6c; border-bottom: 1px solid #aaaaaa;}
-        .mv_box{width: 80%; min-height: 200px; position: relative; margin: 10px auto;}
-        .mv_box a{display: block; width: 100%; height: auto;}
-        .mv_box a img{display: block; width: 100%; height: auto;}
-        #video_frame{position: absolute; top: 0; left: 0; display: none;}
-        #video_frame:target{display: block;}
-        
+        .blank2{height: 100px; clear: both;}
         
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+    <script> 
+        //좌표 값을 바꿔서 입력 35.8534682,128.5639178
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(35.8534682,128.5639178);
+      var mapOptions = {
+        zoom: 17,
+        center: myLatlng
+      }
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: '대구이월드'	  //레이블을 바꿔서 입력
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+     </script>
 </head>
-<body>
+<body onload="initialize()">
 <!--   <h2>폰트어썸 이용하기</h2>
     <a href=""><i class="fa fa-home"></i></a>
     <h2>XE-ICON 이용하기</h2>
@@ -68,7 +81,7 @@
     <div class="container">
         <header class="hd">
             <div class="abs_item">
-                <a href="" class="logo">
+                <a href="index.html" class="logo">
                     <img src="./img/logo.png" alt="로고">
                 </a>
             </div>
@@ -84,43 +97,54 @@
             </a>
         </header>
         <main class="contents">
-            <ul class="main_box">
-                <li class="item1">
-                    <a href="">
-                        <h3 class="thum_tit">대구소개</h3>
-                        <p class="thum_com">달구벌 대구,<br>무엇이 있을까?</p>
-                    </a>
-                </li>
-                <li class="item2">
-                    <a href="">
-                        <h3 class="thum_tit">대구탐방</h3>
-                        <p class="thum_com">추천하는 명소<br>그리고 음식</p>
-                    </a>
-                </li>
-                <li class="item3">
-                    <a href="">
-                        <h3 class="thum_tit">커뮤니티</h3>
-                        <p class="thum_com">실시간 sns 소통</p>
-                    </a>
-                </li>
-            </ul>
-            <h2 class="main_tit">달구벌 축제</h2>
-            <div class="mv_box">
-                <a href="#video_frame">
-                    <img src="./img/thumnail.png" alt="썸네일">
-                </a>
-                 <div id="video_frame">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iKPNjg58rag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                </div>
-            </div>
-
-        <footer class="ft">
-            <ul class="fnb">
-                <li class="item1"><a href="">이용약관</a></li>
-                <li class="item2"><a href="">개인정보처리방침</a></li>
-            </ul>
-            <p class="copyright">&copy;All copyrights by hyunji_k</p>
-        </footer>
+           <div class="contets_frame">
+               <div class="page" id="page1">
+                   <a href="#page1" class="tb_btn">공지사항</a>
+                   <div class="tb_data">
+                       <ul>
+                           <li>
+                               <img src="./img/notice_1.jpg" style="width: 150px" height="auto" alt="행사1">
+                               <p>2019 제 2회 아·태 안티에이징 코스 본격 시동</p>
+                           </li>
+                           <li>
+                               <img src="./img/notice_2.jpg" style="width: 150px" height="auto" alt="행사2">
+                               <p> 쓰레기더미가 꽃밭으로 변신, 대구 꽃으로 물들다!</p>
+                           </li>
+                           <li>
+                               <img src="./img/notice_3.jpg" style="width: 150px" height="auto" alt="행사3">
+                               <p>설레는 황금연휴엔 '함께가요~대구미술관'</p>
+                           </li>
+                           <li>
+                               <img src="./img/notice_4.jpg" style="width: 150px" height="auto" alt="행사4">
+                               <p>'시민들이 함께 뽑은 대구 올해의 책' 기념식도 참여하고, 뇌 과학자 정재승…</p>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="page" id="page2">
+                   <a href="#page2" class="tb_btn">실시간sns</a>
+                   <div class="tb_data">
+                       
+                   </div>
+               </div>
+               <div class="page" id="page3">
+                   <a href="#page3" class="tb_btn">대구지도</a>
+                   <div class="tb_data">
+                        <div class="map_frame" style="width: 300px; margin:10px auto;">
+                            <div id="map_canvas" style="width: 300px; height: 200px;">
+                            </div>
+                        </div>
+                   </div>
+               </div>
+           </div>
+           <div class="blank2"></div>
+            <footer class="ft">
+                <ul class="fnb">
+                    <li class="item1"><a href="">이용약관</a></li>
+                    <li class="item2"><a href="">개인정보처리방침</a></li>
+                </ul>
+                <p class="copyright">&copy;All copyrights by hyunji_k</p>
+            </footer>
         </main>
     </div>
 <!--  aside.left>nav.gnb>ul>li.dep1.item$*3>label[for=ra1] -->
@@ -132,7 +156,7 @@
 
            </div>
            <div class="breadcrumb">
-               Home
+               대구소개
            </div>
             <nav class="gnb">
                <input type="radio" name="rdo" id="ra0" class="ra_item" checked>
@@ -160,7 +184,7 @@
                         <label for="ra3">커뮤니티</label>
                         <ul class="sub">
                             <li><a href="sub3.html#page1">공지사항</a></li>
-                            <li><a href="sub3.html#page2">실시간SNS</a></li>
+                            <li><a href="sub3.html#page2">실시간sns</a></li>
                             <li><a href="sub3.html#page3">대구지도</a></li>
                         </ul>
                     </li>

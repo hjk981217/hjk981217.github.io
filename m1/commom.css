@@ -1,0 +1,276 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ck_item,
+.ra_item {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    clear: both;
+    padding: 0;
+}
+
+.hd {
+    height: 60px;
+    width: 100%;
+    background: #4f9af9;
+    border-bottom: 1px solid #fff;
+}
+
+.lst_btn,
+.close_btn {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 22px auto;
+    text-indent: -9999px;
+}
+
+.lst_btn {
+    position: absolute;
+    background-image: url("./img/top_button.png");
+    left: 5px;
+    top: 5px;
+}
+
+.close_btn {
+    float: right;
+    background-image: url("./img/close_btn.png");
+}
+
+.log_box {
+    clear: both;
+    width: 100px;
+    height: 100px;
+    border-radius: 53px;
+    border: 2px solid #6fafff;
+    background-color: #fff;
+    margin: 40px auto;
+    background-image: url(./img/login_icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.left {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 999;
+    transition: 1s;
+}
+
+.collap_wrap {
+    width: 80%;
+    height: 100%;
+    background: #5aa2ff;
+}
+
+#ck1:checked ~ .left {
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gnb .dep1 {
+    text-indent: 20px;
+    color: #fff;
+    line-height: 30px;
+}
+
+.gnb .dep1 a {
+    display: block;
+    line-height: 30px;
+    color: #d2e7ff;
+    text-indent: 50px;
+}
+
+.sub {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.9s
+}
+
+.ra_item:checked ~ .sub {
+    height: auto;
+    opacity: 1;
+}
+
+.ra_item:checked ~ label {
+    color: #f6ff6d;
+}
+
+.logo {
+    display: block;
+    width: 98px;
+    height: auto;
+    margin: 10px auto;
+}
+
+.logo img {
+    width: 98px;
+    height: auto;
+}
+
+.abs_item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.share_btn,
+.order_btn,
+.login_btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+}
+
+.login_btn {
+    right: 10px;
+}
+
+.order_btn {
+    right: 40px;
+}
+
+.share_btn {
+    right: 75px;
+}
+
+.sns_frame,
+.order_frame {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 999;
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.sns_box {
+    width: 80px;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+.sns_box li {
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #ccc;
+}
+
+.sns_box li a {
+    display: block;
+    color: #333;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.ck2_close,
+.ck3_close {
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px auto;
+    background-image: url(./img/close_btn_n.png);
+}
+
+#ck2:checked ~ .sns_frame {
+    top: 0;
+}
+
+#ck3:checked ~ .order_frame {
+    top: 0;
+}
+
+.order_box {
+    width: 280px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.order_box img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.contents {
+    width: 100%;
+    height: 100%;
+}
+
+.ft {clear: both;
+    height: 100px;
+    background: #eee;
+    border-top: 4px solid #ccc;
+    padding-top: 10px;
+}
+
+.fnb {
+    clear: both;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.fnb li {
+    float: left;
+    padding-left: 6px;
+}
+
+.fnb li.item1 a:after {
+    content: "|";
+    padding-left: 10px;
+}
+
+.copyright {
+    clear: both;
+    text-align: center;
+    color: #333;
+    line-height: 2.4;
+}
