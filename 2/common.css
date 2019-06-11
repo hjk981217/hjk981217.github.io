@@ -50,7 +50,7 @@
     .pg_tit{color: #64a765; font-style: italic; text-transform: uppercase; padding-top: 2em; padding-left: 60px; font-family: "Roboto";}
     .pg_tit2{color: #333; font-family: "Nanum Gothic"; padding-bottom: 1em; padding-top: 1.5em; padding-left: 60px; font-size: 2.5em;}
     .pg_com{padding-left: 60px; padding-top: 1.5em; font-weight: 600;}
-    .pg_more{display: block; width: 48px; height: 48px; margin-top: 50px; margin-left: 60px; background-image: url("./img/go.png");}
+    .pg_more{display: block; width: 48px; height: 48px; margin-top: 50px; margin-left: 60px; background-repeat: no-repeat; background-image: url("./img/go.png");}
      @keyframes pic_ani{
         0% { opacity:0; }
         100% { opacity:1; }
