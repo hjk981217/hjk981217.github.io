@@ -4,7 +4,7 @@
     .hd{position: relative;}
     
     #main{background-size: cover; background-repeat: no-repeat; background-image: url("./img/main1.jpg"),url("./img/main.jpg"); background-position: center center;}
-    .logo{display: block; width: 187px; height: 54px; background-image: url("./img/logo.PNG"); background-repeat: no-repeat; background-size: cover; z-index: 50; position: absolute; top: 3%; left: calc(50% - 93px);}
+    .logo{display: block; width: 187px; height: 54px; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-size: cover; z-index: 50; position: absolute; top: 3%; left: calc(50% - 93px);}
     #gnb{width: 570px; height: 52px; margin: 0 auto; margin-top: 7%; position: static; top: 0; left: 0; z-index: 10; color: transparent;}
     #gnb li{float: left; padding: 1em 2.4em;}
     #gnb li a{display: block; color: #e3e3e3; font-size: 1.1em; font-weight: 600;}
@@ -50,7 +50,7 @@
     .pg_tit{color: #64a765; font-style: italic; text-transform: uppercase; padding-top: 2em; padding-left: 60px; font-family: "Roboto";}
     .pg_tit2{color: #333; font-family: "Nanum Gothic"; padding-bottom: 1em; padding-top: 1.5em; padding-left: 60px; font-size: 2.5em;}
     .pg_com{padding-left: 60px; padding-top: 1.5em; font-weight: 600;}
-    .pg_more{display: block; width: 48px; height: 48px; margin-top: 50px; margin-left: 60px; background-image: url("./img/go.PNG");}
+    .pg_more{display: block; width: 48px; height: 48px; margin-top: 50px; margin-left: 60px; background-image: url("./img/go.png");}
      @keyframes pic_ani{
         0% { opacity:0; }
         100% { opacity:1; }
