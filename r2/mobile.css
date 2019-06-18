@@ -1,0 +1,31 @@
+/* 모바일 */
+.mobile {display:block; }
+#gnb{position: fixed; z-index: 90; width: 100vw; height: 100vh; background-color: #fff;  margin-top: 0; left: -100%; transition: 0.8s;}
+#lst_ck:checked ~ #main #gnb{left: 0;}
+#search_ck:checked ~ #main .search{right: 0;}
+#gnb li{float: none; clear: both; padding: 1em 2.4em;}
+#gnb li a{font-size: 1em; color: #4c443d;}
+#tnb { position:fixed; z-index:92; right:-105%; top:6.5%; transition:0.8s; }
+#tnb .item2, #tnb .dp1{display: none;}
+#lst_ck:checked ~ #main #tnb { right:5%; }
+.desk{display: none;}
+.page .column li { clear:both; width:100%; height: 48vh; }
+.page .pic { width: 70%; height: auto; }
+.pg_tit{ padding-left: 50px; font-size: 1.2em;}
+.pg_tit2{font-size: 1.5em; padding-left: 50px;}
+.pg_com {padding-left:50px; font-size:1em; font-weight:400; } 
+.pg_more {margin-top: 10px; margin-left:50px; }  
+#page2 .pic{margin-top: -50px; left: 50px;}
+.page_img3{margin-left: 10%;}
+.pg_t1{font-size: 1.3em; text-align: center; padding-top: 15em;}
+.pg_com1{padding-top: 10px; font-size: 1em;}
+#page4{height: 150hvh;}
+.lb_box{top: 0; width: 100%;}
+.pic_box{padding-left: 0; width: 100vw; padding-top: 350px;}
+.pic_box li{float: none; clear: both;}
+.pic_box li img{width: 100%; margin-top: 20px;}
+#ra1:checked ~ .pic_box{margin-left: 0; margin-top: 0px;}
+#ra2:checked ~ .pic_box{margin-left: 0; margin-top: -300px;}
+#ra3:checked ~ .pic_box{margin-left: 0; margin-top: -600px;}
+#ra4:checked ~ .pic_box{margin-left: 0; margin-top: -900px;}
+  
