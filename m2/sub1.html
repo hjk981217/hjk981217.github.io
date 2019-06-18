@@ -40,20 +40,21 @@
         .page .pg_data{display: none; margin-top: 30px; padding-bottom: 20px;}
         .page:target .pg_data{display: block;}
         .page:target .tb_btn{background: #262626; color: #fff;}
-        .page .pg_data .pg_tit{font-weight: 400; font-size: 27px; margin-left: 10px;}
+        .page .pg_data .pg_tit{font-weight: 800; font-size: 1.5em; margin-left: 10px;}
      
         #page1 .pg_data .cont_logo{display: block; width: 300px; margin: 0 auto;}
         #page1 .pg_data .brand{width: 95%; margin: 0 auto; line-height: 20px; font-size: 16px; color: #4e4e4e; padding-bottom: 10px;}
-        #page1 .pg_data .con_tit{font-size: 19px; width: 95%; margin: 0 auto; padding-top: 5px;}
+        #page1 .pg_data .con_tit{font-size: 1.3em; font-weight: 500; width: 95%; margin: 0 auto; padding-top: 5px; color: #444; line-height: 2; padding-top: 10px;}
         #page1 .pg_data .con_data{width: 95%; margin: 0 auto; padding-bottom: 10px;}
         
         #page2 .pg_data .con{ width: 300px; height: auto; margin: 0 auto; padding-top: 20px; padding-bottom: 20px;}
         #page2 .pg_data .con h4{padding-bottom: 10px;}
         
         #page3 .pg_data h4{width: 90%; margin: 0 auto; font-size: 17px; font-weight: lighter; padding-top: 20px; padding-bottom: 10px;}
-        #page3 .pg_data .con{width: 90%; margin: 0 auto; padding-top: 10px; padding-bottom: 10px;}
+        #page3 .pg_data .con{width: 90%; margin: 0 auto; padding-top: 10px; padding-bottom: 10px; line-height: 2;} 
+        #page3 .pg_data .con span{font-weight: bold; font-size: 1.12em;}
         
-        .blank2{height: 300px;}
+        .blank2{height: 400px;}
         
     </style>
     <script src="./js/jquery-latest.js"></script>
@@ -89,7 +90,7 @@
                <a href="#page1" class="tb_btn">브랜드소개</a>
                <div class="pg_data">
                     <h3 class="pg_tit">브랜드소개</h3>
-                    <img src="./img/con_logo.jpg" alt="logo" class="cont_logo">
+                    <img src="/img/con_logo.jpg" alt="logo" class="cont_logo">
                     <p class="brand">클리오는 1993년 전문 메이크업 아티스트에 의해 탄생된 대한민국에서 가장 오랜 역사를 가진 메이크럽 브랜드 입니다. 자신을 아름답게 가꾸는 일의 즐거움과 가치를 아는 여성을 위해 존재하며, 프로아티스트의 노하우를 담은 혁신적인 품질, 감각적인 컬러, 스타일리시한 디자인으로, 누구나 쉽고 간편하게 프로페셔널 메이크업을 가능하게 해줍니다.</p>
                     <h4 class="con_tit">Enjoy Prifessional</h4>
                     <p class="con_data">프로메이크럽 아티스트 못지 않은 다양한 연출과 감각적인 스타일링. 이를 동해 자신만의 매력을 표현하며 즐거움과 자신감을 갖는 클리오 아이덴티티</p>
@@ -129,7 +130,7 @@
                  <h3 class="pg_tit">(주)클리오 역사</h3>
                  <h4>(주)클리오는 23년간의 역사와 전문적이고 체계화된 지식의 축적을 통해 대한민국 최고 색조 전문 회사로 성장하였습니다.</h4>
                  <div class="con">
-                    <p>1993년<br>
+                    <p><span class="bold">1993년</span><br>
                     -회사 설립&국내 시장 진입<br>
                     -'클리오'브랜드 런칭<br>
                     -창업부터 고품질 색조시장 공략<br>
@@ -139,7 +140,7 @@
                     </p>
                  </div>
                  <div class="con">
-                     <p>2005년<br>
+                     <p><span class="bold">2005년</span><br>
                     -tor조 전문 브랜드로 성장<br>
                     -'페리페라' 브랜드 런칭<br>
                     -온라인 쇼핑몰 런칭<br>
@@ -147,7 +148,7 @@
                     -클리오 아이라이너 킬블랙 MS 1위 확보</p>
                  </div>
                  <div class="con">
-                     <p>2011년<br>
+                     <p><span class="bold">2011년</span><br>
                         -브랜드·유통 확장<br>
                         -'구달' 브랜드 런칭<br>
                         -H&B스토어 색조부문 1위 <br>
@@ -156,7 +157,7 @@
                      </p>
                  </div>
                  <div class="con">
-                     <p>2017<br>
+                     <p><span class="bold">2017</span><br>
                     -브랜드·유통 본격 성장<br>
                     -글로벌 시장 진업<br>
                     '클럽클리오'매장 중국 진출<br>
@@ -198,7 +199,7 @@
         <nav class="gnb">
             <ul class="menu">
                 <li class="item1">
-                    <a href="sub1.html">ABOUT CLIO</a>
+                    <a href="sub1.html#page1">ABOUT CLIO</a>
                 </li>
                 <li class="item2">
                     <a href="">PRODUCT</a>
