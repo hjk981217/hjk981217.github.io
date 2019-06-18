@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<link href="https://fonts.googleapis.com/css?family=Muli|Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="common_sub1.css">
+<title>풀무원 로하스</title>
+<style>
+    @media screen and (max-width:767px){
+        .mobile {display:block; }
+        .video_fr{opacity: 0;}
+        #main{background-image: url("./img/main_bg_m.jpg"); width: 100vw; height: 100vh; background-size: cover; background-position: center center; z-index: 0;}
+        .hd_top{width: 100%; height: 50px; background: #fff;}
+        .logo{background-size: 80px auto; background-repeat: no-repeat;}
+        #gnb{clear: both; position: fixed; z-index: 90; width: 100vw; height: 100vh; background-color: #fff; margin-top: 0; left: -100%; transition: 0.8s;}
+        #gnb ul{padding-top: 30px;}
+        #gnb li{float: none; clear: both; padding: 1em 2.4em;}
+        #gnb li a{font-size: 1.1em; color: #7ea34a;}
+        #lst_ck:checked ~ #main #gnb{left: 0;}
+        #search_ck:checked ~ #main .search{right: 0;}
+        #tnb { position:fixed; z-index:92; right:-105%; top:6.5%; transition:0.8s; }
+        #tnb .item2, #tnb .dp1{display: none;}
+        #lst_ck:checked ~ #main #tnb { right:5%; }
+        .desk{display: none;}
+        .main_tit{position: absolute; top: 50%; left: 0; font-size: 1.5em; color: #283c28;}
+        .main_tit2{position: absolute; top: 60%; left: 0; font-size: 1.3em; width: 75%; color: #283c28;}
+        .page{width: 100vw; height: 100vh;position: relative;}
+        .page .con1{padding: 0; margin: 0;}
+        .text{padding: 5px;}
+        .pg_tit{font-size: 1.4em; font-weight: 600;}
+        .pg_com{font-size: 1.0em; width: 85%; padding-bottom: 20px;}
+        #page1 .pg_cont .item1{background-image: url("./img/m_page1_1.jpg"); width: 600px; height: 150px; background-repeat: no-repeat; background-position: center center; background-size: 100%; position: relative;}
+        #page1 .pg_cont .item1 .icon{background-repeat: no-repeat;width: 80px; height: 80px; background-position: center center; position: relative; left: -250px; }
+        #page1 .pg_cont .item2{background-image: url("./img/m_page1_2.jpg"); width: 600px; height: 150px; background-repeat: no-repeat; background-position: center center; background-size: 100%; position: relative;}
+        #page1 .pg_cont .item2 .icon{background-repeat: no-repeat;width: 80px; height: 80px; background-position: center center; position: relative; left: -250px; }
+        #page1 .pg_cont .item3{background-image: url("./img/m_page1_3.jpg"); width: 600px; height: 150px; background-repeat: no-repeat; background-position: center center; background-size: 100%; position: relative;}
+        #page1 .pg_cont .item3 .icon{background-repeat: no-repeat;width: 80px; height: 80px; background-position: center center; position: relative; left: -250px; }
+        .txt_tit{opacity: 1; position: relative; left: -70px; top: -45px;}
+        #page2 .pg_cont{width: 100%; height: 300px; position: absolute; left: -65px;}
+        #page2 .pg_cont li{float: left;  padding: 10px; margin: 0 auto;}
+        #page2 .pg_cont li .cont1{font-size: 1em;}
+        #page2 .pg_cont li .cont2{font-size: 0.9em;}
+        
+        #page3 .con1 .pg3_lst li{float: left; padding: 5px; margin: 0;}
+        #page3 .con1 .pg3_lst .bot{clear: right;}
+        #page3 .con1 .pg3_lst .mo{clear: left;}
+        #page3 .con1 .pg3_lst li a img{width: 170px; height: 130px;}
+        #page3 .con1 .pg3_lst li a .comment{width: 170px; font-size: 0.8em;}
+        .ft{height: 150px;}
+        .ft_lst{display: none;}
+        .addr {display: none;}
+        .copy{clear: both; font-size: 0.9em; line-height: 2;}
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+        .hd_top{width: 100%; height: 50px; background: #fff; border-bottom: 2px solid #7ea34a;}
+        .logo{background-size: 80px auto; background-repeat: no-repeat; right: 10%;}
+        #gnb{clear: both; position: fixed; z-index: 90; width: 100vw; height: 100vh; background-color: #fff; margin-top: 0; left: -100%; transition: 0.8s;}
+        #gnb ul{padding-top: 30px;}
+        #gnb li{float: none; clear: both; padding: 1em 2.4em;}
+        #gnb li a{font-size: 1.1em; color: #7ea34a;}
+        #lst_ck:checked ~ #main #gnb{left: 0;}
+        #search_ck:checked ~ #main .search{right: 0;}
+        #tnb { position:fixed; z-index:92; right:-105%; top:6.5%; transition:0.8s; }
+        #tnb .item2, #tnb .dp1{display: none;}
+        #lst_ck:checked ~ #main #tnb { right:5%; }
+        .video_fr{width: 100vw; height: 100vh;}
+        video{width: 100vw; height: 100vh;}
+        .page .con1{padding: 0; margin: 0;}
+        .pg_tit{font-size: 1.9em; font-weight: 600;}
+        .pg_com{font-size: 1.3em; width: 85%; padding-bottom: 20px;}
+        #page1 .pg_cont .item1{background-image: url("./img/t_page1_1.jpg"); width: 250px; height: 400px;}
+        #page1 .pg_cont .item2{background-image: url("./img/t_page1_2.jpg"); width: 250px; height: 400px;}
+        #page1 .pg_cont .item3{background-image: url("./img/t_page1_3.jpg"); width: 250px; height: 400px;}
+        .txt_tit{opacity: 1; position: relative;}
+        #page2 .pg_cont{width: 100%; height: 300px; position: absolute; left: -65px;}
+        #page2 .pg_cont li{float: left;  padding: 50px; margin: 10px 20px;}
+        #page2 .pg_cont li .cont1{font-size: 1.5em;}
+        #page2 .pg_cont li .cont2{font-size: 1.2em;}
+        #page3 .con1 .pg3_lst li{float: left; padding: 10px; margin: 20px 50px;}
+        #page3 .con1 .pg3_lst .bot{clear: right;}
+    }
+    @media screen and (min-width: 960px){
+        .mobile{display: none;}
+    }
+</style>
+</head>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<body>
+    <input type="checkbox" class="ck_item" id="lst_ck">
+    <input type="checkbox" class="ck_item" id="search_ck">
+    <header class="page hd" id="main">
+       <div class="hd_top">
+            <a href="index.html" class="logo"></a>
+            <nav id="gnb">
+                <ul class="gnb_mn">
+                    <li class="item1"><a href="#">바른먹거리&로하스</a></li>
+                    <li class="item2"><a href="#">사회책임경영</a></li>
+                    <li class="item3"><a href="#">뉴스룸</a></li>
+                    <li class="item4"><a href="#">풀무원</a></li>
+                </ul>
+                <label for="lst_ck" class="mobile close_btn"></label>
+            </nav>
+            <nav id="tnb">
+                <ul class="mn desk">
+                    <li class="item1"><a href="#">KOR</a></li>
+                    <li class="item2"><a href="#">ENG</a></li>
+                    <li class="item3"><a href="#">CHI</a></li>
+                    <li class="item4"><a href="#">JAP</a></li>
+                </ul>
+            </nav>
+            <label for="lst_ck" class="mobile lst_btn"></label>
+            <label for="search_ck" class="mobile search_btn"></label>
+        </div>
+<!--
+        <nav class="mobile search">
+            <h3 class="mob_title1">SEARCH</h3>
+            <input type="text" id="keywords" class="input_data">
+            <input type="submit" id="sub_btn" class="sub_btn">
+            <h4 class="mob_title2">인기 검색어</h4>
+            <ul class="mob_menu">
+                <li class="item1"><a href="#">바른먹거리</a></li>
+                <li class="item2"><a href="#">로하스</a></li>
+                <li class="item3"><a href="#">바른먹거리캠페인</a></li>
+            </ul>
+            <label for="search_ck" class="close_btn"></label>
+        </nav>
+        <label for="lst_ck" class="mobile lst_btn"></label>
+        <label for="search_ck" class="mobile search_btn"></label>
+-->
+        <h3 class="mobile main_tit">건강에도 좋은것이 <br>환경에도 좋습니다.</h3>
+        <h3 class="mobile main_tit2">인간과 자연을 함께 사랑하는 풀무원이 권하는 지혜로운 라이프 스타일, 로하스(LOHAS)</h3>
+    </header>
+    <div class="page" id="page1">
+       
+    </div>
+    <div class="page" id="page2">
+      
+    </div>
+    <footer class="ft">
+        <div class="ft_logo"><img src="./img/ft_logo.png" alt="하단로고"></div>
+        <ul class="ft_lst">
+            <li class="item color" style="font-weight: bold"><a href="#">개인정보처리방침</a></li>
+            <li class="item"><a href="#">이메일주소무단수집거부</a></li>
+            <li class="item"><a href="#">사이버감사실</a></li>
+            <li class="item"><a href="#">공장견학</a></li>
+            <li><a href="#">풀무원채용 </a></li>
+        </ul>
+        <ul class="addr">
+            <li class="item">법인명 : (주)풀무원</li>
+            <li class="item">서울시 강남구 광평로 280 로즈데일빌딩</li>
+            <li class="item">대표전화 : 080-002-0085</li>
+        </ul>
+        <p class="copy">Copyright ⓒ Pulmuone co.,Ltd All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
