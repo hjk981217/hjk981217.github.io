@@ -33,7 +33,8 @@
     
     /* page1 */
     #page1{background-color: #ece9de; }
-    .con1{position: relative; width: 100%; padding: 0 400px; margin: 0 auto; }
+    .con1{position: relative; width: 100%; padding: 0; margin: 0 auto; }
+    .cont_box1{width: 1200px; height: auto; margin: 0 auto;}
     .text{padding-bottom: 30px; padding-top: 100px;}
     .pg_tit{font-size: 2.3em; font-weight: 500; color: #555;}
     .pg_com{ color: #555; font-size: 1.2em; font-weight: 500;}
