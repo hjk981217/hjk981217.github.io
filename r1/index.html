@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한화이글스</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<!--    인터넷익스플로러의 최신브라우저인 IE-Edge로 문서열기-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    아이콘 계열의 웹앱 설정-->
+    <meta name="apple-mobile-web-app-title" content="EAGLES">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="title" content="EAGLES">
+<!--    비아이폰 및 공통 웹앱 설정-->
+    <meta name="title" content="EAGLES">
+    <meta name="keywords" content="한화이글스, 야구">
+    <meta name="description" content="한화이글스는 대한민국의 대전광역시를 연고지로 하는 KBO 소속 프로야구단이다.">
+<!--    SNS에 의한 설정-->
+    <meta itemprop="name" content="EAGLES">
+    <meta itemprop="description" content="한화이글스는 대한민국의 대전광역시를 연고지로 하는 KBO 소속 프로야구단이다.">
+<!--    sns 썸네일이미지-->
+    <meta itemprop="image" content="./images/">
+<!--    페이스북 연동 설정 -->
+    <meta property="fb:app_id" content="APP_ID">
+<!--    페이스북, 트위터, 카카오톡의  크롤러 연동 설정 -->
+    <meta property="og:type" content="Website">
+    <meta property="og:title" content="EAGLES">
+    <meta property="og:url" content="./index.html">
+    <meta property="og:description" content="한화이글스는 대한민국의 대전광역시를 연고지로 하는 KBO 소속 프로야구단이다.">
+    <meta property="og:image" content="./images/">
+<!--
+    메타포 아이콘 설정
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+-->
+<!--
+    <link rel="apple-touch-icon-180x180" sizes="180x180" href="./images/">
+    <link rel="icon" type="images/png" sizes="16x16" href="./images/">
+    <link rel="icon" type="images/png" sizes="16x16" href="./images/">
+    <link rel="icon" type="images/png" sizes="32x32" href="./images/">
+-->
+    <link href="https://fonts.googleapis.com/css?family=Mandali|Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="common.css">
+<!--    구글 아날리틱스 주소 연결-->
+    <style>
+        @media screen and (max-width:767px){
+            .page_tit{font-size: 4em;}
+            .more{font-size: 1.3em;}
+            .logo{width: 120px;}
+            .menu_call img{width: 20px;}
+            .next_page{display: none;}
+            video {display: none;}
+            #page4{background-image: url("./images/vs4.jpg")}
+            #vdo_btn{display: none;}
+        }
+        @media screen and (min-width:768px){
+            .logo{width: 160px;}
+            .menu_call img{width: 32px;}
+            .col_menu li{font-size: 1.4em;}
+            .col_menu li a{font-size: 2em;}
+            .hd.on{background-color: #fff; height: 80px;}
+            .next_page{display: none;}
+            video {display: none;}
+            #page4{background-image: url("./images/t_vs4.jpg")}
+            #vdo_btn{display: none;}
+        }
+        @media screen and (min-width: 960px){
+            .page_tit{font-size: 7em;}
+            .more{font-size: 2em;}
+            #page1{background-image: url("./images/img_season_2019.jpg"); }
+            #page2{background-image: url("./images/img_player03.png");}
+            #page3{background-image: url("./images/main_vs_dt3.jpg");}
+            .hd.on{background-color: #fff; height: 80px;}
+            .next_page{display: block;}
+            .fnb li{line-height: 2.6; padding: 10px; padding-left: 4em; position: relative;}
+            .fnb li a{font-size: 2.0em;}
+            #page4{background-image: none;}
+            video{display: block;}
+            #vdo_btn{display: block;}            
+        }
+/* 폰트
+        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Mandali', sans-serif;
+*/
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".fnb li a.ad").click(function(){
+                var inx = $(this).index();
+                $(".fnb li a.ad").removeClass("on");
+                $(".fnb li .sub").css("display","none");
+                $(this).addClass("on");
+                $(this).siblings(".sub").slideDown();
+            });
+            var win_h = $(window).height();
+            var wd = $(window).width();
+            $(".page").each(function(index){ // 각 페이지마다 스크롤 해야할 양을 지정
+                $(this).attr("data-page", win_h*index);
+            });
+            $(".page").on("mousewheel", function(e){
+                var secPos = parseInt($(this).attr("data-page"));
+                if(e.originalEvent.wheelDelta > 0){ // 위로 스크롤 할때
+                    $("body, html").not(":animated").animate({scrollTop:secPos - win_h}, 600);
+                }else if(e.originalEvent.wheelDelta < 0){ // 아래로 스크롤 할때
+                    $("body, html").not(":animated").animate({scrollTop:secPos + win_h}, 600);
+                }
+            });
+            $(".menu_call, .close").click(function(){
+                $(".gnb").toggleClass("on");
+            });
+            $(window).scroll(function(){ 
+                var sc_top = $(window).scrollTop(); //스크롤량 계산
+                if(sc_top>=200){ //스크롤량 200px 이상이면
+                    $(".hd").addClass("on");
+                    $(".logo_img").attr("src","./images/logo.png");
+                    $(".menu_btn").attr("src","./images/plus2.png");
+                }else{
+                     $(".hd").removeClass("on");
+                    $(".logo_img").attr("src","./images/logo.png");
+                    $(".menu_btn").attr("src","./images/plus.png");
+                }
+            });
+            $(".next_page").click(function(){
+                var np = parseInt($(this).attr("data-target"));
+                $("body,html").not(":animated").animate({scrollTop:np*win_h}, 500);
+            });
+            var sc_txt = ["EAGLES","PLAYERS","MASCOT","FAN"];
+            if(wd>=960){
+                $(".page_comment").text(sc_txt[0]);
+                $(".page_num").text(1);
+                $(window).scroll(function(){
+                    var cur_page = 0;
+                    cur_page = $(window).scrollTop() /win_h;
+                    if(cur_page>=4){
+                        $(".page_text").fadeOut();
+                    } else{
+                        $(".page_text").fadeIn();
+                        $(".page_comment").text(sc_txt[cur_page]);
+                        $(".page_num").text(parseInt(cur_page+1));
+                    }
+                });
+            } else {
+                $(".page_text").fadeOut();
+            }
+            /* 동영상 일시정지/재생 토글 부분  */
+            var sw1=true;
+            const video = document.querySelector("#vdo1");
+            $("#vdo_btn").click(function(){
+                if(sw1){
+                    video.pause();   //동영상이나 사운드 파일 재생 일시정지
+                    $("#vdo_btn").addClass("on");
+                } else {
+                    video.play();   //동영상이나 사운드 파일 재생
+                    $("#vdo_btn").removeClass("on");
+                }
+                sw1 = !sw1;
+            });
+            $(".next_page").click(function(){
+                var np = parseInt($(this).attr("data-target"));
+                $("body, html").not(":animated").animate({scrollTop:np*win_h}, 500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="page" id="page1">
+        <h2 class="page_tit">EAGLES</h2>
+        <a href="#" class="more">
+            <span class="txt">VIEW MORE</span><span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="1"></div>
+    </div>
+    <div class="page" id="page2">
+        <h2 class="page_tit">PLAYERS</h2>
+        <a href="#" class="more">
+            <span class="txt">VIEW MORE</span><span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="2"></div>
+    </div>
+    <div class="page" id="page3">
+        <h2 class="page_tit">MASCOT</h2>
+        <a href="#" class="more">
+            <span class="txt">VIEW MORE</span><span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="3"></div>
+    </div>
+    <div class="page" id="page4">
+        <div class="vdo_fr">
+            <video poster="./images/video_img.jpg" id="vdo1" autoplay loop muted style="width: 100vw" "height: 100vh">
+                <source src="./images/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <h2 class="page_tit">FAN</h2>
+        <a href="#" class="more">
+            <span class="txt">VIEW MORE</span><span class="plus"></span>
+        </a>
+        <div id="vdo_btn"></div>
+        <div class="next_page" data-target="4"></div>
+    </div>
+    <div class="page" id="page5">
+        <nav class="fnb">
+            <ul class="fnb_menu">
+                <li class="item1 split">
+                    <a href="#" class="ad">introduction</a>
+                    <ul class="sub">
+                        <li class="item2"><a href="#">EAGLES</a></li>
+                        <li class="item3"><a href="#">PLAYERS</a></li>
+                    </ul>
+                </li>
+                <li class="item4 split">
+                    <a href="#" class="ad">promotion</a>
+                    <ul class="sub">
+                        <li class="item5"><a href="#">FAN</a></li>
+                        <li class="item6"><a href="#">EVENT</a></li>
+                    </ul>
+                </li>
+                <li class="item7"><a href="#">TODAY'S LINE-UP</a></li>
+                <li class="item8"><a href="#">Records</a></li>
+                <li class="item9"><a href="#">NEWS</a></li>
+            </ul>
+            <div class="fnb_logo"></div>
+            <div class="copy"></div>
+            <div class="next_page" data-target="0"></div>
+        </nav>
+    </div>
+    <header class="hd">
+        <a href="index.html" class="logo">
+            <img src="./images/logo.png" class="logo_img" alt="로고">
+        </a>
+        <label for="ck" class="menu_call">
+            <img src="./images/plus.png" class="menu_btn" alt="메뉴호출버튼">
+        </label>
+    </header>
+    <nav class="gnb">
+       <div class="col_logo">
+          <img src="./images/logo.png" alt="메뉴로고">
+       </div>
+       <div class="close">
+           <img src="./images/close.png" alt="닫기">
+       </div>
+       <div class="wd_box">
+            <h3 class="addr">6월 3일 (월) 대전광역시 중구</h3>
+            <ul class="wd_fr">
+                <li class="item1">
+                    <span class="cr_data">16º</span>
+                    <span class="cr_txt">최저기온</span>
+                </li>
+                <li class="item2">
+                    <span class="cr_data">31º</span>
+                    <span class="cr_txt">최고기온</span>
+                </li>
+            </ul>
+        </div>
+        <ul class="col_menu">
+            <li class="item1 split">INTRODUCTION</li>
+            <li class="item2"><a href="#">EAGLES</a></li>
+            <li class="item3"><a href="#">PLAYERS</a></li>
+            <li class="item4 split">PROMOTION</li>
+            <li class="item5"><a href="#">FAN</a></li>
+            <li class="item6"><a href="#">EVENT</a></li>
+            <li class="item7"><a href="#">TODAY'S LINE-UP</a></li>
+            <li class="item8"><a href="#">Records</a></li>
+            <li class="item9"><a href="#">NEWS</a></li>
+        </ul>
+    </nav>
+    <div class="page_text" id="page_text">
+        <span class="page_comment"></span>
+        <span class="page_num"></span>
+    </div>
+</body>
+</html>
