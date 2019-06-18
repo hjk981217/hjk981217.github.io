@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클리오</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" centent="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <!--    모든 스마트기기의 메타포 아이콘-->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <!--    비 ios 계열의 스마트폰의 바로가기 아이콘-->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <!--    고해상도 아이폰 메타포 아이콘-->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <!--    아이패드형 메타포 아이콘-->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Overpass&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="collap.css">
+    <link rel="stylesheet" href="hd.css">
+    <link rel="stylesheet" href="ft.css">
+    
+    <style>
+        .wrap {margin-left: 0; width: 100%;transition: 0.5s; }
+        .wrap.on {margin-left: 110%;}
+        
+        .blank1{height: 100px;}
+        .contents{width: 100%; height: 100%;}
+        .tit{font-size: 1.8em; margin-left: 10px; padding-bottom: 10px;}
+        .tit2{font-size: 1.2em; margin-left: 10px; padding-bottom: 10px;}
+        .blank3{height: 100px;}
+        .mv_box{width: 80%; min-height: 200px; position: relative; margin: 10px auto;}
+        .mv_box a{display: block; width: 100%; height: auto;}
+        .mv_box a img{display: block; width: 100%; height: auto;}
+        #video_frame{position: absolute; top: 0; left: 0; display: none;}
+        #video_frame:target{display: block;}
+        
+        .blank2{height: 400px;}
+        
+    </style>
+    <script src="./js/jquery-latest.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="slider1.js"></script>
+    <script src="slider2.js"></script>
+    <script src="./js/ktswiper.min.js"></script>  
+    <script>
+        $(document).ready(function(){
+           $("#vs2").ktswiper({
+               infinite: true, //양방향 무한 모션
+               speed: 300,  //슬라이드 스피드
+               autoplay: true,  //자동 플레이 유무(false시 자동플레이어 안됨)
+               autoplaySpeed: 3000,  // 자동플레이 스피드
+               slidesToShow: 1, //한 화면에 보야줄 아이템수
+               slidesToScroll: 1, //힌번에 슬라이드 시킬 아이템 개수
+               arrows: false //좌우 화살 버튼 노출 여부 (false 시 안보임)
+           });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="lst"></div>
+            <a href="index.html" class="logo"></a>
+        </header>
+        <div class="blank1"></div>
+        <div id="contents">
+           <div class="page" id="page1">
+               <h2 class="tit">MEDIA</h2>
+               <h3 class="tit2">TV광고</h3>
+               <div class="blank3"></div>
+               <div class="mv_box">
+                <a href="#video_frame">
+                    <img src="./img/thumnail.png" alt="썸네일">
+                </a>
+                 <div id="video_frame">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8_P7S1WxQFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+           </div>
+        </div>
+        <div class="blank2"></div>
+        <footer class="ft">
+            <nav class="fnb">
+                <ul class="left">
+                    <li class="item1"><a href="#">MEET Us</a></li>
+                    <li class="item2"><a href="#">뉴스레터구독</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="item1"><a href="#"></a></li>
+                    <li class="item2"><a href="#"></a></li>
+                    <li class="item3"><a href="#"></a></li>
+                </ul>
+            </nav>
+            <ul class="linkbox">
+                <li class="item1"><a href="#">개인정보처리방침</a></li>
+                <li class="item2"><a href="#">채용정보</a></li>
+            </ul>
+            <address class="addr">서울시 강남구 압구정로 30길 62 (주)클리오 대표이사:한현옥</address>
+            <p class="copyright">COPYRIGHT ⓒ 2016 CLUBCLIO.CO.LTD.ALL RIGHT RESERVED</p>
+            <img src="./img/f_logo.png" alt="g_logo" class="ft_logo">
+        </footer>
+<!--        a 태그는 제이쿼리가 링크여서 안먹는다 애니메이션 효과주려면 div로 태그해서 값을 준다-->
+        <div class="to_top"></div>
+    </div>
+    <div class="collap">
+        <div class="c_logo">
+            <img src="./img/logo.jpg" alt="로고">
+        </div>
+        <div class="close"></div>
+        <nav class="gnb">
+            <ul class="menu">
+                <li class="item1">
+                    <a href="sub1.html#page1">ABOUT CLIO</a>
+                </li>
+                <li class="item2">
+                    <a href="sub2.html#page1">PRODUCT</a>
+                </li>
+                <li class="item3">
+                    <a href="sub3.html">MEDIA</a>
+                </li>
+                <li class="item4">
+                    <a href="">PRO-TIP</a>
+                </li>
+                <li class="item5">
+                    <a href="">COMMUNITY</a>
+                </li>
+                <li class="item6">
+                    <a href="">EVENT</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클리오</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" centent="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <!--    모든 스마트기기의 메타포 아이콘-->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <!--    비 ios 계열의 스마트폰의 바로가기 아이콘-->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <!--    고해상도 아이폰 메타포 아이콘-->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <!--    아이패드형 메타포 아이콘-->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Overpass&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="collap.css">
+    <link rel="stylesheet" href="hd.css">
+    <link rel="stylesheet" href="ft.css">
+    
+    <style>
+        .wrap {margin-left: 0; width: 100%;transition: 0.5s; }
+        .wrap.on {margin-left: 110%;}
+        
+        #vs1 {clear:both; width: 100vw;height: 100vh;overflow: hidden;position: relative;}
+        .img_box {width: 400%;height: 100%;}
+        .img_box li {float: left;width: 25%;height: 100%;position: relative; }
+        .img_box .img_con {display: block;width: auto;height: 100%;}
+        .tit_box {position: absolute;top: 55%;left: 40%; width: 70%; z-index: 10;}
+        .detail { display: block;position: absolute; bottom: 25%; left: 15%; z-index: 11;width: 45px;  height: 45px;background-image: url("./img/btn_play.png"); background-size: 42px 42px;background-repeat: no-repeat;} 
+        .btn_frame{position: absolute; bottom: 20%; left: 15%; z-index: 20; width: 70%;}
+        .btn_box{position: relative; width: 100%; height: 16px;}
+        .btn_box li{position: absolute; width: 16px; height: 16px; top: 4px;}
+        .btn_box li button{display: block; width: 8px; height: 8px; border-radius: 5px; border: 1px solid #fff; background-color: transparent; }
+        .btn_box li.on button{background-color: #fff;}
+        .btn_box li.item1{left: 0;}
+        .btn_box li.item2{left: 16px;}
+        .btn_box li.item3{left: 32px;}
+        .btn_box li.item4{left: 48px}
+        div.play{left: 64px; top:3px; position: absolute; width: 16px; height: 16px; z-index: 20;}
+        .btn_frame .play button{width: 16px; height: 16px; background-image: url("./img/btn_autostop.png"); background-repeat: no-repeat; background-position: center top; border: 0; border-radius: 0;}
+        .btn_frame .play.on button{background-position: center -21px;}
+        
+        #vs2 {clear:both; height:100vh; padding-top: 10%;}
+        #vs2:before{content: "NEW ARRIVAL"; display: block; width: 100%; clear: both; line-height: 36px; font-size: 26px; text-align: center; padding-bottom: 15px; font-family: "Boogaloo"; color: #a50053;}
+        #vs2 li.slide_01 {float: left; width: 100%;}
+        #vs2 li div.slide_01_inner{ width: 100%;}
+        #vs2 .img_wrap { width: 100%;}
+        #vs2 .img_wrap img{ display: block; width: 100%; height: auto;}
+        #vs2 .txt_fr{width: 350px; margin: 0 auto;}
+        #vs2 .tit{font-size: 18px; font-weight: 400;}
+        #vs2 .com{font-size: 14px; padding-top: 10px; line-height: 1.3; color: #5f5f5f;}
+        
+        #page1{padding-bottom: 50px;}
+                 
+        #vs3{width: 100vw; height: 100vh; position: relative; overflow: hidden; padding-top: 50px; border-top: 1.5px solid #c3c3c3;}
+        .thum_box{width: 700px;}
+        .thum_box li{float: left; margin: 10px; width: 100px; height: 100px; border: 3px solid #e2e2e2;}
+        .thum_box li.item1.on{border: 3px solid #d6006a;}
+        .thum_box li.item2.on{border: 3px solid #5d01c7;}
+        .thum_box li.item3.on{border: 3px solid #0ad811;}
+        .thum_box li.item4.on{border: 3px solid #28e2cc;}
+        .thum_box li.item5.on{border: 3px solid #f02966;}
+        .big_img_box{clear: both; width: 500%; height: 70%;}
+        .big_img_box li{width: 20%; float: left; height: 100%;}
+        .big_img_box li img{width: 70%; height: auto; margin-left: 15%;}
+        .big_img_box .tit2{font-size: 0.9em; padding: 10px; color: #fa4216; padding-top: 5px;}
+        .big_img_box .tit3{font-size: 1.1em; padding: 10px;}
+        .big_img_box .com2{font-size: 0.9em; padding: 10px; line-height: 1.2; color: #6a6a6a;}
+        
+    </style>
+    <script src="./js/jquery-latest.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="slider1.js"></script>
+    <script src="slider2.js"></script>
+    <script src="./js/ktswiper.min.js"></script>  
+    <script>
+        $(document).ready(function(){
+           $("#vs2").ktswiper({
+               infinite: true, //양방향 무한 모션
+               speed: 300,  //슬라이드 스피드
+               autoplay: true,  //자동 플레이 유무(false시 자동플레이어 안됨)
+               autoplaySpeed: 4000,  // 자동플레이 스피드
+               slidesToShow: 1, //한 화면에 보야줄 아이템수
+               slidesToScroll: 1, //힌번에 슬라이드 시킬 아이템 개수
+               arrows: false //좌우 화살 버튼 노출 여부 (false 시 안보임)
+           });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="lst"></div>
+            <a href="index.html" class="logo"></a>
+        </header>
+        <div id="vs1">
+            <ul class="img_box">
+                <li class="item1">
+                    <img src="./img/visual_2.jpg" alt="vs2" class="img_con">
+                    <div class="tit_box">
+                        <img src="" alt="">
+                    </div>
+                    <a href="#" class="detail"></a>
+                </li>
+                <li class="item2">
+                    <img src="./img/visual_3.jpg" alt="vs3" class="img_con">
+                    <div class="tit_box">
+                        <img src="" alt="">
+                    </div>
+                    <a href="#" class="detail"></a>
+                </li>
+                <li class="item3">
+                    <img src="./img/visual_4.jpg" alt="vs4" class="img_con">
+                    <div class="tit_box">
+                        <img src="" alt="">
+                    </div>
+                    <a href="#" class="detail"></a>
+                </li>
+                <li class="item4">
+                    <img src="./img/visual_5.jpg" alt="vs5" class="img_con">
+                    <div class="tit_box">
+                        <img src="./img/tit_4.png" alt="tit4">
+                    </div>
+                    <a href="#" class="detail"></a>
+                </li>
+            </ul>
+            <div class="btn_frame">
+                <ul class="btn_box">
+                    <li class="item1 on"><button></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                    <li class="item4"><button></button></li>
+                </ul>
+                <div class="play"><button></button></div>
+            </div>
+        </div>
+        <ul class="ktswiper-track" id="vs2">
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0">
+                <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/pd2_1.jpg" alt="섀도우">
+                    </div>
+                    <div class="txt_fr">
+                        <h3 class="tit">프로 아이 팔레트 3종</h3>
+                        <p class="com">대체 불가한 컬러 조합, 처음 만나보는 크리스탈 글리터, 보이는 그대로 고화소, 고밀착</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/pd2_2.jpg" alt="마스카라">
+                    </div>
+                    <div class="txt_fr">
+                        <h3 class="tit">킬래쉬 수퍼프루프 마스카라</h3>
+                        <p class="com">눈 앞, 뒤, 숨은 모 사이까지 꼼꼼하게 빗어주어 한 올 한 올 걱정 없이 깔끔한 속눈썹 연출</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/pd2_3.jpg" alt="파운데이션">
+                    </div>
+                    <div class="txt_fr">
+                        <h3 class="tit">킬커버 스테이 퍼펙트 파운데이션</h3>
+                        <p class="com">다양한 사이즈의 밀착 커버링 파우더를 믹스해 여러 번 덧발라도 뭉침 걱정 없이 가볍고 편안한 커버 완성</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/pd2_4.jpg" alt="스펀지">
+                    </div>
+                    <div class="txt_fr">
+                        <h3 class="tit">하이드로 메이크업 스폰지 오리지널 다이아</h3>
+                        <p class="com">부드러운 곡면으로 이루어져 찍힘, 자국, 밀림 No! 어느 부위든 밀착 메이크업 가능</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/pd2_5.jpg" alt="프라이머">
+                    </div>
+                    <div class="txt_fr">
+                        <h3 class="tit">프리스텝 피치 톤 업 프라이머</h3>
+                        <p class="com">하얗게 들뜬 인위적인 톤 업 NO! 맑고 화사한 피부 표현을 위한 선택</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="page1">
+            <img src="./img/visual_1.jpg" width="400" height="auto" alt="post">
+        </div>
+        <div id="vs3">
+            <ul class="thum_box">
+                <li class="item1 on"><img src="./img/pd_1.jpg" width="100" height="100" alt="19s/s섀도우" class="thumbnail"></li>
+                <li class="item2"><img src="./img/pd_2.jpg" width="100" height="100" alt="19s/s쿠션" class="thumbnail"></li>
+                <li class="item3"><img src="./img/pd_3.jpg" width="100" height="100" alt="19s/s컨실러" class="thumbnail"></li>
+                <li class="item4"><img src="./img/pd_4.jpg" width="100" height="100" alt="19s/s틴트" class="thumbnail"></li>
+                <li class="item5"><img src="./img/pd_5.jpg" width="100" height="100" alt="19s/s하이라이터" class="thumbnail"></li>
+            </ul>
+            <ul class="big_img_box">
+                <li class="item1">
+                    <img src="./img/pd_1.jpg" alt="19s/s섀도우">
+                    <h4 class="tit2">NEW PRODUCT</h4>
+                    <h3 class="tit3">프리즘 에어 섀도우 스파클링</h3>
+                    <p class="com2">매끄럽게 피팅되는 에어밀찰, 어느 각도에나 빛나는 고발색 프리즘 펄감, 늘 처음처럼 지속되는 롱래스팅</p>
+                    <a href="" class="more2"></a>
+                </li>
+                <li class="item2">
+                    <img src="./img/pd_2.jpg" alt="19s/s쿠션">
+                    <h4 class="tit2">NEW PRODUCT</h4>
+                    <h3 class="tit3">[NEW]누디즘 수분커버 쿠션 기획세트</h3>
+                    <p class="com2">마이크로 입자로 잡티 커버! ,은은하고 촉촉한 수분 광채!, 자연 유래 폴리머로 롱래스팅</p>
+                    <a href="" class="more2"></a>
+                </li>
+                <li class="item3">
+                    <img src="./img/pd_3.jpg" alt="19s/s컨실러">
+                    <h4 class="tit2">NEW PRODUCT</h4>
+                    <h3 class="tit3">킬커버 에어리핏 컨실러</h3>
+                    <p class="com2">촉촉한 제형이 결점을 부드럽게 커버하여 뭉침이나 얼룩 없이 깨끗한 피부 완성, 소량만 묻어 나오는 3mm 초슬림 어플리케이터로 텁텁한 느낌없이 얇고 가벼운 커버, 국소부위에 콕 찍거나 혹은 눕혀서 넓게 사용할 수 있는 만능 브러쉬</p>
+                    <a href="" class="more2"></a>
+                </li>
+                <li class="item4">
+                    <img src="./img/pd_4.jpg" alt="19s/s틴트">
+                    <h4 class="tit2">NEW PRODUCT</h4>
+                    <h3 class="tit3">매드 매트 리퀴드립</h3>
+                    <p class="com2">고농축 컬러 피그먼트를 함유하여 가볍게 밀착되고 라커처럼 선명한 매트 컬러 구현, 미세 구상 파우더가 입술 사이사이의 굴곡을 부드럽게 커버, 컵이나 빨대에 묻어날 걱정 NO! 입술에 착 밀착되어 오랜시간 선명함 유지</p>
+                    <a href="" class="more2"></a>
+                </li>
+                <li class="item5">
+                    <img src="./img/pd_5.jpg" alt="19s/s하이라이터">
+                    <h4 class="tit2">NEW PRODUCT</h4>
+                    <h3 class="tit3">프리즘 에어 하이라이터</h3>
+                    <p class="com2">투명한 맑은 색감, 은은하게 빛나는 미세 펄감, 매끈 촉촉 피부 밀착</p>
+                    <a href="" class="more2"></a>
+                </li>
+            </ul>
+        </div>
+        <footer class="ft">
+            <nav class="fnb">
+                <ul class="left">
+                    <li class="item1"><a href="#">MEET Us</a></li>
+                    <li class="item2"><a href="#">뉴스레터구독</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="item1"><a href="#"></a></li>
+                    <li class="item2"><a href="#"></a></li>
+                    <li class="item3"><a href="#"></a></li>
+                </ul>
+            </nav>
+            <ul class="linkbox">
+                <li class="item1"><a href="">개인정보처리방침</a></li>
+                <li class="item2"><a href="">채용정보</a></li>
+            </ul>
+            <address class="addr">서울시 강남구 압구정로 30길 62 (주)클리오 대표이사:한현옥</address>
+            <p class="copyright">COPYRIGHT ⓒ 2016 CLUBCLIO.CO.LTD.ALL RIGHT RESERVED</p>
+            <img src="./img/f_logo.png" alt="g_logo" class="ft_logo">
+        </footer>
+<!--        a 태그는 제이쿼리가 링크여서 안먹는다 애니메이션 효과주려면 div로 태그해서 값을 준다-->
+        <div class="to_top"></div>
+    </div>
+    <div class="collap">
+        <div class="c_logo">
+            <img src="./img/logo.jpg" alt="로고">
+        </div>
+        <div class="close"></div>
+        <nav class="gnb">
+            <ul class="menu">
+                <li class="item1">
+                    <a href="sub1.html#page1">ABOUT CLIO</a>
+                </li>
+                <li class="item2">
+                    <a href="sub2.html#page2">PRODUCT</a>
+                </li>
+                <li class="item3">
+                    <a href="sub3.html">MEDIA</a>
+                </li>
+                <li class="item4">
+                    <a href="#">PRO-TIP</a>
+                </li>
+                <li class="item5">
+                    <a href="#">COMMUNITY</a>
+                </li>
+                <li class="item6">
+                    <a href="#">EVENT</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</body></html>
