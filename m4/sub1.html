@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>박카스</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" centent="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind|Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="./js/jquery-latest.js"></script>
+    <script src="./js/ktswiper.min.js"></script>
+    <link rel="stylesheet" href="./css/ft.css">
+    <link rel="stylesheet" href="./css/hd.css">
+    <link rel="stylesheet" href="./css/collap.css">
+    <script src="./js/common.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%; height: 100%; font-family: "Hind", "Nanum Gothic", sans-serif;}
+        ul, li{list-style: none;}
+        a{text-decoration: none;}
+        button, label, input {background: transparent; border: 0; outline: 0;}
+        .wrap{width: 100%;}
+        
+       .contents_frame{width: 100%; height: 100%;}
+        .page{width: 100%; padding-top: 0;}
+        .tb_btn{display: block; width: 33.333%; line-height: 40px; text-align: center; color: #3e3e3e; font-weight: 600; font-size: 15px; position: absolute; top: 59px; z-index: 50; background: #fff;  text-decoration: none; font-family: "NanumGothic";}
+        
+        #page1 .tb_btn{left: 0;}
+        #page2 .tb_btn{left: 33.333%; }
+        #page3 .tb_btn{left: 66.666%; }
+        
+        .page .tb_data{display: none; margin-top: 70px; padding-bottom: 20px;}
+        .page:target .tb_data{display: block;}
+        .page:target .tb_btn{background: #fff; text-decoration: none; border-bottom: 0; color: #160a8b; font-weight: bold}
+        .page .tb_data h3{width: 200px; height: 30px; line-height: 35px; background-size: 30px;  background-repeat: no-repeat; background-position: left; margin-left: 10px; padding-left: 35px; color: #5aa2ff;}
+        
+        #page1{clear: both;}
+          
+       
+        
+    </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="lst"></div>
+            <div class="logo">
+                <a href="index.html"><img src="./image/logo.png" alt="로고"></a>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="contents_frame">
+                <div class="page" id="page1">
+                    <a href="#page1" class="tb_btn">박카스와 타우린</a>
+                    <div class="tb_data">
+                        <h3 class="dt_tit">박카스와 타우린</h3>
+                        <div class="dt_data">
+                            <h4>스트레스와 노화잡는 타우린</h4>
+                            <p>일상생활 속에서 피할 수 없는 스트레스는 타우린의 고갈을 초래합니다. 어패류나 각종 육류의 섭취를 통해 타우린을 지속적으로 공급받을 수 있으나 결핍 증세가 있다면 타우린이 포함된 음료나 음식을 섭취하는 일이 가장 신속한 해결책입니다.</p>
+                        </div>
+                        <div class="dt_data">
+                            <h4>독소배출, 고혈압 예방, 다이어트에도 효과적인 타우린</h4>
+                            <p>타우린은 간 기능을 강화하여 체내 독소 배출을 촉진하기 때문에 간 기능 유지에 중요한 작용을 합니다. 또 교감 신경을 억제하는 효과가 있어 혈압 상승을 막고 혈액순환을 촉진해 고혈압 예방에도 사용됩니다. 일반적인 대사회로를 활성화 하는 작용이 있어 다이어트에도 효과적이라는 연구가 나오고 있습니다.</p>
+                        </div>
+                        <div class="dt_data">
+                            <h4>현대인의 웃음을 책임지는 타우린</h4>
+                            <p>타우린의 섭취는 심리적으로 안정감을 주어 매사에 긍정적이고 낙관적인 태도를 견지하는데 도움을 줍니다. 비록 크기는 작지만 타우린은 정신적으로, 육체적으로 웰빙의 기쁨을 유도하고 건강한 웃음을 유지해주는 기능을 가진다고 무방할 것입니다. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" id="page2">
+                    <a href="#page2" class="tb_btn">박카스의 역사</a>
+                    <div class="tb_data">
+                        <h3 class="dt_tit">박카스의 역사</h3>
+                    </div>
+                </div>
+                <div class="page" id="page3">
+                    <a href="#page3" class="tb_btn">BI소개</a>
+                    <div class="tb_data">
+                        <h3 class="dt_tit">BI소개</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blank"></div>
+        <footer class="ft">
+            <div class="f_logo">
+                <img src="./image/f_logo.png" alt="f_logo">
+            </div>
+            <div class="right">
+                <address>서울특별시 동대문구 천호대로64 TEL.02-920-8114</address>
+                <p class="copy">Copyright 2018 BACCHUSD. ALL Right Reserver.</p>
+            </div>
+        </footer>
+    </div>
+    <div class="collap">
+        <div class="collap_bg">
+            <div class="m_logo"><img src="./image/menu_logo.png" alt="로고"></div>
+            <div class="close"></div>
+        </div>
+        <nav class="gnb">
+            <ul class="ac_lst">
+                <li class="ac_fr item1">
+                   <input type="radio" name="ac_ra" class="ac_ra" id="ac_ra1">
+                   <label for="ac_ra1" class="ac_btn">박카스</label>
+                   <div class="ac_con"><a href="sub1.html#page1">박카스와 타우린</a></div>
+                   <div class="ac_con"><a href="sub1.html#page2">박카스의 역사</a></div>
+                   <div class="ac_con"><a href="sub1.html#page3">BI소개</a></div>
+               </li>
+               <li class="ac_fr item2">
+                   <input type="radio" name="ac_ra" class="ac_ra" id="ac_ra2">
+                   <label for="ac_ra2" class="ac_btn">제품</label>
+                   <div class="ac_con"><a href="#">박카스D</a></div>
+                   <div class="ac_con"><a href="#">박카스F</a></div>
+                   <div class="ac_con"><a href="#">박카스 디카페-A</a></div>
+                   <div class="ac_con"><a href="#">박카스맛 젤리</a></div>
+                   <div class="ac_con"><a href="#">수출용 박카스</a></div>
+               </li>
+               <li class="ac_fr item3">
+                   <input type="radio" name="ac_ra" class="ac_ra" id="ac_ra3">
+                   <label for="ac_ra3" class="ac_btn">광고</label>
+                   <div class="ac_con"><a href="#">영상광고</a></div>
+                   <div class="ac_con"><a href="#">지면광고</a></div>
+               </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>박카스</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" centent="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind|Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="./js/jquery-latest.js"></script>
+    <script src="./js/ktswiper.min.js"></script>
+    <link rel="stylesheet" href="./css/ft.css">
+    <link rel="stylesheet" href="./css/hd.css">
+    <link rel="stylesheet" href="./css/collap.css">
+    <script src="./js/common.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%; height: 100%; font-family: "Hind", "Nanum Gothic", sans-serif;}
+        ul, li{list-style: none;}
+        a{text-decoration: none;}
+        button, label, input {background: transparent; border: 0; outline: 0;}
+        .wrap{width: 100%;}
+       
+        
+       
+        /* vs1 */
+        .vs1{width: 100vw; height: 100vh;}
+        .vs1 img{width: 100%; height: auto;}
+        
+        /* vs2 */
+        #vs2{width: 100vw; height: 100vh; overflow: hidden; position: relative;}
+        #vs2:before{content: "PRODUCT"; font-size: 2.0em; display:block; width: 100%; clear:both; text-align: center; padding-top: 20px; padding-bottom: 20px; color: #666;}
+        #vs2 .img_box{width: 400%; height: auto; position: absolute; text-align: center; padding-top: 50px;}
+        #vs2 .img_box li{float: left; width: 25%; height: auto;}
+        #vs2 .img_box .txt_fr{padding-top: 40px;}
+        #vs2 .img_box .txt_fr h3{font-size: 22px; padding-bottom: 20px; font-weight: bold;}
+        #vs2 .img_box .txt_fr p{line-height: 1.5; color: #404040; font-size: 14px;}
+        
+        /* vs3 */
+        #vs3{width: 100%; height: 100%; margin: 0 auto;}
+        .title{font-size: 1.7em; color: #666; text-align: center; padding-top: 30px; padding-bottom: 20px; font-weight: 600;}
+        .sub_tit{width: 55%; text-align: center; padding-bottom: 20px; color: #162a89; font-weight: 600;}
+        .mv_box{width: 80%; min-height: 200px; position: relative; margin: 0 auto;}
+        .mv_box a{display: block; width: 100%; height: auto;}
+        .mv_box a img{display: block; width: 100%; height: auto;}
+        #video_fr{position: absolute; top: 0; left: 0; display: none;}
+        #video_fr:target{display: block;}
+        
+        .blank{height: 50px;}
+        
+       
+        
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(window).width());
+            var intv = setInterval(function(){
+                nextAni();
+            }, 4000);
+            function nextAni(){
+                $(".img_box").not(":animated").animate({"margin-left":-wd+"px"}, 1000,function(){
+                    $(".img_box li").eq(0).appendTo($(".img_box"));
+                    $(".img_box").css("margin-left","0px");
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="lst"></div>
+            <div class="logo">
+                <a href="index.html"><img src="./image/logo.png" alt="로고"></a>
+            </div>
+        </header>
+        <div id="vs1" class="vs1">
+            <img src="./image/vs1.jpg" alt="vs1">
+        </div>
+        <div id="vs2">
+            <ul class="img_box">
+                <li class="item1">
+                    <div class="img_wrap">
+                        <img src="./image/prd_1.png" alt="박카스1">
+                    </div>
+                    <div class="txt_fr">
+                        <h3>박카스D</h3>
+                        <p>타우린이 2,000mg 함유!<br>대한민국 대표 피로회복제</p>
+                    </div>
+                </li>
+                <li class="item2">
+                    <div class="img_wrap">
+                        <img src="./image/prd_2.png" alt="박카스2">
+                    </div>
+                    <div class="txt_fr">
+                        <h3>박카스F</h3>
+                        <p>타우린과 DL-카르니틴 성분 함유는 물론<br>120mg 대용량으로 더 크게!</p>
+                    </div>
+                </li>
+                <li class="item3">
+                    <div class="img_wrap">
+                        <img src="./image/prd_3.png" alt="박카스3">
+                    </div>
+                    <div class="txt_fr">
+                        <h3>박카스 디카페-A</h3>
+                        <p>카페인에 민감한<br>당신을 위한 피로회복제!</p>
+                    </div>
+                </li>
+                <li class="item4">
+                    <div class="img_wrap">
+                        <img src="./image/prd_4.png" alt="박카스젤리">
+                    </div>
+                    <div class="txt_fr">
+                        <h3>박카스맛 젤리</h3>
+                        <p>타우린&비타민 B군 3종 함유!<br>남녀노소 누구나 맛있게!</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="vs3">
+           <div class="text_title">
+               <h3 class="title">영상광고</h3>
+               <p class="sub_tit">대한민국 회사원편</p>
+           </div>
+            <div class="mv_box">
+                <a href="#video_fr">
+                    <img src="./image/thum_nail.jpg" alt="썸네일">
+                </a>
+                <div id="video_fr">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/u722FMV5XMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="blank"></div>
+        <footer class="ft">
+            <div class="f_logo">
+                <img src="./image/f_logo.png" alt="f_logo">
+            </div>
+            <div class="right">
+                <address>서울특별시 동대문구 천호대로64 TEL.02-920-8114</address>
+                <p class="copy">Copyright 2018 BACCHUSD. ALL Right Reserver.</p>
+            </div>
+        </footer>
+    </div>
+    <div class="collap">
+        <div class="collap_bg">
+            <div class="m_logo"><img src="./image/menu_logo.png" alt="로고"></div>
+            <div class="close"></div>
+        </div>
+        <nav class="gnb">
+            <ul class="ac_lst">
+                <li class="ac_fr item1">
+                   <input type="radio" name="ac_ra" class="ac_ra" id="ac_ra1">
+                   <label for="ac_ra1" class="ac_btn">박카스</label>
+                   <div class="ac_con"><a href="sub1.html#page1">박카스와 타우린</a></div>
+                   <div class="ac_con"><a href="sub1.html#page2">박카스의 역사</a></div>
+                   <div class="ac_con"><a href="sub1.html#page3">BI소개</a></div>
+               </li>
+               <li class="ac_fr item2">
+                   <input type="radio" name="ac_ra" class="ac_ra" id="ac_ra2">
+                   <label for="ac_ra2" class="ac_btn">제품</label>
+                   <div class="ac_con"><a href="#">박카스D</a></div>
+                   <div class="ac_con"><a href="#">박카스F</a></div>
+                   <div class="ac_con"><a href="#">박카스 디카페-A</a></div>
+                   <div class="ac_con"><a href="#">박카스맛 젤리</a></div>
+                   <div class="ac_con"><a href="#">수출용 박카스</a></div>
+               </li>
+               <li class="ac_fr item3">
+                   <input type="radio" name="ac_ra" class="ac_ra" id="ac_ra3">
+                   <label for="ac_ra3" class="ac_btn">광고</label>
+                   <div class="ac_con"><a href="#">영상광고</a></div>
+                   <div class="ac_con"><a href="#">지면광고</a></div>
+               </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

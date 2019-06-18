@@ -1,0 +1,11 @@
+    //common.js 
+        $(document).ready(function(){
+            $(".lst").click(function(){
+                $(".collap").addClass("on");
+                $(".wrap").addClass("on");
+            });
+            $(".close").click(function(){
+                $(".collap").removeClass("on"); 
+                $(".wrap").removeClass("on"); 
+            });
+        });
