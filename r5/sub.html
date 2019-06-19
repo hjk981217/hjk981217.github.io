@@ -98,60 +98,27 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         #gnb li .sb_item li { clear:both; min-width:190px;  padding:0.7em; }    
         #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
         #gnb li a { font-size:1.2em; color: #fff; }
-        .pro_slider { width:900px; height:200px; margin:28px auto; overflow:hidden; 
-        padding-top:40px; } 
-        .sl_box { width:3000px; margin-left:0; }    
-        .sl_box li { float:left;  padding:10px; }
-        .thum_box { display:block; width: 160px; height:195px; text-align:center; }  
-        .thum_item { width:160px; height:160px; background-position:center center;
-            background-repeat:no-repeat; background-size:100% 100%; transition:0.5s; 
-            border-radius:80px; overflow:hidden; }
-        .thum_box:hover .thum_item { background-size:160% 160%; } 
-        .item1 .thum_item {background-image:url("./img/thum_img1.png"); }
-        .item2 .thum_item {background-image:url("./img/thum_img2.png"); }
-        .item3 .thum_item {background-image:url("./img/thum_img3.png"); }
-        .item4 .thum_item {background-image:url("./img/thum_img7.png"); }
-        .item5 .thum_item {background-image:url("./img/thum_img4.png"); }
-        .item6 .thum_item {background-image:url("./img/thum_img5.png"); }
-        .item7 .thum_item {background-image:url("./img/thum_img8.png"); }
-        .item8 .thum_item {background-image:url("./img/thum_img9.png"); }
-        .item9 .thum_item {background-image:url("./img/thum_img6.png"); }
-        .item10 .thum_item {background-image:url("./img/thum_img10.png"); }
-        .thum_txt { display:block; line-height:40px; font-size:1.2em; }    
-        .thum_box:hover .thum_txt { font-weight:bold; }
-        .thum_btn_box { position:relative; width:1200px; margin:0 auto; }    
-        .thum_btn_box li { position:absolute; top:-150px; z-index:50; }
-        .thum_btn_box li button { display:block; width:20px; height:45px; 
-            background-size:100% auto; background-repeat:no-repeat; cursor:pointer; }
-        .thum_btn_box li.left { left:5%; }    
-        .thum_btn_box li.right { right:5%; }        
-        .thum_btn_box li.left button { background-image:url("./img/btn_bk_prev.png"); }    
-        .thum_btn_box li.right button { background-image:url("./img/btn_bk_next.png"); }    
-        .content { clear:both; }    
-        .con_lst { width:1206px; margin:20px auto; }    
-        .con_lst li { float:left; padding:20px; position:relative;  }
-        .con_lst li .pic_box { padding:40px 0px; position:relative; float:none; clear:both; }   
+       
         .pic { border:1px solid #aaa; }
         .em_box { position:absolute; bottom:10%; left:0; text-align:center; width:100%; } 
         .brand_main .em_box { bottom:30%; }  
-        .item_com1 { padding:1.5em 0; line-height:1; font-size:1.7em; font-weight:500; color:#fff; }
-        .item_com2 { padding:0.8em 0; line-height:2.5; font-size:1.2em; font-weight:500; color:#fff; }
         
-        .pic_more { display:block; font-size:1.3em; font-weight:600; color:#fff; width:180px; margin:5px auto; margin-bottom:10px;  position:relative; 
-            border-radius:30px; height:50px; border:1px solid #fff; 
-            text-align:center;  overflow:hidden; }   
-        .more_text { position:absolute; top:0; left:0; z-index:2; line-height:50px; 
-            display:block; width: 180px; height:48px; border-radius:30px; }
-        .pic { width: 360px; }    
-        .pic_more:before { content:""; display:block; width:180px; background:#fff;
-            height:50px; position:absolute; left:0; top:-100%; transition:0.5s; z-index:1; 
-            border-radius:30px; }
-        .pic_more:hover { color:#0a253e; }
-        .pic_more:hover::before { top:0; }
+        .page{clear: both; width: 100vw; height: 100vh; position: relative;}
+        .con_box{width: 1280px; height: 100%; margin: 0 auto; }
+        .main_tit{line-height: 3; text-align: center; font-size: 3.0em; color:#0a253e;}
+        .tit{font-size: 2.5em; padding-top: 50px; padding-left: 70px;}
+        .con_lst li{float: left;}
+        .con_lst li.item1{padding-left:70px; padding-right: 50px; padding-top: 50px;}
+        .txt_box{float: left;}
+        .cm_txt{font-size: 1.5em; line-height: 1.5;}
+        .com{width:550px;font-size: 1.2em; line-height: 1.5; padding-bottom: 30px; }
+        .com2{width:550px; font-size: 1.2em; line-height: 30px;}
+        .com2 br{line-height: 4;}
+        
         .ft { clear:both; background: #414141;}  
-        .ft_wrap { width:1200px; margin:5px auto; text-align: center;}
+        .ft_wrap { width:1200px; margin: 0 auto; text-align: center;}
         .ft_logo{padding-top: 20px;}
-        .copyright { line-height:1.6; font-size:1.2em; padding:2em; word-wrap:break-word; color: #fff;}
+        .copyright { line-height:1.6; font-size:1.2em; padding:2em; word-wrap:break-word; color: #fff; }
         .store_detail { display:block; width: 60px; height: 60px; 
         position:fixed; right:4%; bottom:5%; z-index:99; 
         background-image:url("./img/btn_place.png");
@@ -167,17 +134,13 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         .brand-list_gnb li { clear:both; padding:0.7em; }
         .brand-list_gnb.on { left:0; }
         #gnb { width: 80%;  overflow-x:hidden;}
-        #gnb li a { font-size:0.95em; }   
-        .pro_slider { width:180px;   }
-        .thum_btn_box { width:100%; }
-        .con_lst { width:100%; overflow-x:hidden; }
-        .con_lst li { padding:10px; text-align:center; }
-        .con_lst li .pic_box { width:calc(100vw - 20px); margin:0 auto; text-align:center; clear:both; height:auto; }
-        .pic { width:calc(100vw - 40px); margin:0 auto; height: auto; }
+        #gnb li a { font-size:0.95em; } 
         .item_com1{  font-size:1.1em; } 
         .item_com{  font-size:0.9em; } 
         .brand_main .em_box { bottom:0; }  
         .brand_main .item_com { display:block; }
+        .page .con_box{width: 375px; height: 100vh; }   
+        #page1 .con_lst .item1 img{width: 150px;}
         .pic_home {  font-size:1.1em; } 
         .ft_wrap { width:100%; }
     }
@@ -192,15 +155,7 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         .brand-list_gnb li:nth-child(12) { display:none; }
         .brand-list_gnb li:nth-child(13) { display:none; }
         .brand-list_gnb li:nth-child(14) { display:none; }
-        .pro_slider { width:540px; overflow-x:hidden; }
-        .thum_btn_box { width:100%; }
-        .con_lst { width:100%; margin:0;  }
-        .con_lst li { float:left; clear:none; height:auto; padding:0;  }
-        .con_lst li .pic_box { float:left; clear:none;  padding:8px; 
-        width:auto; height:575px; overflow:hidden; }
-        .brand_main .item_com { display:block; }
-        .pic { height:575px; width:auto; }
-        .pic { width:calc(50vw - 20px); }
+        
     }
     </style>
     <script>
@@ -314,200 +269,68 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         </ul>
     </nav>
 </header>
-<div class="pro_slider">
-    <ul class="sl_box">
-       <li class="item1">
-          <a href="#" class="thum_box">
-               <div class="thum_item"></div>
-               <span class="thum_txt">HAZZYS MEN</span>
-          </a>
-       </li>
-       <li class="item2">
-           <a href="#" class="thum_box">
-               <div class="thum_item"></div>
-               <span class="thum_txt">HAZZYS LADIES</span>
-           </a>
-       </li>
-       <li class="item3">
-           <a href="#" class="thum_box">
-               <div class="thum_item"></div>
-               <span class="thum_txt">2019 SPRING</span>
-           </a>
-        </li>
-        <li class="item4">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">2019 SUMMER</span>
-            </a>
-        </li>
-        <li class="item5">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">ACCESSORIES</span>
-            </a>
-        </li>
-        <li class="item6">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">HAZZYS GOLF</span>
-            </a>
-       </li>
-       <li class="item7">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">ACCESSORIES</span>
-            </a>
-        </li>
-        <li class="item8">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">HAZZYS GOLF</span>
-            </a>
-       </li>
-       <li class="item9">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">HAZZYS PANTS</span>
-            </a>
-        </li>
-        <li class="item10">
-            <a href="#" class="thum_box">
-                <div class="thum_item"></div>
-                <span class="thum_txt">HAZZYS MEN</span>
-            </a>
-       </li>
-    </ul>
+<div class="page" id="page1">
+    <div class="con_box">
+        <h1 class="main_tit">ABOUT HAZZYS</h1>
+        <div class="con">
+            <h3 class="tit">BRAND CONCEPT</h3>
+            <ul class="con_lst">
+                <li class="item1">
+                    <img src="./img/sub1.jpg" alt="서브이미지1">
+                </li>
+                <div class="txt_box">
+                    <h4 class="cm_txt">HAZZYS MEN / WOMEN</h4>
+                    <p class="com">브리티시 감성을 간직한 HAZZYS는 세련된 도시 남/녀를 위한 브랜드 입니다. 비즈니스 미팅, 새로운 사람들과 만남, 액티브한 야외활동 등 도시인의 하루는 다양한 이벤트로 늘 분주합니다. 이런 도시인의 라이프스타일을 잘 이해하는 HAZZYS는 세련된 디테일과 컬러와 최고의 퀄리티를 자랑하고 그들의 하루를 더욱 활기차고 자신감 있게 연출해줍니다.</p>
+                </div>
+                <li class="item2">
+                     <img src="./img/sub2.jpg" alt="서브이미지2">
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<ul class="thum_btn_box">
-    <li class="left">
-        <button class="thum_btn"></button>
-    </li>
-    <li class="right">
-        <button class="thum_btn"></button>
-    </li>
-</ul>
-<div class="content">
-    <ul class="con_lst">
-        <li class="item1 col">
-            <div class="pic_box">
-                <img src="./img/main1.png" alt="parsons" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">HAZZYS MEN</h1>
-                    <p class="item_com2">PHIZ라인 반려견 의류 라인 출시</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-            <div class="pic_box">
-                <img src="./img/main2.png" alt="oven" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">19 S/S SPRING HAZZYS LADIED</h1>
-                    <p class="item_com2">헤지스와 팀 코펜트, 한 팀이 되다</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-            <div class="pic_box">
-                <img src="./img/main3.png" alt="charlotte" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">HAZZYS 2019 SPRIHG</h1>
-                    <p class="item_com2">그 여자의 이야기</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-            <div class="pic_box brand_main">
-                <img src="./img/blank.png" alt="임시데이터" class="pic">
-                <div class="em_box">
-                    <img src="./img/logo.png" alt="메인로고" class="lt_logo">
-                    <p class="item_com">헤지스</p>
-                </div>
-            </div>
-        </li>
-        <li class="item2 col">
-            <div class="pic_box">
-                <img src="./img/main4.png" alt="vieu" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">2019 SPRING & SUMMER</h1>
-                    <p class="item_com2">당신의 스타일에 집중하는 가방들</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-            <div class="pic_box">
-                <img src="./img/main5.png" alt="dongshim" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">HAZZYS GOLF</h1>
-                    <p class="item_com2">위트와 멋스러움이 묻어나는 브리티쉬 감성</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-                </div>
-            <div class="pic_box">
-                <img src="./img/main6.png" alt="ettol" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">SUMMER CHINO PANTS</h1>
-                    <p class="item_com2">ALPHA CHINO</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-            <div class="pic_box">
-                <img src="./img/main7.png" alt="eliden" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">HAZZYS LADIES 2019 SUMMER</h1>
-                    <p class="item_com2">스타일 지수는 높이고, 체온은 낮추고!<br> 지금부터 여름까지 쭉- 착용할 수 있는<br> 여름 필수 아이템전</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li class="item3 col">
-            <div class="pic_box">
-                <img src="./img/main11.png" alt="unit" class="pic">
-                <div class="em_box">
-                    <div class="em_box">
-                        <h1 class="item_com1">HAZZYS LADIES</h1>
-                        <p class="item_com2">SUMMER ACCESSORIES</p>
-                        <a href="#" class="pic_more">
-                            <span class="more_text">VIEW MORE</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="pic_box">
-                <img src="./img/main9.png" alt="sogongwon" class="pic">
-                <div class="em_box">
-                     <h1 class="item_com1">COOL & LOVELY HAZZYS GOLF</h1>
-                    <p class="item_com2">보기만해도 시원한 스트라이프 패턴이 포인트 </p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-            <div class="pic_box">
-                <img src="./img/main10.png" alt="lottetops" class="pic">
-                <div class="em_box">
-                    <h1 class="item_com1">HAZZYS MEN</h1>
-                    <p class="item_com2">EASY COOLER!</p>
-                    <a href="#" class="pic_more">
-                        <span class="more_text">VIEW MORE</span>
-                    </a>
-                </div>
-            </div>
-        </li>
-    </ul>
+<div class="page" id="page2">
+    <div class="con_box">
+        <ul class="con_lst">
+             <li class="item1">
+                 <h4 class="cm_txt">HAZZYS ACCESSORIES</h4>
+                 <p class="com2">HAZZYS 액세서리는 세련된 도시인을 위한 패션 소품입니다.핸드백, 지갑, 벨트, 키홀더 등의 다양한 패션 소품들은 세련된 캐주얼 시티룩을 완성합니다.<br>부담스럽지 않은 디자인으로 자연스러운 아름다움을 표현하고, 잉글리쉬 포인터 심볼 플레이를 통한 위트 있는 디테일로 독특한 개성을 연출합니다. <br>HAZZYS 액세서리는 앞선 감각의 패션 소품임을 약속 드립니다.</p>
+             </li>
+             <li class="item2">
+                 <img src="./img/sub3.jpg" alt="서브이미지3">
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="page" id="page3">
+    <div class="con_box">
+        <ul class="con_lst">
+             <li class="item1">
+                 <img src="./img/sub4.jpg" alt="서브이미지4">
+             </li>
+             <li class="item2">
+                 <h4 class="cm_txt">HAZZYS GOLF</h4>
+                 <p class="com2">편안한 클래식함을 추구하는 HAZZYS 골프, 새롭고 신선한 스타일을 선호하는 젊은 골퍼들을 위한 브랜드 입니다. 비슷비슷한 색감과 지루한 스타일, 천편일률적인 패턴의 골프웨어들과는 다릅니다.<br>HAZZYS 골프는 최상의 컨디션을 유지할 수 있는 패턴을 연구하여 최고의 원단과 소재로 만들어졌고, 패셔너블한 브리티시 스타일을 구현하여 필드뿐 아니라 가벼운 도시 생활에도 잘 어울립니다.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="page" id="page4">
+    <div class="con_box">
+        <ul class="con_lst">
+             <li class="item1">
+                 <h4 class="cm_txt">HAZZYS MEN SKIN CARE</h4>
+                 <p class="com2">헤지스맨 스킨케어는 빅데이터로 남성들의 리얼한 목소리를 듣고 오늘을 사는 남성 피부의 진정한 고민을 연구하였습니다. 헤지스의 감성을 담아 ‘영국 바버샵’의 리얼 그루밍 비법과 남성 피부만을 위한 ‘잉글리쉬 허브’ 성분을 담은 오직 남자를 위해 만든 세심한 스킨케어.<br>이제, 헤지스맨 스킨케어와 함께 스타일부터 스킨케어까지 완벽한 스타일링을 완성할 시간입니다.</p>
+             </li>
+             <li class="item2">
+                 <img src="./img/sub5.jpg" alt="서브이미지5">
+            </li>
+        </ul>
+    </div>
 </div>
 <footer class="ft">
     <div class="ft_wrap">
-       <img src="./img/ft_logo.png" alt="하단로고" class="ft_logo">
+        <img src="./img/ft_logo.png" alt="하단로고" class="ft_logo">
         <p class="copyright">@ 2018 LF. All Rights Reserved. </p>
     </div>
 </footer>
