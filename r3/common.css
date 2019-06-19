@@ -34,8 +34,8 @@
     /* page1 */
     #page1{background-color: #ece9de; }
     .con1{position: relative; width: 100%; padding: 0; margin: 0 auto; }
-    .cont_box1{width: 1200px; height: auto; margin: 0 auto;}
-    .text{padding-bottom: 30px; padding-top: 100px;}
+.cont_box1{width: 1200px; height: auto; margin: 0 auto;}
+    .text{padding-bottom: 30px; padding-top: 50px;}
     .pg_tit{font-size: 2.3em; font-weight: 500; color: #555;}
     .pg_com{ color: #555; font-size: 1.2em; font-weight: 500;}
     .pg_cont li{float: left;}
@@ -62,7 +62,7 @@
     #page2 .con1{background-image: url("./img/page2_1.jpg"); background-size: cover; width: 100%; height: 100%; background-position: center center; margin: 0 auto;}
     #page2 .con1 .pg_tit{color: #fff;}
     #page2 .con1 .pg_com{color: #fff;}
-    #page2 .pg_cont{padding: 100px;}
+    #page2 .pg_cont{padding-left: 100px;}
     #page2 .pg_cont li{ float: left;line-height: 5; padding: 100px; text-align: center;}
     #page2 .pg_cont li .cont1{font-size: 1.4em; color: #fff;}
     #page2 .pg_cont li .cont2{font-size: 1.2em; color: #fff;}
@@ -70,10 +70,10 @@
     #page3{width: 100vw; height: 100vh;}
     #page3 .con1 .pg3_lst li{float: left; padding-top: 20px; padding-right: 150px; padding-bottom: 20px;}
     #page3 .con1 .pg3_lst .bot{clear: both;}
-    #page3 .con1 .pg3_lst li a{display: block; color: #555; line-height: 1.5; font-size: 0.8em; font-weight: 600}
+    #page3 .con1 .pg3_lst li a{display: block; color: #555; line-height: 1.5; font-size: 0.9em; font-weight: 600;}
     #page3 .con1 .pg3_lst li a:hover{text-decoration: underline;}
     #page3 .con1 .pg3_lst li a img{width: 250px; height: 150px; clear: both;}
-    #page3 .con1 .pg3_lst .comment{width: 250px;}
+    #page3 .con1 .pg3_lst .comment{display: block; width: 250px; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
     
     .ft{width: 100vw; height: 250px; text-align: center; border-top: 2px solid #8cc73f;}
     .ft_logo{padding-top: 30px; padding-bottom: 30px;}

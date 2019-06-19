@@ -28,28 +28,35 @@
         .desk{display: none;}
         .main_tit{position: absolute; top: 50%; left: 0; font-size: 1.5em; color: #283c28;}
         .main_tit2{position: absolute; top: 60%; left: 0; font-size: 1.3em; width: 75%; color: #283c28;}
-        .page{width: 100vw; height: 100vh;position: relative;}
-        .page .con1{padding: 0; margin: 0;}
-        .text{padding: 5px;}
+        .page{width: 100vw; height: 100vh; }
         .pg_tit{font-size: 1.4em; font-weight: 600;}
-        .pg_com{font-size: 1.0em; width: 85%; padding-bottom: 20px;}
+        .pg_com{font-size: 1.0em;padding-bottom: 20px;}
+        
+        #page1 .text{width: 350px; height: auto; margin-left: 10px;}
+        #page1 .pg_cont:hover{display: none;}
+        .pg_cont li{float: none;}
         #page1 .pg_cont .item1{background-image: url("./img/m_page1_1.jpg"); width: 600px; height: 150px; background-repeat: no-repeat; background-position: center center; background-size: 100%; position: relative;}
         #page1 .pg_cont .item1 .icon{background-repeat: no-repeat;width: 80px; height: 80px; background-position: center center; position: relative; left: -250px; }
         #page1 .pg_cont .item2{background-image: url("./img/m_page1_2.jpg"); width: 600px; height: 150px; background-repeat: no-repeat; background-position: center center; background-size: 100%; position: relative;}
         #page1 .pg_cont .item2 .icon{background-repeat: no-repeat;width: 80px; height: 80px; background-position: center center; position: relative; left: -250px; }
         #page1 .pg_cont .item3{background-image: url("./img/m_page1_3.jpg"); width: 600px; height: 150px; background-repeat: no-repeat; background-position: center center; background-size: 100%; position: relative;}
         #page1 .pg_cont .item3 .icon{background-repeat: no-repeat;width: 80px; height: 80px; background-position: center center; position: relative; left: -250px; }
+        
         .txt_tit{opacity: 1; position: relative; left: -70px; top: -45px;}
+        #page2 .text{width: 350px; height: auto; margin-left: 10px;}
         #page2 .pg_cont{width: 100%; height: 300px; position: absolute; left: -65px;}
         #page2 .pg_cont li{float: left;  padding: 10px; margin: 0 auto;}
-        #page2 .pg_cont li .cont1{font-size: 1em;}
-        #page2 .pg_cont li .cont2{font-size: 0.9em;}
+        #page2 .pg_cont li .cont1{font-size: 1.1em;}
+        #page2 .pg_cont li .cont2{font-size: 1em;}
         
+        #page3 .text{width: 350px; height: auto; margin-left: 10px;}
+        #page3 .con1{width: 360px; height: 100%; margin: 0 auto;}
         #page3 .con1 .pg3_lst li{float: left; padding: 5px; margin: 0;}
         #page3 .con1 .pg3_lst .bot{clear: right;}
         #page3 .con1 .pg3_lst .mo{clear: left;}
-        #page3 .con1 .pg3_lst li a img{width: 170px; height: 130px;}
-        #page3 .con1 .pg3_lst li a .comment{width: 170px; font-size: 0.8em;}
+        #page3 .con1 .pg3_lst li a img{width: 170px; height: auto;}
+        #page3 .con1 .pg3_lst li a .comment{display: block; width: 170px; font-size: 0.9em; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
+        .blank{height: 100px;}
         .ft{height: 150px;}
         .ft_lst{display: none;}
         .addr {display: none;}
@@ -69,19 +76,25 @@
         #lst_ck:checked ~ #main #tnb { right:5%; }
         .video_fr{width: 100vw; height: 100vh;}
         video{width: 100vw; height: 100vh;}
-        .page .con1{padding: 0; margin: 0;}
+        .page{padding: 0; margin: 0;}
         .pg_tit{font-size: 1.9em; font-weight: 600;}
         .pg_com{font-size: 1.3em; width: 85%; padding-bottom: 20px;}
+        #page1 .text{width: 750px; height: auto; margin-left: 20px;}
         #page1 .pg_cont .item1{background-image: url("./img/t_page1_1.jpg"); width: 250px; height: 400px;}
         #page1 .pg_cont .item2{background-image: url("./img/t_page1_2.jpg"); width: 250px; height: 400px;}
         #page1 .pg_cont .item3{background-image: url("./img/t_page1_3.jpg"); width: 250px; height: 400px;}
         .txt_tit{opacity: 1; position: relative;}
-        #page2 .pg_cont{width: 100%; height: 300px; position: absolute; left: -65px;}
-        #page2 .pg_cont li{float: left;  padding: 50px; margin: 10px 20px;}
+        #page2 .text{width: 750px; height: auto; margin-left: 20px;}
+        #page2 .pg_cont{width: 100%; height: 300px;}
+        #page2 .pg_cont li{float: left;  padding: 50px;}
         #page2 .pg_cont li .cont1{font-size: 1.5em;}
         #page2 .pg_cont li .cont2{font-size: 1.2em;}
-        #page3 .con1 .pg3_lst li{float: left; padding: 10px; margin: 20px 50px;}
+        #page3 .con1{width: 750px; height: auto; margin: 0 auto;}
+        #page3 .con1 .pg3_lst li{float: left; padding: 10px;}
         #page3 .con1 .pg3_lst .bot{clear: right;}
+        #page3 .con1 .pg3_lst .mo{clear: left;}
+        #page3 .con1 .pg3_lst .comment{display: block; width: 250px; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
+        
     }
     @media screen and (min-width: 960px){
         .mobile{display: none;}
@@ -139,7 +152,7 @@
     </header>
     <div class="page" id="page1">
         <div class="con1">
-            <div class="cont_box1">
+           <div class="cont_box1">
                 <div class="text">
                     <h1 class="pg_tit">바른먹거리 & 로하스</h1>
                     <h3 class="pg_com">나와 내 가족의 건강, 더 나아가 지구환경의 건강까지 두루 살핍니다.</h3>
@@ -172,73 +185,74 @@
     </div>
     <div class="page" id="page2">
         <div class="con1">
-            <div class="cont_box1">
-                <div class="text">
-                    <h1 class="pg_tit">사회책임경영</h1>
-                    <h3 class="pg_com">'생명존중'과 '이웃사랑' 정신을 바탕으로 로하스 생활(LOHAS Living)을 구현해 나갑니다.</h3>
-                </div>
-                <ul class="pg_cont">
-                    <li class="item1">
-                        <img src="./img/page2_icon1.png" alt="" class="icons">
-                        <div class="text2">
-                            <h4 class="cont1">건강</h4>
-                            <p class="cont2">Health</p>
-                        </div>
-                    </li>
-                    <li class="item2">
-                        <img src="./img/page2_icon2.png" alt="" class="icons">
-                        <div class="text2">
-                            <h4 class="cont1">지속가능성</h4>
-                            <p class="cont2">Sustainability</p>
-                        </div>
-                    </li>
-                    <li class="item3">
-                        <img src="./img/page2_icon3.png" alt="" class="icons">
-                        <div class="text2">
-                            <h4 class="cont1">지역사회</h4>
-                            <p class="cont2">Community</p>
-                        </div>
-                    </li>
-                </ul>
+           <div class="cont_box1">
+            <div class="text">
+                <h1 class="pg_tit">사회책임경영</h1>
+                <h3 class="pg_com">'생명존중'과 '이웃사랑' 정신을 바탕으로 로하스 생활(LOHAS Living)을 구현해 나갑니다.</h3>
+            </div>
+            <ul class="pg_cont">
+                <li class="item1">
+                    <img src="./img/page2_icon1.png" alt="" class="icons">
+                    <div class="text2">
+                        <h4 class="cont1">건강</h4>
+                        <p class="cont2">Health</p>
+                    </div>
+                </li>
+                <li class="item2">
+                    <img src="./img/page2_icon2.png" alt="" class="icons">
+                    <div class="text2">
+                        <h4 class="cont1">지속가능성</h4>
+                        <p class="cont2">Sustainability</p>
+                    </div>
+                </li>
+                <li class="item3">
+                    <img src="./img/page2_icon3.png" alt="" class="icons">
+                    <div class="text2">
+                        <h4 class="cont1">지역사회</h4>
+                        <p class="cont2">Community</p>
+                    </div>
+                </li>
+            </ul>
             </div>
         </div>
     </div>
     <div class="page" id="page3">
         <div class="con1">
-            <div class="cont_box1">
-                <div class="text">
-                    <h1 class="pg_tit">뉴스룸</h1>
-                    <h3 class="pg_com">풀무원의 다양한 소식과 생생한 뉴스를 매일 만나실 수 있습니다.</h3>
-                </div>
-                <ul class="pg3_lst">
-                    <li class="item1"><a href="#">
-                    <img src="./img/page4_1.jpg" alt="친환경포장확대선언">
-                    <p class="comment">풀무원, 환경의 날 맞아 나와 지구환경을 위한 친환경 포장 확대 선언</p>
-                    </a></li>
-                    <li class="item2"><a href="#">
-                    <img src="./img/page4_2.jpg" alt="주주총회">
-                    <p class="comment">창사 35주년(주)풀무원, 글로벌기준 지주회사 지배구조체제 확립 선언</p>
-                    </a></li>
-                    <li class="item3"><a href="#">
-                    <img src="./img/page4_3.jpg" alt="온라인모니터21기">
-                    <p class="comment">풀무원, 온라인 모니터 요원 'e-fresh' 21기 모집</p>
-                    </a></li>
-                    <li class="item4 bot"><a href="#">
-                    <img src="./img/page4_4.jpg" alt="풀무원샘물">
-                    <p class="comment"> 풀무원샘물, 세계 해양의 날 기념 환경 정화 캠페인 실시</p>
-                    </a></li>
-                    <li class="item5 mo"><a href="#">
-                    <img src="./img/page4_5.jpg" alt="풀무원아임리얼">
-                    <p class="comment">풀무원 '아임리얼', 리뉴얼 기념 '어게인 2007'이벤트 개최</p>
-                    </a></li>
-                    <li class="item6"><a href="#">
-                    <img src="./img/page4_6.jpg" alt="구워먹는떡">
-                    <p class="comment">풀무원, 쫄깃하게 즐기는 영양 간식 '구워먹는 떡' 2종 출시</p>
-                    </a></li>
-                </ul>
+           <div class="cont_box1">
+            <div class="text">
+                <h1 class="pg_tit">뉴스룸</h1>
+                <h3 class="pg_com">풀무원의 다양한 소식과 생생한 뉴스를 매일 만나실 수 있습니다.</h3>
+            </div>
+            <ul class="pg3_lst">
+                <li class="item1"><a href="#">
+                <img src="./img/page4_1.jpg" alt="친환경포장확대선언">
+                    <span class="comment">풀무원, 환경의 날 맞아 나와 지구환경을 위한 친환경 포장 확대 선언</span>
+                </a></li>
+                <li class="item2"><a href="#">
+                <img src="./img/page4_2.jpg" alt="주주총회">
+                    <span class="comment">창사 35주년(주)풀무원, 글로벌기준 지주회사 지배구조체제 확립 선언</span>
+                </a></li>
+                <li class="item3 mo"><a href="#">
+                <img src="./img/page4_3.jpg" alt="온라인모니터21기">
+                    <span class="comment">풀무원, 온라인 모니터 요원 'e-fresh' 21기 모집</span>
+                </a></li>
+                <li class="item4 bot"><a href="#">
+                <img src="./img/page4_4.jpg" alt="풀무원샘물">
+                    <span class="comment"> 풀무원샘물, 세계 해양의 날 기념 환경 정화 캠페인 실시</span>
+                </a></li>
+                <li class="item5 mo"><a href="#">
+                <img src="./img/page4_5.jpg" alt="풀무원아임리얼">
+                    <span class="comment">풀무원 '아임리얼', 리뉴얼 기념 '어게인 2007'이벤트 개최</span>
+                </a></li>
+                <li class="item6"><a href="#">
+                <img src="./img/page4_6.jpg" alt="구워먹는떡">
+                    <span class="comment">풀무원, 쫄깃하게 즐기는 영양 간식 '구워먹는 떡' 2종 출시</span>
+                </a></li>
+            </ul>
             </div>
         </div>
     </div>
+    <div class="blank"></div>
     <footer class="ft">
         <div class="ft_logo"><img src="./img/ft_logo.png" alt="하단로고"></div>
         <ul class="ft_lst">
