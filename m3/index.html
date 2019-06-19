@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>해태제과</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" centent="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="https://fonts.googleapis.com/css?family=Hind|Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%; height: 100%; font-family: "Hind", "Nanum Gothic", sans-serif;}
+        ul{list-style: none;}
+        a{text-decoration: none; color: #555;}
+        button, label, input {background: transparent; border: 0; outline: 0;}
+        
+        .wrap{margin-left: 0; width: 100%; transition: 0.5s;}
+        .wrap.on {margin-left: 110%;}
+        /*header*/
+        .hd{position: fixed; top: 0; left: 0; width: 100%; height: 69px; background: #fff;background-color: transparent; z-index: 99;}
+        .hd.on{background-color: #e21776;}
+        .logo{display: block; width: 50px; height: 24px; background-image: url("./img/logo_change.png"); margin-top: 20px; margin-left: 20px; float: left; background-position: top;}
+        .hd.on .logo{background-position: bottom;}
+        
+        /* menu */
+        .collap{width: 100%; height: 100%; position: fixed; top: 0; right:-110%; background: #fff; transition: 0.5s; z-index:999; }
+        .collap.on{right:0; }
+        .collap_bg{width: 100%; height: 70px;background: #e21776;}
+        .c_logo{width: 50px; height: auto; margin-left: 15px; margin-top: 18px; float: left;}
+        .c_logo img{display: block; width: 100%; height: auto;}
+        .close{width: 30px; height: 30px; float: right; margin-top: 18px; margin-right: 17px; background-image: url("./img/close.png"); background-size: 28px;  background-repeat: no-repeat;  background-position: center center; }
+        .gnb{clear: both; padding-top: 50px; width: 100%; height: 100%;}
+        .gnb .dep1 {line-height: 40px; padding: 10px;}
+        .gnb .dep1>a{display: block;  font-weight: 800; font-size: 20px;}
+        .sub{display: none;}
+        .sub li{margin-left: 20px; margin-top: 5px;}
+        .sub li>a{font-size: 16px; color: #777;}
+        .dep1:hover .sub{display: block;}
+        .dep1:hover .color{color: #e21776;}
+        
+        .lst{width: 36px; height: 36px; background-image: url("./img/menu.png"); background-position: center center; background-size: 28px; float: right; margin: 18px; background-repeat: no-repeat; background-color: #e21776;}
+        
+        /* main style */
+        #vs1{clear: both; width: 100vw; height: 100vh; overflow: hidden;}
+        .vs_box{width: 300%; height: 100%;}
+        .vs_box li{float: left; width: 33.333%; height: 100%;}
+        .vs_box .vs_con{display: block; width: auto; height: 100%;}
+        .detail { display: block;position: absolute; bottom: 20%; left: 15%; z-index: 11;width: 45px;  height: 45px;background-image: url("./img/btn_play.png"); background-size: 38px 38px;background-repeat: no-repeat;} 
+        .btn_frame{position: absolute; bottom: 18%; left: 15%; z-index: 20; }
+        .btn_box{position: relative; width: 100%; height: 16px;}
+        .btn_box li{position: absolute; width: 16px; height: 16px; top: 4px;}
+        .btn_box li button{display: block; width: 8px; height: 8px; border-radius: 5px; border: 1px solid #f23492; background-color: transparent; }
+        .btn_box li.on button{background-color: #f23492;}
+        .btn_box li.item1{left: 0;}
+        .btn_box li.item2{left: 16px;}
+        .btn_box li.item3{left: 32px;}
+        div.play{left: 48px; top:3px; position: absolute; width: 16px; height: 16px; z-index: 20;}
+        .btn_frame .play button{width: 16px; height: 16px; background-image: url("./img/btn_autostop.png"); background-repeat: no-repeat; background-position: center top; border: 0; border-radius: 0;}
+        .btn_frame .play.on button{background-position: center -21px;}
+        
+        #vs2{padding-top: 40px; width: 100vw; height: 100vh; margin: 0 auto; padding-bottom: 20px; border-bottom: 1px solid #e21776;}
+        #vs2:before{content: "NEW PRODUCT"; display: block; width: 100%; clear: both; line-height: 36px; font-size: 26px; text-align: center; padding-bottom: 15px; font-family: "Boogaloo"; color: #e21776;}
+        .con_box{width: 360px; height: 100%; margin: 0 auto;}
+        #vs2 li.slide_01 {float: left; width: 100%; padding-top: 70px; margin: 0 auto;}
+        #vs2 li div.slide_01_inner{width: 100%; margin: 0 auto;}
+        #vs2 .img_wrap {width: 225px; height: 225px; padding-bottom: 20px;margin: 0 auto;}
+        #vs2 .img_wrap img{ display: block; width: 100%; height: auto; border-radius: 50%; background: transparent;  border: 2px solid #ffc4e0;}
+        #vs2 .txt_fr{width: 350px; margin: 0 auto; padding-top: 10px;  text-align: center;}
+        #vs2 .tit{font-size: 1.2em; font-weight: 600; color: #e21776;}
+        #vs2 .com{font-size: 1em; padding-top: 10px; line-height: 1.3; color: #5f5f5f;}
+        
+        #vs3{padding-top: 40px; height: 100vh; padding-bottom: 20px;}
+        #vs3:before{content: "SWEET NRWS"; display: block; width: 100%; clear: both; line-height: 36px; font-size: 26px; text-align: center; padding-bottom: 15px; font-family: "Boogaloo"; color: #e21776;}
+        .thum_box{width: 800px;}
+        .thum_box li{float: left; margin: 10px; width: 100px; height: 100px; border: 3px solid #e2e2e2;}
+        .thum_box li.item1.on{border: 3px solid #d6006a;}
+        .thum_box li.item2.on{border: 3px solid #5d01c7;}
+        .thum_box li.item3.on{border: 3px solid #0ad811;}
+        .thum_box li.item4.on{border: 3px solid #28e2cc;}
+        .thum_box li.item5.on{border: 3px solid #f02966;}
+        .thum_box li.item6.on{border: 3px solid #f08529;}
+        .con_box2{width: 360px; height: 100%; margin: 0 auto;}
+        .big_img_box{clear: both; width: 600%; height: 70%; margin: 0 auto;}
+        .big_img_box li{width: 16.66%; float: left; height: 100%; text-align: center; }
+        .big_img_box li img{width: 70%; height: auto; text-align: center;}
+        .big_img_box .tit2{font-size: 0.9em; padding: 10px; color: #fa4216; padding-top: 5px; margin: 0 auto;}
+        .big_img_box .com2{font-size: 0.9em; padding: 10px; line-height: 1.2; color: #6a6a6a;}
+        
+        .ft{width: 100%; height: 80px; border-top: 1px solid #a3a3a3;}
+        .f_logo{float: left;width: 20%; height: 80px; margin-top: 20px; text-align: center;}
+        .f_right{float: right; width: 80%; height: 80px; padding-top: 15px;}
+        .linkbox li{float: left; padding-right: 5px;}
+        .linkbox .item1:after{content: "|"; padding-left: 5px; color: #555;}
+        .linkbox .item2:after{content: "|"; padding-left: 5px; color: #555;}
+        .linkbox li a{font-size: 12px;}
+        .copyright{font-size: 12px; color: #a3a3a3; padding-top: 25px;}
+        
+    </style>
+    <script src="./js/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".lst").click(function(){
+                $(".collap").addClass("on");
+                $(".wrap").addClass("on");
+            });
+            $(".close").click(function(){
+                $(".collap").removeClass("on"); 
+                $(".wrap").removeClass("on"); 
+            });
+            $(window).scroll(function(){
+                var par = parseInt($(window).scrollTop());
+                if(par>=200){
+                    $(".hd").addClass("on");
+                } else {
+                    $(".hd").removeClass("on");
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script>
+        $(document).ready(function(){
+                var wd = parseInt($(window).width());
+                var intv = setInterval(function(){
+                    nextAni();
+                }, 3000);
+                function nextAni(){
+                        $(".vs_box").not(":animated").animate({"margin-left":-wd+"px"}, 900, function(){
+                        $(".vs_box li").eq(0).appendTo($(".vs_box")); 
+                        $(".vs_box").css("margin-left", "0px");
+                        $(".btn_box li").eq(0).appendTo($(".btn_box")); 
+                        $(".btn_box li").removeClass("on");
+                        $(".btn_box li").eq(0).addClass("on");
+                    });
+                };
+                var sw = true;
+                $(".play").click(function(){ 
+                     if(sw==true){
+                         $(this).addClass("on");
+                         clearInterval(intv);
+                     } else {
+                         $(this).removeClass("on");
+                         nextAni();
+                        intv = setInterval(function(){
+                            nextAni();
+                        }, 3000);
+                     }
+                     sw= !sw;
+                });
+                $(".btn_box li").click(function(){
+                    var idx = $(this).index()-1;
+                    clearInterval(intv);
+                    for(var i=0;i<idx;i++){
+                        $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                        $(".vs_box li").eq(0).appendTo($(".vs_box"));
+                    }
+                    nextAni();
+                    intv = setInterval(function(){
+                        nextAni();
+                    }, 3000);
+                });
+            });
+    </script>
+    <script src="./js/ktswiper.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#page1").ktswiper({
+                infinite: true, //양방향 무한 모션
+                speed: 400, // 슬라이드 스피드
+                autoplay: true, //자동플레이 유무( false시 자동플레이 안됨 )
+                autoplaySpeed: 5000, // 자동플레이 스피드
+                slidesToShow: 1, //한 화면에 보여줄 아이템수
+                slidesToScroll: 1, // 한번에 슬라이드 시킬 아이템 개수
+                arrows: false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+            });
+        });
+    </script>
+    <script src="slider2.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="lst"></div>
+            <a href="index.html" class="logo"></a>
+        </header>
+        <div id="vs1">
+            <ul class="vs_box">
+                <li class="item1">
+                    <img src="./img/vs1.png" alt="vs1" class="vs_con">
+                    <a href="#" class="detail"></a>
+                </li>
+                <li class="item2">
+                    <img src="./img/vs2.png" alt="vs2" class="vs_con">
+                    <a href="#" class="detail"></a>
+                </li>
+                <li class="item3">
+                    <img src="./img/vs3.png" alt="vs3" class="vs_con">
+                    <a href="#" class="detail"></a>
+                </li>
+            </ul>
+            <div class="btn_frame">
+                <ul class="btn_box">
+                    <li class="item1 on"><button></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                </ul>
+                <div class="play"><button></button></div>
+            </div>
+        </div>
+        <div id="vs2">
+        <div class="con_box">
+                <ul class="ktswiper-track" id="page1">
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./img/vs2_1.png" alt="연양갱바">
+                            </div>
+                            <div class="txt_fr">
+                                <h4 class="tit">연양갱바</h4>
+                                <p class="com">연양갱이 시원한 아이스크림으로 탄생!</p>
+                                <a href="#" class="more"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./img/vs2_2.png" alt="누가바쇼콜라">
+                            </div>
+                            <div class="txt_fr">
+                                <h4 class="tit">누가바 쇼콜라</h4>
+                               <p class="com">진~한 쇼콜라로 새롭게 만나는 누가바! </p>
+                                <a href="#" class="more"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./img/vs2_3.png" alt="만두젤리">
+                            </div>
+                            <div class="txt_fr">
+                                <h4 class="tit">고향만두 젤리</h4>
+                                <p class="com">고향만두를 상큼한 과일젤리로?!</p>
+                                <a href="#" class="more"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./img/vs2_4.png" alt="맛동산흑당쇼콜라">
+                            </div>
+                            <div class="txt_fr">
+                                 <h4 class="tit">맛동산 흑당쇼콜라</h4>
+                                 <p class="com">44년만의 맛동산의 새로운 도전!</p>
+                                <a href="#" class="more"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0" >
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./img/vs2_5.png" alt="젤루조아초코">
+                            </div>
+                            <div class="txt_fr">
+                                <h4 class="tit">젤루조아초코</h4>
+                                <p class="com">진~한 초코 풍미를 느낄 수 있는 젤루조아 초코!</p>
+                                <a href="#" class="more"></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="vs3">
+            <div class="cont_box">
+                <ul class="thum_box">
+                <li class="item1 on"><img src="./img/thum1.jpg" alt="notice1" class="thumb_nail"></li>
+                <li class="item2"><img src="./img/thum2.jpg" alt="notice2" class="thumb_nail"></li>
+                <li class="item3"><img src="./img/thum3.jpg" alt="notice3" class="thumb_nail"></li>
+                <li class="item4"><img src="./img/thum6.jpg" alt="notice4" class="thumb_nail"></li>
+                <li class="item5"><img src="./img/thum5.jpg" alt="notice5" class="thumb_nail"></li>
+                <li class="item6"><img src="./img/thum4.jpg" alt="notice5" class="thumb_nail"></li>
+            </ul>
+            <div class="cont_box2">
+                <ul class="big_img_box">
+                    <li class="item1">
+                        <img src="./img/notice_6.jpg" alt="notice1">
+                        <h4 class="tit2">2019-06-10</h4>
+                        <p class="com2">해태, 가성비 백미(白眉) '부라보 소프트 콘' 출시</p>
+                        <a href="#" class="more2"></a>
+                    </li>
+                    <li class="item2">
+                        <img src="./img/notice_5.jpg" alt="notice2">
+                        <h4 class="tit2">2019-05-28</h4>
+                        <p class="com2">보라빛 향기 허니버터칩 여름 한정판 '라벤더&amp;블루베리' 출시!</p>
+                        <a href="#" class="more2"></a>
+                    </li>
+                    <li class="item3">
+                        <img src="./img/notice_4.jpg" alt="notice3">
+                        <h4 class="tit2">2019-05-15</h4>
+                        <p class="com2">전자코가 찾은 여름 맛!! 해태 '오예스 미숫가루라떼' 출시!</p>
+                        <a href="#" class="more2"></a>
+                    </li>
+                    <li class="item4">
+                        <img src="./img/notice_1.jpg" alt="notice4">
+                        <h4 class="tit2">2019-05-08</h4>
+                        <p class="com2">해태 오예스 미니, 출시 두 달 만에 1천만개 판매</p>
+                        <a href="#" class="more2"></a>
+                    </li>
+                    <li class="item5">
+                        <img src="./img/notice_2.jpg" alt="notice5">
+                        <h4 class="tit2">2019-04-24</h4>
+                        <p class="com2">해태, 만두처럼 과즙으로 속 채운 '만두젤리' 출시</p>
+                        <a href="#" class="more2"></a>
+                    </li>
+                    <li class="item6">
+                        <img src="./img/notice_3.jpg" alt="notice6">
+                        <h4 class="tit2">2019-04-17</h4>
+                        <p class="com2">해태, 자두 과즙 8% 국내 첫 자두 아이스바 출시!!</p>
+                        <a href="#" class="more2"></a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="ft">
+            <div class="f_logo">
+                <img src="./img/f_logo.png" alt="f_logo">
+            </div>
+            <div class="f_right">
+                <ul class="linkbox">
+                    <li class="item1"><a href="#">개인정보처리방침</a></li>
+                    <li class="item2"><a href="#">이메일주소무단수집거부</a></li>
+                    <li class="item3"><a href="#">고객문의</a></li>
+                </ul>
+                <p class="copyright">COPYRIGHTⓒ2015 HAITAI CONFECTIONERY&amp;FOODS CO.,LTD.ALL RIGHT RESERVED.</p>
+            </div>
+        </footer>
+    </div>
+    <div class="collap">
+        <div class="collap_bg">
+            <div class="c_logo">
+                <img src="./img/logo_color.png">
+            </div>
+            <div class="close"></div>
+        </div>
+        <nav class="gnb">
+            <ul>
+                <li class="dep1"><a href="#" class="color">회사소개</a>
+                    <ul class="sub">
+                        <li><a href="#">회장인사말</a></li>
+                        <li><a href="#">해태소개</a></li>
+                    </ul>               
+                </li>
+                <li class="dep1"><a href="#" class="color">제품소개</a>
+                    <ul class="sub">
+                        <li><a href="#">허니시리즈</a></li>
+                        <li><a href="#">비스켓</a></li>
+                        <li><a href="#">스낵</a></li>
+                        <li><a href="#">캔디</a></li>
+                        <li><a href="#">아이스크림</a></li>
+                        <li><a href="#">식품</a></li>
+                    </ul>
+                </li>
+                <li class="dep1"><a href="#" class="color">달콤한세상</a>
+                    <ul class="sub">
+                        <li><a href="#">CF</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">해태뉴스</a></li>
+                    </ul>
+                </li>
+                <li class="dep1"><a href="#" class="color">이벤트</a>
+                    <ul class="sub">
+                        <li><a href="#">진행 중 이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
