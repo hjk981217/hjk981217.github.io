@@ -4,160 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
     <meta charset="UTF-8">
     <title>헤지스</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <style>
-        /* reset */
-        ::-moz-selection {	background: #b3d4fc;	text-shadow: none; }
-::selection {	background: #b3d4fc;	text-shadow: none; }
-img {	vertical-align: middle;	border: 0; }
-ol, ul, li, dl, dt, dd {	list-style: none; }
-h1, h2, h3 {	padding: 0;	margin: 0; }
-body, div, dl, dt, dd, ul, li, ol, p, figure {	padding: 0;	margin: 0;
-	outline:0 !important; }
-:root, html { font-size: 14px; }
-body {    font-family: 'Noto Sans KR','Roboto Condensed';	font-size: 14px;
-	line-height: 1.6;	color: rgb(70,70,70);}
-button, input[type='submit'], input[type='reset'], input[type='button'] {
-	padding: 0;	border: 0;	background: none;	line-height: normal;
-	font: inherit;	color: inherit;	overflow: visible;
-	-webkit-box-sizing: content-box;   box-sizing: content-box; }
-button {	-webkit-user-select: none;	   -moz-user-select: none;
-	    -ms-user-select: none;	        user-select: none;	outline:0; }
-input[type='submit'], input[type='reset'], input[type='button'] {
-	-webkit-appearance: button;	   -moz-appearance: button;
-	        appearance: button; }
-a {	color:inherit; text-decoration: none; }
-a:link {	text-decoration: none; }
-.hidden {	display: none; }
-.acc-hidden {	border: 0;	clip: rect(0 0 0 0);
-	height: 1px;	margin: -1px;	line-height: 0;
-	overflow: hidden;	padding: 0;	position: absolute;	width: 1px;
-	visibility: hidden;	font-size: 0; }
-fieldset, .field { 	padding: 0;	margin: 0;	border: 0; }
-input[type='text'], input[type='tel'], input[type='password'], textarea {
-	-webkit-appearance: none;	border-radius: 0;
-	margin: 0;	padding: 0;	border: 0;	line-height: normal; }
-button {	-webkit-appearance: none;	-moz-appearance: none;    appearance: none; }
-input[type='number'] {	-webkit-appearance: none;	-moz-appearance: none;
-	     appearance: none;	border-radius: 0; }
-.fl { 	float: left; }
-.fr {	float: right; }
-table {	border-collapse: collapse;	border-spacing: 0; display:table; }
-tr { display:table-row; }
-th, th { display:table-cell; }
-.ui-loader {	display: none;}
-select {	border-radius: none;	-webkit-border-radius: 0; }
-.cb {	clear: both; }
-.cf:after {    display: block;    clear: both;    content: ''; }
-.tac {text-align:center;}
-.mt0 {margin-top: 0;}
-body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
-    font-weight: 400; min-width:1280px; }
-       
-       
-        .tnb { width: 100%; height: 51px; border-bottom:1px solid #f0f0f0; } 
-        .tnb_wrap { width:1280px; margin:0 auto; }
-        .gnb-top { display:none; width:44px; height:30px;  
-            background-image:url("./img/btn_menu.png"); background-position:center center;
-            background-repeat:no-repeat; background-size:33px auto; text-indent:-9999px; 
-            position:fixed; left:10px; top:10px; z-index:70; cursor:pointer; }
-        .top_close { display:none; width:40px; height:40px; 
-            background-image:url("./img/close.png"); background-position:center center;
-            background-repeat:no-repeat; text-indent:-9999px; 
-            position:fixed; right:10%; top:20px; z-index:99; cursor:pointer; }    
-        .brand-list_gnb { float:left; position:static; left:0; top:0; width:auto; 
-            height:auto; z-index:auto; background-color:transparent; transition:0.5s; 
-            padding-left:0; padding-top:0; }    
-        .brand-list_gnb li { float:left; padding:1em 0.7em; position:relative; overflow:hidden; } 
-        .brand-list_gnb li:after { content:""; display:block; 
-            width:100%; height:2px; position:absolute; background:#24c;
-            left:-190px; bottom:2px; transition:0.5s; transition-timing-function:ease-out; }
-        .brand-list_gnb li:hover::after { left:0; }
-        .brand-list_gnb li a { color:#333; }   
-        .brand-list_gnb li a:hover { color:#24c; }  
-
-        .elstyle a { display:block; width: 25px; height: 22px; background-image:url("./img/logo_mini.png"); background-repeat:no-repeat;
-            background-position: center center; text-indent:-9999px; }
-        .language-box { clear:both; width:65px; height:50px; overflow:hidden; }    
-        .language-box a { display:block; line-height:50px; position:relative; 
-            width:65px; }   
-        .language-box a.on:after { content:"▼"; position:absolute; right:10px; 
-            font-size:0.7em; top:-1px; }    
-        .gnb-bot { float:right; }  
-        .logo{display: block; width: 68px; height: 60px; background-image: url("./img/logo.png"); background-size: cover; background-position: center center; margin: 30px auto;}
-        .hd_com { clear:both; text-align:center; font-size:1.6em; font-weight:400; padding:1em; }
-        #gnb { clear:both; width:100%;  margin:0 auto;    }  
-        #gnb .mn{ width:655px; margin:0 auto; }    
-        #gnb li { float:left; position:relative; } 
-        #gnb li .mn1:after { content:"|"; padding-left:24px; }     
-        #gnb li.item6 .mn1:after { content:""; }   
-        #gnb li .sb_item {  position:absolute; left:-45px; background:#0a253e; display:none; border:1px solid #0a253e; z-index:50; }
-        #gnb li:hover .sb_item { display:block; }    
-        #gnb li .sb_item li { clear:both; min-width:190px;  padding:0.7em; }    
-        #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
-        #gnb li a { font-size:1.2em; color: #fff; }
-        .pro_slider { width:900px; height:200px; margin:28px auto; overflow:hidden; 
-        padding-top:40px; } 
-        .sl_box { width:3000px; margin-left:0; }    
-        .sl_box li { float:left;  padding:10px; }
-        .thum_box { display:block; width: 160px; height:195px; text-align:center; }  
-        .thum_item { width:160px; height:160px; background-position:center center;
-            background-repeat:no-repeat; background-size:100% 100%; transition:0.5s; 
-            border-radius:80px; overflow:hidden; }
-        .thum_box:hover .thum_item { background-size:160% 160%; } 
-        .item1 .thum_item {background-image:url("./img/thum_img1.png"); }
-        .item2 .thum_item {background-image:url("./img/thum_img2.png"); }
-        .item3 .thum_item {background-image:url("./img/thum_img3.png"); }
-        .item4 .thum_item {background-image:url("./img/thum_img7.png"); }
-        .item5 .thum_item {background-image:url("./img/thum_img4.png"); }
-        .item6 .thum_item {background-image:url("./img/thum_img5.png"); }
-        .item7 .thum_item {background-image:url("./img/thum_img8.png"); }
-        .item8 .thum_item {background-image:url("./img/thum_img9.png"); }
-        .item9 .thum_item {background-image:url("./img/thum_img6.png"); }
-        .item10 .thum_item {background-image:url("./img/thum_img10.png"); }
-        .thum_txt { display:block; line-height:40px; font-size:1.2em; }    
-        .thum_box:hover .thum_txt { font-weight:bold; }
-        .thum_btn_box { position:relative; width:1200px; margin:0 auto; }    
-        .thum_btn_box li { position:absolute; top:-150px; z-index:50; }
-        .thum_btn_box li button { display:block; width:20px; height:45px; 
-            background-size:100% auto; background-repeat:no-repeat; cursor:pointer; }
-        .thum_btn_box li.left { left:5%; }    
-        .thum_btn_box li.right { right:5%; }        
-        .thum_btn_box li.left button { background-image:url("./img/btn_bk_prev.png"); }    
-        .thum_btn_box li.right button { background-image:url("./img/btn_bk_next.png"); }    
-        .content { clear:both; }    
-        .con_lst { width:1206px; margin:20px auto; }    
-        .con_lst li { float:left; padding:20px; position:relative;  }
-        .con_lst li .pic_box { padding:40px 0px; position:relative; float:none; clear:both; }   
-        .pic { border:1px solid #aaa; }
-        .em_box { position:absolute; bottom:10%; left:0; text-align:center; width:100%; } 
-        .brand_main .em_box { bottom:30%; }  
-        .item_com1 { padding:1.5em 0; line-height:1; font-size:1.7em; font-weight:500; color:#fff; }
-        .item_com2 { padding:0.8em 0; line-height:2.5; font-size:1.2em; font-weight:500; color:#fff; }
-        
-        .pic_more { display:block; font-size:1.3em; font-weight:600; color:#fff; width:180px; margin:5px auto; margin-bottom:10px;  position:relative; 
-            border-radius:30px; height:50px; border:1px solid #fff; 
-            text-align:center;  overflow:hidden; }   
-        .more_text { position:absolute; top:0; left:0; z-index:2; line-height:50px; 
-            display:block; width: 180px; height:48px; border-radius:30px; }
-        .pic { width: 360px; }    
-        .pic_more:before { content:""; display:block; width:180px; background:#fff;
-            height:50px; position:absolute; left:0; top:-100%; transition:0.5s; z-index:1; 
-            border-radius:30px; }
-        .pic_more:hover { color:#0a253e; }
-        .pic_more:hover::before { top:0; }
-        .ft { clear:both; background: #414141;}  
-        .ft_wrap { width:1200px; margin:5px auto; text-align: center;}
-        .ft_logo{padding-top: 20px;}
-        .copyright { line-height:1.6; font-size:1.2em; padding:2em; word-wrap:break-word; color: #fff;}
-        .store_detail { display:block; width: 60px; height: 60px; 
-        position:fixed; right:4%; bottom:5%; z-index:99; 
-        background-image:url("./img/btn_place.png");
-        background-size:cover; }
-        
-        @media screen and (max-width:767px){
+      
+    @media screen and (max-width:767px){
         body, html { min-width:100%; }
         .gnb-top { display:block; }
         .tnb_wrap { width:100%; }
@@ -180,18 +34,15 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         .brand_main .item_com { display:block; }
         .pic_home {  font-size:1.1em; } 
         .ft_wrap { width:100%; }
+        .slide{display: none;}
+        .mobile{display: block;}
     }
     @media screen and (min-width:768px) and (max-width:959px){
         body, html { min-width:100%; }
         .tnb_wrap { width:100%; }
         .brand-list_gnb { position:relative; width:688px; margin:0 auto;
         left:auto; top:auto; padding-left:0; padding-top:0; font-size: 0.9em;}
-        .brand-list_gnb li:nth-child(9) { display:none; }
-        .brand-list_gnb li:nth-child(10) { display:none; }
-        .brand-list_gnb li:nth-child(11) { display:none; }
-        .brand-list_gnb li:nth-child(12) { display:none; }
-        .brand-list_gnb li:nth-child(13) { display:none; }
-        .brand-list_gnb li:nth-child(14) { display:none; }
+        .brand-list_gnb li:nth-child(8) { display:none; }
         .pro_slider { width:540px; overflow-x:hidden; }
         .thum_btn_box { width:100%; }
         .con_lst { width:100%; margin:0;  }
@@ -201,6 +52,10 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         .brand_main .item_com { display:block; }
         .pic { height:575px; width:auto; }
         .pic { width:calc(50vw - 20px); }
+        .pic_home {  font-size:1.1em; } 
+        .ft_wrap { width:100%; }
+        .slide{display: none;}
+        .mobile{display: block;}
     }
     </style>
     <script>
@@ -225,7 +80,29 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
                 $(".sl_box li").eq(0).appendTo($(".sl_box"));
                 $(".sl_box").css("margin-left","0px");                
             });
-        });   
+        });
+        var intv = setInterval(function(){nextAni();},3000);
+        function nextAni(){
+            $(".img_box").not(":animated").animate({"margin-left":"-1920px"}, 900,function(){
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+                $(".img_box").css("margin-left","0px");
+            });
+        }
+        function prevAni(){
+            $(".img_box li").eq(4).prependTo($(".img_box"));
+            $(".img_box").css("margin-left","-1920px");
+            $(".img_box").not(":animated").animate({"margin-left":"0px"},900);
+        }
+        $(".down").click(function(){
+            clearInterval(intv);
+            nextAni(); 
+            intv=setInterval(function(){ nextAni(); }, 2900);
+        });
+        $(".up").click(function(){
+            clearInterval(intv);
+            prevAni(); 
+            intv=setInterval(function(){ nextAni(); }, 2900);
+        });
     });    
     </script>
 </head>
@@ -237,9 +114,9 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
 		</div>
 		<ul class="brand-list_gnb">
 			<li class="elstyle"><a href="index.html" >HOME</a></li>
-			<li><a href="sub.html">ABOUTHAZZYS </a></li>
+			<li><a href="sub.html">ABOUT HAZZYS </a></li>
+			<li><a href="#">HAZZYS LADIES</a></li>
 			<li><a href="#">HAZZYS MEN</a></li>
-			<li><a href="#">HAZZYS LADIES </a></li>
 			<li><a href="#">2019 SPRING</a></li>
 			<li><a href="#">2019 SUMMER</a></li>
 			<li><a href="#">ACCESSORIES</a></li>
@@ -258,7 +135,7 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
 </nav>	
 <header class="hd">
     <a href="index.html" class="logo"></a>
-    <p class="hd_com">HAZZYS,<br>어반 라이프의 주인공이 되는 당신을 위한 스타일입니다.</p>
+    <p class="hd_com mobile">HAZZYS,<br>어반 라이프의 주인공이 되는 당신을 위한 스타일입니다.</p>
     <nav id="gnb">
         <ul class="mn">
             <li class="item1">
@@ -271,19 +148,19 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
                 </ul>
             </li>
             <li class="item2">
-                <button class="mn1">MEN</button>
+                <button class="mn1">WOMEN</button>
                 <ul class="sb_item">
-                    <li class="it1"><a href="#">CAMPAIGN</a></li>
-                    <li class="it2"><a href="#">HAZZYS ICONIC ITEN</a></li>
-                    <li class="it3"><a href="#">SPECIAL EDITION</a></li>
+                    <li class="it1"><a href="#">SUMMER</a></li>
+                    <li class="it2"><a href="#">SPRING</a></li>
+                    <li class="it3"><a href="#">ACC</a></li>
                 </ul>
             </li>
             <li class="item3">
-                <button class="mn1">WOMEN</button>
+                <button class="mn1">MEN</button>
                 <ul class="sb_item">
-                    <li class="it1"><a href="#">CAMPAIGN</a></li>
-                    <li class="it2"><a href="#">HAZZYS ICONIC ITEN</a></li>
-                    <li class="it3"><a href="#">SPECIAL EDITION</a></li>
+                    <li class="it1"><a href="#">SUMMER</a></li>
+                    <li class="it2"><a href="#">SPRING</a></li>
+                    <li class="it3"><a href="#">ACC</a></li>
                 </ul>
             </li>
             <li class="item4">
@@ -297,8 +174,8 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
             <li class="item5">
                 <button class="mn1">GOLF</button>
                 <ul class="sb_item">
-                    <li class="it1"><a href="#">CAMPAIGN</a></li>
-                    <li class="it2"><a href="#">HAZZYS ICONIC ITEN</a></li>
+                    <li class="it1"><a href="#">SUMMER</a></li>
+                    <li class="it2"><a href="#">SPRING</a></li>
                     <li class="it3"><a href="#">SPECIAL EDITION</a></li>
                 </ul>
             </li>
@@ -313,6 +190,23 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
             </li>
         </ul>
     </nav>
+    <div class="slide">
+        <div id="main">
+            <figure class="img_fr">
+                <ul class="img_box">
+                    <li><a href="#"><img src="./img/main1.jpg" alt="vs1"></a></li>
+                    <li><a href="#"><img src="./img/main2.jpg" alt="vs2"></a></li>
+                    <li><a href="#"><img src="./img/main3.jpg" alt="vs3"></a></li>
+                    <li><a href="#"><img src="./img/main4.jpg" alt="vs4"></a></li>
+                    <li><a href="#"><img src="./img/main5.jpg" alt="vs5"></a></li>
+                </ul>
+                <ul class="btn_box">
+                <li class="btn_fr"><button class="up">◀</button></li>
+                <li class="btn_fr"><button class="down">▶</button></li>
+            </ul>
+            </figure>
+        </div>
+    </div>
 </header>
 <div class="pro_slider">
     <ul class="sl_box">
@@ -511,5 +405,6 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         <p class="copyright">@ 2018 LF. All Rights Reserved. </p>
     </div>
 </footer>
+<a href="store.html" class="store_detail"></a>
 </body>
 </html> 

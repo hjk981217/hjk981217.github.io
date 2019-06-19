@@ -4,128 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="sub.css">    
     <meta charset="UTF-8">
     <title>헤지스</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <style>
-        /* reset */
-        ::-moz-selection {	background: #b3d4fc;	text-shadow: none; }
-::selection {	background: #b3d4fc;	text-shadow: none; }
-img {	vertical-align: middle;	border: 0; }
-ol, ul, li, dl, dt, dd {	list-style: none; }
-h1, h2, h3 {	padding: 0;	margin: 0; }
-body, div, dl, dt, dd, ul, li, ol, p, figure {	padding: 0;	margin: 0;
-	outline:0 !important; }
-:root, html { font-size: 14px; }
-body {    font-family: 'Noto Sans KR','Roboto Condensed';	font-size: 14px;
-	line-height: 1.6;	color: rgb(70,70,70);}
-button, input[type='submit'], input[type='reset'], input[type='button'] {
-	padding: 0;	border: 0;	background: none;	line-height: normal;
-	font: inherit;	color: inherit;	overflow: visible;
-	-webkit-box-sizing: content-box;   box-sizing: content-box; }
-button {	-webkit-user-select: none;	   -moz-user-select: none;
-	    -ms-user-select: none;	        user-select: none;	outline:0; }
-input[type='submit'], input[type='reset'], input[type='button'] {
-	-webkit-appearance: button;	   -moz-appearance: button;
-	        appearance: button; }
-a {	color:inherit; text-decoration: none; }
-a:link {	text-decoration: none; }
-.hidden {	display: none; }
-.acc-hidden {	border: 0;	clip: rect(0 0 0 0);
-	height: 1px;	margin: -1px;	line-height: 0;
-	overflow: hidden;	padding: 0;	position: absolute;	width: 1px;
-	visibility: hidden;	font-size: 0; }
-fieldset, .field { 	padding: 0;	margin: 0;	border: 0; }
-input[type='text'], input[type='tel'], input[type='password'], textarea {
-	-webkit-appearance: none;	border-radius: 0;
-	margin: 0;	padding: 0;	border: 0;	line-height: normal; }
-button {	-webkit-appearance: none;	-moz-appearance: none;    appearance: none; }
-input[type='number'] {	-webkit-appearance: none;	-moz-appearance: none;
-	     appearance: none;	border-radius: 0; }
-.fl { 	float: left; }
-.fr {	float: right; }
-table {	border-collapse: collapse;	border-spacing: 0; display:table; }
-tr { display:table-row; }
-th, th { display:table-cell; }
-.ui-loader {	display: none;}
-select {	border-radius: none;	-webkit-border-radius: 0; }
-.cb {	clear: both; }
-.cf:after {    display: block;    clear: both;    content: ''; }
-.tac {text-align:center;}
-.mt0 {margin-top: 0;}
-body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
-    font-weight: 400; min-width:1280px; }
-       
-       
-        .tnb { width: 100%; height: 51px; border-bottom:1px solid #f0f0f0; } 
-        .tnb_wrap { width:1280px; margin:0 auto; }
-        .gnb-top { display:none; width:44px; height:30px;  
-            background-image:url("./img/btn_menu.png"); background-position:center center;
-            background-repeat:no-repeat; background-size:33px auto; text-indent:-9999px; 
-            position:fixed; left:10px; top:10px; z-index:70; cursor:pointer; }
-        .top_close { display:none; width:40px; height:40px; 
-            background-image:url("./img/close.png"); background-position:center center;
-            background-repeat:no-repeat; text-indent:-9999px; 
-            position:fixed; right:10%; top:20px; z-index:99; cursor:pointer; }    
-        .brand-list_gnb { float:left; position:static; left:0; top:0; width:auto; 
-            height:auto; z-index:auto; background-color:transparent; transition:0.5s; 
-            padding-left:0; padding-top:0; }    
-        .brand-list_gnb li { float:left; padding:1em 0.7em; position:relative; overflow:hidden; } 
-        .brand-list_gnb li:after { content:""; display:block; 
-            width:100%; height:2px; position:absolute; background:#24c;
-            left:-190px; bottom:2px; transition:0.5s; transition-timing-function:ease-out; }
-        .brand-list_gnb li:hover::after { left:0; }
-        .brand-list_gnb li a { color:#333; }   
-        .brand-list_gnb li a:hover { color:#24c; }  
-
-        .elstyle a { display:block; width: 25px; height: 22px; background-image:url("./img/logo_mini.png"); background-repeat:no-repeat;
-            background-position: center center; text-indent:-9999px; }
-        .language-box { clear:both; width:65px; height:50px; overflow:hidden; }    
-        .language-box a { display:block; line-height:50px; position:relative; 
-            width:65px; }   
-        .language-box a.on:after { content:"▼"; position:absolute; right:10px; 
-            font-size:0.7em; top:-1px; }    
-        .gnb-bot { float:right; }  
-        .logo{display: block; width: 68px; height: 60px; background-image: url("./img/logo.png"); background-size: cover; background-position: center center; margin: 30px auto;}
-        .hd_com { clear:both; text-align:center; font-size:1.6em; font-weight:400; padding:1em; }
-        #gnb { clear:both; width:100%;  margin:0 auto;    }  
-        #gnb .mn{ width:655px; margin:0 auto; }    
-        #gnb li { float:left; position:relative; } 
-        #gnb li .mn1:after { content:"|"; padding-left:24px; }     
-        #gnb li.item6 .mn1:after { content:""; }   
-        #gnb li .sb_item {  position:absolute; left:-45px; background:#0a253e; display:none; border:1px solid #0a253e; z-index:50; }
-        #gnb li:hover .sb_item { display:block; }    
-        #gnb li .sb_item li { clear:both; min-width:190px;  padding:0.7em; }    
-        #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
-        #gnb li a { font-size:1.2em; color: #fff; }
-       
-        .pic { border:1px solid #aaa; }
-        .em_box { position:absolute; bottom:10%; left:0; text-align:center; width:100%; } 
-        .brand_main .em_box { bottom:30%; }  
         
-        .page{clear: both; width: 100vw; height: 100vh; position: relative;}
-        .con_box{width: 1280px; height: 100%; margin: 0 auto; }
-        .main_tit{line-height: 3; text-align: center; font-size: 3.0em; color:#0a253e;}
-        .tit{font-size: 2.5em; padding-top: 50px; padding-left: 70px;}
-        .con_lst li{float: left;}
-        .con_lst li.item1{padding-left:70px; padding-right: 50px; padding-top: 50px;}
-        .con_lst li.item2{padding-left: 30px;}
-        .txt_box{float: left;}
-        .cm_txt{font-size: 1.5em; line-height: 1.5;}
-        .com{width:550px;font-size: 1.2em; line-height: 1.5; padding-bottom: 30px; }
-        .com2{width:550px; font-size: 1.2em; line-height: 30px;}
-        .com2 br{line-height: 4;}
-        
-        .ft { clear:both; background: #414141;}  
-        .ft_wrap { width:1200px; margin: 0 auto; text-align: center;}
-        .ft_logo{padding-top: 20px;}
-        .copyright { line-height:1.6; font-size:1.2em; padding:2em; word-wrap:break-word; color: #fff; }
-        .store_detail { display:block; width: 60px; height: 60px; 
-        position:fixed; right:4%; bottom:5%; z-index:99; 
-        background-image:url("./img/btn_place.png");
-        background-size:cover; }
-        
-        @media screen and (max-width:767px){
+    @media screen and (max-width:767px){
         body, html { min-width:100%; }
         .gnb-top { display:block; }
         .tnb_wrap { width:100%; }
@@ -140,16 +26,13 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         .item_com{  font-size:0.9em; } 
         .brand_main .em_box { bottom:0; }  
         .brand_main .item_com { display:block; }
-        .page .con_box{width: 375px; height: 100vh; margin: 0; padding: 0;}
-        .main_tit{font-size: 1.8em; padding-top: 20px;}
-        .tit{font-size: 1.5em; padding: 0; font-style: italic;}
-        .con{ width: 355px; height: 100%; margin: 0 auto;}    
-        .con .con_lst li{padding: 0;}
-        .con .con_lst .item1 img{display: none;}
-        .con .con_lst .item2 img{width: 350px;}    
-        .con_lst li img{width: 300px; height: auto;}
-        .con_lst li{padding: 0;}
-        .con_lst .item3{width: 355px; height: auto; margin: 0 auto;}
+        .page{width: 100vw; height: 100vh;}
+        .con_box{width: 360px; height: 100%; margin: 0 auto;}
+        .main_tit{line-height: 3; text-align: center; font-size: 2em; color:#0a253e; }
+        .con_lst li{padding: 0; margin: 0; clear: both; float: none;}
+        .con_lst li.item img{display: none;}
+        .con_lst li img{width: 250px;}
+        .tit{font-size: 1.5em; padding-top: 50px; padding: 0; font-style: italic;}
         .txt_box{clear: both; float: none; width: 355px; height: auto; margin: 0 auto; }
         .cm_txt{font-size: 1.2em; line-height: 1.5;}
         .com{width:350px;font-size: 1em; line-height: 1.5; padding-bottom: 20px; }
@@ -163,13 +46,25 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         .tnb_wrap { width:100%; }
         .brand-list_gnb { position:relative; width:688px; margin:0 auto;
         left:auto; top:auto; padding-left:0; padding-top:0; font-size: 0.9em;}
-        .brand-list_gnb li:nth-child(9) { display:none; }
-        .brand-list_gnb li:nth-child(10) { display:none; }
-        .brand-list_gnb li:nth-child(11) { display:none; }
-        .brand-list_gnb li:nth-child(12) { display:none; }
-        .brand-list_gnb li:nth-child(13) { display:none; }
-        .brand-list_gnb li:nth-child(14) { display:none; }
-        
+        .brand-list_gnb li:nth-child(8) { display:none; }
+        .page .con_box{width: 750px; height: 100vh; margin: 0; padding: 0;}
+        .main_tit{font-size: 2.5em; padding-top: 20px; }
+        .tit{font-size: 1.8em; padding: 0; font-style: italic; padding-left: 50px;}
+        .page{width: 100vw; height: 100vh;}
+        .con_box{width: 750px; height: 100%; margin: 0 auto;}
+        .main_tit{line-height: 3; text-align: center; font-size: 2em; color:#0a253e; }
+        .con_lst li{padding: 0; margin: 0; clear: both; float: none;}
+        .con_lst li.item img{display: none;}
+        .con_lst li img{width: 500px;}
+        #page1 .con_lst .txt_box{margin-right: 100px; }
+        #page1 .con_lst .cm_txt{padding-left: 0;}
+        .txt_box{clear: both;width: 600px; height: auto; margin: 0 auto; }
+        .cm_txt{font-size: 1.4em; line-height: 1.5; padding-left: 50px;}
+        .com{width:600px;font-size: 1.2em; line-height: 1.5; padding-bottom: 20px; }
+        .com2{width:600px; font-size: 1.2em; line-height: 20px; padding-bottom: 20px; padding-left: 50px;}
+        .com2 br{line-height: 2.5;} 
+        .pic_home {  font-size:1.1em; } 
+        .ft_wrap { width:100%; }
     }
     </style>
     <script>
@@ -206,7 +101,7 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
 		</div>
 		<ul class="brand-list_gnb">
 			<li class="elstyle"><a href="index.html" >HOME</a></li>
-			<li><a href="sub.html">ABOUTHAZZYS </a></li>
+			<li><a href="sub.html">ABOUT HAZZYS </a></li>
 			<li><a href="#">HAZZYS MEN</a></li>
 			<li><a href="#">HAZZYS LADIES </a></li>
 			<li><a href="#">2019 SPRING</a></li>
@@ -240,19 +135,19 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
                 </ul>
             </li>
             <li class="item2">
-                <button class="mn1">MEN</button>
+                <button class="mn1">WOMEN</button>
                 <ul class="sb_item">
-                    <li class="it1"><a href="#">CAMPAIGN</a></li>
-                    <li class="it2"><a href="#">HAZZYS ICONIC ITEN</a></li>
-                    <li class="it3"><a href="#">SPECIAL EDITION</a></li>
+                    <li class="it1"><a href="#">SUMMER</a></li>
+                    <li class="it2"><a href="#">SPRING</a></li>
+                    <li class="it3"><a href="#">ACC</a></li>
                 </ul>
             </li>
             <li class="item3">
-                <button class="mn1">WOMEN</button>
+                <button class="mn1">MEN</button>
                 <ul class="sb_item">
-                    <li class="it1"><a href="#">CAMPAIGN</a></li>
-                    <li class="it2"><a href="#">HAZZYS ICONIC ITEN</a></li>
-                    <li class="it3"><a href="#">SPECIAL EDITION</a></li>
+                    <li class="it1"><a href="#">SUMMER</a></li>
+                    <li class="it2"><a href="#">SPRING</a></li>
+                    <li class="it3"><a href="#">ACC</a></li>
                 </ul>
             </li>
             <li class="item4">
@@ -266,8 +161,8 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
             <li class="item5">
                 <button class="mn1">GOLF</button>
                 <ul class="sb_item">
-                    <li class="it1"><a href="#">CAMPAIGN</a></li>
-                    <li class="it2"><a href="#">HAZZYS ICONIC ITEN</a></li>
+                    <li class="it1"><a href="#">SUMMER</a></li>
+                    <li class="it2"><a href="#">SPRING</a></li>
                     <li class="it3"><a href="#">SPECIAL EDITION</a></li>
                 </ul>
             </li>
@@ -282,6 +177,7 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
             </li>
         </ul>
     </nav>
+    
 </header>
 <div class="page" id="page1">
     <div class="con_box">
@@ -289,7 +185,7 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         <div class="con">
             <h3 class="tit">BRAND CONCEPT</h3>
             <ul class="con_lst">
-                <li class="item1">
+                <li class="item">
                     <img src="./img/sub1.jpg" alt="서브이미지1">
                 </li>
                 <div class="txt_box">
@@ -348,5 +244,6 @@ body, html { width:100%;     font-family: 'Noto Sans KR','Roboto Condensed';
         <p class="copyright">@ 2018 LF. All Rights Reserved. </p>
     </div>
 </footer>
+<a href="store.html" class="store_detail"></a>
 </body>
 </html> 

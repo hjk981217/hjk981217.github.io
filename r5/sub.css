@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+.tnb { width: 100%; height: 51px; border-bottom:1px solid #f0f0f0; } 
+        .tnb_wrap { width:1280px; margin:0 auto; }
+        .gnb-top { display:none; width:44px; height:30px;  
+            background-image:url("./img/btn_menu.png"); background-position:center center;
+            background-repeat:no-repeat; background-size:33px auto; text-indent:-9999px; 
+            position:fixed; left:10px; top:10px; z-index:70; cursor:pointer; }
+        .top_close { display:none; width:40px; height:40px; 
+            background-image:url("./img/close.png"); background-position:center center;
+            background-repeat:no-repeat; text-indent:-9999px; 
+            position:fixed; right:10%; top:20px; z-index:99; cursor:pointer; }    
+        .brand-list_gnb { float:left; position:static; left:0; top:0; width:auto; 
+            height:auto; z-index:auto; background-color:transparent; transition:0.5s; 
+            padding-left:0; padding-top:0; }    
+        .brand-list_gnb li { float:left; padding:1em 0.7em; position:relative; overflow:hidden; } 
+        .brand-list_gnb li:after { content:""; display:block; 
+            width:100%; height:2px; position:absolute; background:#24c;
+            left:-190px; bottom:2px; transition:0.5s; transition-timing-function:ease-out; }
+        .brand-list_gnb li:hover::after { left:0; }
+        .brand-list_gnb li a { color:#333; }   
+        .brand-list_gnb li a:hover { color:#24c; }  
+
+        .elstyle a { display:block; width: 25px; height: 22px; background-image:url("./img/logo_mini.png"); background-repeat:no-repeat;
+            background-position: center center; text-indent:-9999px; }
+        .language-box { clear:both; width:65px; height:50px; overflow:hidden; }    
+        .language-box a { display:block; line-height:50px; position:relative; 
+            width:65px; }   
+        .language-box a.on:after { content:"▼"; position:absolute; right:10px; 
+            font-size:0.7em; top:-1px; }    
+        .gnb-bot { float:right; }  
+        .logo{display: block; width: 68px; height: 60px; background-image: url("./img/logo.png"); background-size: cover; background-position: center center; margin: 30px auto;}
+        .hd_com { clear:both; text-align:center; font-size:1.6em; font-weight:400; padding:1em; }
+        #gnb { clear:both; width:100%;  margin:0 auto;    }  
+        #gnb .mn{ width:655px; margin:0 auto; }    
+        #gnb li { float:left; position:relative; } 
+        #gnb li .mn1:after { content:"|"; padding-left:24px; }     
+        #gnb li.item6 .mn1:after { content:""; }   
+        #gnb li .sb_item {  position:absolute; left:-45px; background:#0a253e; display:none; border:1px solid #0a253e; z-index:50; }
+        #gnb li:hover .sb_item { display:block; }    
+        #gnb li .sb_item li { clear:both; min-width:190px;  padding:0.7em; }    
+        #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
+        #gnb li a { font-size:1.2em; color: #fff; }
+       
+        .pic { border:1px solid #aaa; }
+        .em_box { position:absolute; bottom:10%; left:0; text-align:center; width:100%; } 
+        .brand_main .em_box { bottom:30%; }  
+        
+        .page{clear: both; width: 100vw; height: 100vh; position: relative;}
+        .con_box{width: 1280px; height: 100%; margin: 0 auto; }
+        .main_tit{line-height: 3; text-align: center; font-size: 3.0em; color:#0a253e; }
+        .tit{font-size: 2.5em; padding-top: 50px; padding-left: 70px; font-style: italic; padding-bottom: 20px;}
+        .con_lst li{float: left;}
+        .con_lst li.item1{padding-left:70px; padding-right: 50px; padding-top: 50px;}
+        .con_lst li.item2{padding-left: 30px;}
+        #page1 .con_lst .txt_box{float: right;}
+        #page1 .con_lst li.item2{float: right;}
+        
+        .txt_box{float: left;}
+        .cm_txt{font-size: 2em; line-height: 1.5;}
+        .com{width:550px;font-size: 1.2em; line-height: 1.5; padding-bottom: 30px; }
+        .com2{width:550px; font-size: 1.2em; line-height: 30px;}
+        .com2 br{line-height: 4;}
+        #page2{padding-top: 50px;}
+        #page2 .con_box .txt_box{float: left;}
+        #page2 .con_box .item2{float: right;}
+        #page4 .con_box .txt_box{float: left;}
+        #page4 .con_box .item2{float: right;}
+        
+        .ft { clear:both; background: #414141;}  
+        .ft_wrap { width:1200px; margin: 0 auto; text-align: center;}
+        .ft_logo{padding-top: 20px;}
+        .copyright { line-height:1.6; font-size:1.2em; padding:2em; word-wrap:break-word; color: #fff; }
+        .store_detail { display:block; width: 60px; height: 60px; 
+        position:fixed; right:4%; bottom:5%; z-index:99; 
+        background-image:url("./img/btn_place.png");
+        background-size:cover; }
