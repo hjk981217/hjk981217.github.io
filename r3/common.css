@@ -56,6 +56,7 @@
     #page1 .pg_cont .item1:hover .icon{background-image: url("./img/page1_icon1_h.png");}
     #page1 .pg_cont .item2:hover .icon{background-image: url("./img/page1_icon2_h.png");}
     #page1 .pg_cont .item3:hover .icon{background-image: url("./img/page1_icon3_h.png");}
+    #page1 .pg_cont li:hover{cursor: pointer;}
     #page1 .pg_cont li:hover .txt_tit{opacity: 1;}
     
     #page2{width: 100vw; height: 100vh;}
