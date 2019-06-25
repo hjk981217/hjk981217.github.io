@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>SKT NUGU</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="media.css">
+    <style>
+    /* 내부 스타일 지정 */    
+    </style>
+    <script src="main_nav.js"></script>
+    <script src="asset_tab.js"></script>
+    <script>
+        $(document).ready(function(){
+            var intv = setInterval(function(){nextAni();},3000);
+            function nextAni(){
+                $(".pic_box").not(":animated").animate({"margin-left":"-1090px"}, 800,function(){
+                    $(".pic_box li").eq(0).appendTo($(".pic_box"));
+                    $(".pic_box").css("margin-left","0px");
+                });
+            }
+            function prevAni(){
+                $(".pic_box li").eq(3).prependTo($(".pic_box"));
+                $(".pic_box").css("margin-left","-1090px");
+                $(".pic_box").not(":animated").animate({"margin-left":"0px"},800);
+            }
+            $(".next").click(function(){
+                clearInterval(intv);
+                nextAni(); 
+                intv=setInterval(function(){ nextAni(); }, 2900);
+            });
+            $(".prev").click(function(){
+                clearInterval(intv);
+                prevAni(); 
+                intv=setInterval(function(){ nextAni(); }, 2900);
+            });
+        });
+    </script>
+</head>
+<body>
+<header class="header">
+    <div class="tnb_wrap">
+        <div class="lst_btn mobile">
+            <i class="xi-bars"></i>
+        </div>
+    </div>
+    <div class="tnb_wrap">
+        <a href="#" class="logo">
+            <img src="./img/logo_c.png" alt="로고">
+        </a>
+        <div class="log_fr">
+            <button class="ex_menu_btn"><img src="./img/ticket.png" alt="이용권"></button>
+            <button class="log_btn"><img src="./img/login.png" alt="로그인"></button>
+        </div>
+    </div>
+     <nav class="gnb_wrap">
+        <ul class="gnb">
+             <li class="item1"><a href="#">디바이스</a></li>
+             <li class="item2"><a href="#">서비스</a></li>
+             <li class="item3"><a href="#">developers</a></li>
+             <li class="item4"><a href="#">고객지원</a></li>
+        </ul>
+        <button class="close_btn mobile">
+             <i class="xi-close"></i>
+        </button>
+     </nav>
+</header>
+<main class="content">
+    <div class="cyan_data">
+        <div class="con_wrap">
+            <figure id="visual" class="col12">
+                <ul class="pic_box">
+                    <li class="item1">
+                        <a href="#">
+                            <img src="./img/main1.jpg" alt="티비채널틀어줘">
+                        </a>
+                    </li>
+                    <li class="item2">
+                        <a href="#">
+                            <img src="./img/main2.jpg" alt="실시간차트들려줘">
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="#">
+                            <img src="./img/main3.jpg" alt="스타벅스주문해줘">
+                        </a>
+                    </li>
+                     <li class="item4">
+                        <a href="#">
+                            <img src="./img/main4.jpg" alt="핑크퐁파닉스공부하자">
+                        </a>
+                    </li>
+                </ul>
+<!--
+                <ul class="vs_btn_box">
+                    <li class="item1"><button class="on"></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                    <li class="item4"><button></button></li>
+                </ul>
+-->
+               <ul class="vs_btn_box2">
+                   <li class="item1"><button class="prev"><img src="./img/prev.png" alt="prev"></button></li>
+                   <li class="item2"><button class="next"><img src="./img/next.png" alt="next"></button></li>
+               </ul>
+            </figure>
+    <div class="wt_data">
+        <div class="con_wrap2">
+            <ul id="card_lst">
+                <li class="card col4">
+                    <a href="#">
+                        <img src="./img/product1.png" alt="BtvNUGU" class="card_pic">
+                        <h3 class="card_tit new">Btv x NUGU</h3>
+                        <p class="card_com">말로 하는 TV 생활</p>
+                    </a>       
+                </li>
+                <li class="card col4">
+                    <a href="#">
+                        <img src="./img/product2.png" alt="NUGUcandle" class="card_pic">
+                        <h3 class="card_tit new">NUGU candle</h3>
+                        <p class="card_com">당신을 빛나게 해 줄 인공지능 스피커</p>
+                    </a>    
+                </li>
+                <li class="card col4">
+                    <a href="#">
+                        <img src="./img/product3.png" alt="NUGUnemo" class="card_pic">
+                        <h3 class="card_tit new">NUGU nemo</h3>
+                        <p class="card_com">세상을 보여주는 AI</p>
+                    </a>       
+                </li>
+            </ul>
+        </div>
+        <div class="con_wrap2" style="padding-top:5px">
+            <section class="tb_item_box">
+                <div class="asset_tit_box">
+                    <h3 class="asset_tit on" data-val="1">NUGU 서비스</h3>    
+                    <h3 class="asset_tit" data-val="2">NUGU 소식</h3>                
+                </div>
+                <div class="asset_ban_box">
+                    <div class="asset_ban on" data-val="1">
+                        <div class="asset_ban_img" data-val="1"></div>
+                        <h3 class="asset_ban_tit">NUGU는 아침에 일어나서 잠자리에 들 때까지 나의 Everyday Life안에 항상 함께하는 나를 가장 잘 알고 이해하는 친구이자 가족, 비서와 같은 동반자입니다.</h3>                        
+                    </div>
+                    <div class="asset_ban">
+                        <div class="asset_ban_img" data-val="2"></div>
+                        <h3 class="asset_ban_tit">다양한 NUGU 혜택을 즐겨보세요!</h3>
+                    </div>
+                </div>
+                <div class="asset_con_box">
+                    <ul class="asset_row on" data-val="1">
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon.png" alt="음악" class="item_pic">
+                                <h4 class="item_tit">음악</h4> 
+                                <p class="item_com">눈을 감고 '소리'에만 집중하세요.</p>
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon3.png" alt="편리한기능" class="item_pic">
+                                <h4 class="item_tit">편리한 기능</h4> 
+                                <p class="item_com">언제든지 음성으로 간편하게, 다양한 서비스를 이용해 보세요.</p>
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon2.png" alt="생활/정보" class="item_pic">
+                                <h4 class="item_tit">생활/정보</h4> 
+                                <p class="item_com">NUGU와 함께 기분 좋은 인사로 하루의 아침을 열어보세요.</p>
+                            </a>   
+                        </li>       
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon4.png" alt="검색" class="item_pic">
+                                <h4 class="item_tit">검색</h4> 
+                                <p class="item_com">이젠 말 한마디로 궁금한 것이 생기면 무엇이든 물어보세요.</p>
+                            </a>    
+                        </li>
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon5.png" alt="전화" class="item_pic">
+                                <h4 class="item_tit">전화</h4> 
+                                <p class="item_com">언제 어디서든 두 손이 자유로운 통화</p>
+                            </a>    
+                        </li>
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon6.png" alt="쇼핑주문" class="item_pic">
+                                <h4 class="item_tit">쇼핑/주문</h4> 
+                                <p class="item_com">자주 주문하는 생활 필수품과 맛있는 간식,<br>이제 NUGU를 통해 주문해 보세요.</p>
+                            </a>    
+                        </li>
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon7.png" alt="금융" class="item_pic">
+
+                                <h4 class="item_tit">금융</h4> 
+                                <p class="item_com">환율조회, 금융상품 추천,<br>지점 대기 현황 조회 등을 간편하게 이용해 보세요.</p>
+                            </a>    
+                        </li>
+                        <li class="span2">
+                            <a href="#">
+                                <img src="./img/icon8.png" alt="키즈" class="item_pic">
+                                <h4 class="item_tit">키즈</h4> 
+                                <p class="item_com">우리 아이들의 놀이와 학습을 위한 키즈 콘텐츠를 이용해 보세요.</p>
+                            </a>    
+                        </li>
+                    </ul>
+                    <ul class="asset_row off" data-val="2">
+                        <li class="span3">
+                            <a href="#">
+                                <img src="./img/not1.jpg" alt="이벤트" class="item_pic2">
+                                <h4 class="item_tit2">NUGU call 이벤트 당첨자 발표</h4>
+                                <p class="item_com2">2019.06.18</p>
+                            </a>    
+                        </li>
+                        <li class="span3">
+                            <a href="#">
+                                <img src="./img/not2.jpg" alt="이벤트2" class="item_pic2">
+                                <h4 class="item_tit2">광고성 정보 수신 동의 이벤트 당첨자 발표</h4>
+                                <p class="item_com2">2019.06.14</p>
+                            </a>            
+                        </li>
+                        <li class="span3">
+                            <a href="#">
+                               <img src="./img/not3.jpg" alt="이벤트3" class="item_pic2">
+                               <h4 class="item_tit2">NUGU 서비스 이용약관 변경 안내</h4>
+                               <p class="item_com2">2019.06.11</p>
+                            </a>   
+                        </li>
+                        <li class="span3">
+                            <a href="#">  
+                               <img src="./img/not4.jpg" alt="이벤트4" class="item_pic2">
+                               <h4 class="item_tit2">멜로 카카오계정 유저 NUGU 이용 안내</h4>
+                               <p class="item_com2">2019.06.10</p>
+                            </a>   
+                        </li>
+                        <li class="span3">
+                            <a href="#">
+                               <img src="./img/not5.jpg" alt="이벤트5" class="item_pic2">
+                               <h4 class="item_tit2">NUGU 플러스 친구 EVENT</h4>
+                               <p class="item_com2">2019.06.10 ~ 2019.06.30</p>
+                            </a>   
+                        </li>
+                        <li class="span3">
+                            <a href="#">
+                               <img src="./img/not6.jpg" alt="이벤트6" class="item_pic2">
+                               <h4 class="item_tit2">NUGU와 떠나는 동해안 뮤직 페스티벌</h4>
+                               <p class="item_com2">2019.06.03 ~ 2019.06.30</p>
+                            </a>   
+                        </li>
+                        <li class="span3">
+                            <a href="#">  
+                               <img src="./img/not7.jpg" alt="이벤트7" class="item_pic2">
+                               <h4 class="item_tit2">말로 보는 스포츠! 여행의 행운까지 잡아보세요!</h4>
+                               <p class="item_com2">2019.06.05 ~ 2019.06.30</p>
+                            </a>   
+                        </li>
+                        <li class="span3">
+                            <a href="#">
+                               <img src="./img/not8.jpg" alt="이벤트8" class="item_pic2">
+                               <h4 class="item_tit2">NUGU나 소원은 있다! 당첨자 발표</h4>
+                               <p class="item_com2">2019.05.29</p>
+                            </a>   
+                        </li>
+                    </ul>
+                </div>
+            </section>    
+        </div>    
+    </div>
+    <footer class="footer">
+        <div class="ft_wrap">
+           <nav id="fnb">
+                <ul class="fmenu">
+                    <li class="item1"><a href="#">서울특별시 중구 을지로 65</a></li>
+                    <li class="item2"><a href="#">대표이사/사장:박정호</a></li>
+                    <li class="item3"><a href="#">사업자등록번호:104-81-37225</a></li>
+                    <li class="item4"><a href="#">판매허가번호:중고 029223호</a></li>
+                </ul>
+            </nav>
+            <nav id="fnb">
+                <ul class="fmenu">
+                    <li class="item1"><a href="#">사업자정보확인</a></li>
+                    <li class="item2"><a href="#">개인정보 처리방침</a></li>
+                    <li class="item3"><a href="#">이용약관</a></li>
+                    <li class="item4"><a href="#">이용권 구매약관</a></li>
+                    <li class="item5"><a href="#">판매중개서비스약관</a></li>
+                </ul>
+            </nav>
+            <nav id="fnb">
+                <ul class="fmenu">
+                    <li class="item1"><a href="#">고객센터:1670-0110</a></li>
+                    <li class="item2"><a href="#">09:00 ~ 18:00 (주말 및 공휴일 제외)</a></li>
+                    <li class="item3"><a href="#">1:1 문의하기</a></li>
+                    <li class="item4 out"><a href="#">오픈소스 라이선스</a></li>
+                </ul>
+            </nav>  
+            <p class="copyright">
+                <span class="copy_r">* SK텔레콤㈜은 통신판매중개자로서 거래 당사자가 아니며, 입점 판매자가 등록한 상품 정보 및 거래에 대해 SK텔레콤㈜은 일체 책임을 지지 않습니다.</span>
+            </p>
+            
+        </div>
+    </footer>
+</main>    
+</body>
+</html>
