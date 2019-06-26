@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet">
+    <title>HJ PORTFOLIO</title>
+    <link rel="shortcut icon" href="./img/favicon.png">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="./css/chart.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:1024px)">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans+KR&display=swap" rel="stylesheet">   
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.fullPage.js"></script>
+    <script src="./js/jquery.mixitup.min.js"></script>
+    <script src="./js/mixFilter.js"></script>
+<!--    <script src="./js/modernizr.custom.min.js"></script>-->
+    <script src="./js/menu.js"></script>
+    <script src="./js/chart.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                sectionsColor: ['#a5aeff', '#a5aeff', '#a5aeff', '#a5aeff'],
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage','lastPage'],
+                menu: '#menu',
+                afterLoad: function(anchorLink, index) {
+                     //section 2
+                     if (index == 3) {
+                         //moving the image
+                         $('#section2').find('.intro').delay(500).animate({
+                             left: '0%'
+                         }, 500, 'easeOutExpo');
+
+                         $('#section2').find('p').first().fadeIn(1800, function() {
+                             $('#section2').find('p').last().fadeIn(1800);
+                         });
+                     }
+                    //section 3
+                    if (anchorLink == '4thPage') {
+                        //moving the image
+                        $('#section3').find('.intro').delay(0).animate({
+                            left: '0%'
+                        }, 500, 'easeOutExpo');
+                    }
+                }
+            });            
+        });
+        
+    </script>
+    <style>
+        
+        
+    </style> 
+</head>
+<body>
+<nav id="menubox">
+    <ul id="menu">
+        <li data-menuanchor="firstPage"><a href="#firstPage" onfocus="this.blur();">INTRO</a>
+         <li data-menuanchor="secondPage"><a href="#secondPage" onfocus="this.blur();">SKILLS</a></li>
+         <li data-menuanchor="3rdPage"><a href="#3rdPage" onfocus="this.blur();">PORTFOLIO</a></li>
+         <li data-menuanchor="4thPage"><a href="#4thPage" nfocus="this.blur();">CONTACT</a></li>
+    </ul>
+</nav>
+<div id="fullpage">
+    <div class="section" id="section0">
+        <div class="logo"><a href="index.html"><img src="./img/logo.png" alt="로고"></a></div> 
+        <div class="img_box">
+            <div class="img_lst">
+                <img src="./img/main_text2.gif" alt="화이트보드" class="main_txt">
+            </div>
+        </div>
+        <div id="scroll">
+            <img src="img/scrolldown.gif" alt="스크롤">
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="con_box">
+            <h1 class="con_tit">SKILLS</h1>
+            <div id="scene-2-content">
+                <div class="charts clearfix">
+                    <div class="chart" id="water">
+                        <div class="circle-mask-outer left">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="circle-mask-outer right">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <img class="icon" src="./img/ps.png" alt="포토샵">
+                            <p class="text">
+                                <span class="percent-number">90</span><span class="percent-symbol">%</span>
+                            </p>
+                        </div>
+                    </div><!-- /.chart -->
+
+                    <div class="chart" id="sunshine">
+                        <div class="circle-mask-outer left">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="circle-mask-outer right">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <img class="icon" src="img/ai.png" alt="일러스트">
+                            <p class="text">
+                                <span class="percent-number">90</span><span class="percent-symbol">%</span>
+                            </p>
+                        </div>
+                    </div><!-- /.chart -->
+
+                    <div class="chart" id="birds">
+                        <div class="circle-mask-outer left">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="circle-mask-outer right">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <img class="icon" src="img/html.png" alt="html">
+                            <p class="text">
+                                <span class="percent-number">80</span><span class="percent-symbol">%</span>
+                            </p>
+                        </div>
+                    </div><!-- /.chart -->
+
+                    <div class="chart" id="woods">
+                        <div class="circle-mask-outer left">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="circle-mask-outer right">
+                            <div class="circle-mask-inner">
+                                <div class="circle-body"></div>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <img class="icon" src="img/js.png" alt="제이쿼리">
+                            <p class="text">
+                                <span class="percent-number">75</span><span class="percent-symbol">%</span>
+                            </p>
+                        </div>
+                    </div><!-- /.chart -->
+                </div>
+            </div><!-- /#scene-2-content -->    
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="con_box">
+            <h1 class="con_tit">PORTFOLIO</h1>
+            <div class="controls">
+                <button class="filter" data-filter="all">All</button>
+                <button class="filter" data-filter=".Responsive">Responsive</button>
+                <button class="filter" data-filter=".mobile">Mobile</button>
+                <button class="filter" data-filter=".web">Web</button>
+            </div>
+            <div class="container" id="mixItUp">
+                    <div id="mixImg1" class="mix Responsive" data-myorder="">
+                        <div class="hover">
+                            <h2 class="hovertitle">헤지스 반응형 리뉴얼</h2>
+                            <div class="hoverline"></div>
+                            <a href="http://hjk981217.github.io/r5" class="hoverlink" target="_blank"><img src="./img/plus.png" alt="more"></a>
+                        </div>
+                    </div>
+                    <div id="mixImg2" class="mix mobile">
+                        <div class="hover">
+                            <h2 class="hovertitle">박카스 모바일 페이지 리뉴얼</h2>
+                            <div class="hoverline"></div>
+                            <a href="http://hjk981217.github.io/m4" class="hoverlink" target="_blank"><img src="./img/plus.png" alt="more"></a>
+                        </div>
+                    </div>
+                    <div id="mixImg3" class="mix Responsive">
+                        <div class="hover">
+                            <h2 class="hovertitle">한화이글스 반응형 리뉴얼</h2>
+                            <div class="hoverline"></div>
+                            <a href="http://hjk981217.github.io/r1" class="hoverlink" target="_blank"><img src="./img/plus.png" alt="more"></a>
+                        </div>
+                    </div>
+                    <div id="mixImg4" class="mix Responsive">
+                        <div class="hover">
+                            <h2 class="hovertitle">NUGU 반응형 리뉴얼</h2>
+                            <div class="hoverline"></div>
+                            <a href="http://본인아이디.github.io/폴더명" class="hoverlink" target="_blank">준비중입니다 :)</a>
+                        </div>
+                    </div>
+                    <div id="mixImg5" class="mix mobile">
+                        <div class="hover">
+                            <h2 class="hovertitle">클리오 모바일 리뉴얼</h2>
+                            <div class="hoverline"></div>
+                            <a href="http://hjk981217.github.github.io/m2" class="hoverlink" target="_blank"><img src="./img/plus.png" alt="more"></a>
+                        </div>
+                    </div>
+                    <div id="mixImg6" class="mix web">
+                        <div class="hover">
+                            <h2 class="hovertitle"></h2>
+                            <div class="hoverline"></div>
+                            <a href="http://본인아이디.github.io/폴더명" class="hoverlink" target="_blank">준비중입니다 :)</a>
+                        </div>
+                    </div>
+                    <div class="gap"></div>
+              </div>
+          </div>
+    </div>
+    <div class="section" id="section3">
+       <div class="con_box">
+            <div class="itr">
+                <h1 class="con_tit">CONTACT</h1>
+                <div id="contlst">
+                    <div id="contact1">
+                        <img src="./img/about_img.png" alt="사진">
+                    </div>
+                    <div id="contact2">
+                        <div class="cont_box">
+                            <ul class="l_lst">
+                                <li class="item1">
+                                    <img src="./img/page1_icon1.png" alt="생년월일">
+                                </li>
+                                <li class="item2">
+                                    <img src="./img/page1_icon2.png" alt="전화번호">
+                                </li>
+                                <li class="item3">
+                                    <img src="./img/page1_icon3.png" alt="이메일">
+                                </li>
+                                <li class="item4">
+                                    <img src="./img/page1_icon4.png" alt="교육이수사항">
+                                </li>
+                                <li class="item5">
+                                    <img src="./img/page1_icon5.png" alt="자격증">
+                                </li>
+                            </ul>
+                            <ul class="r_lst">
+                                <li class="item1">1998년 12월 17일</li>
+                                <li class="item2">010-2367-7986</li>
+                                <li class="item3"><a href="#" class="mail">as981217@naver.com</a></li>
+                                <li class="item4">그린컴퓨터아트학원 스마트기기 UI/UX디자인 </li>
+                                <li class="item5">웹디자인기능사(필기) - 2019년 4월</li>
+                                <li class="item6">운전면허2종보통 - 2017년 12월</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+               <div class="copy">
+                   <p>COPYRIGHT &copy; 2019 Kang_Hyunji ALL RIGHTS RESERVED.</p>
+               </div>                
+            </div>
+       </div>
+    </div>
+</div>
+</body>
+</html>
