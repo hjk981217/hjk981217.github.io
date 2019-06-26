@@ -45,7 +45,7 @@ button:active{background-color: #6b76ff; color: #fff;}
 #mixImg3{background-image:url(../img/pg3_2.png); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center;}
 #mixImg4{background-image:url(../img/pg3_5.png); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center;}
 #mixImg5{background-image:url(../img/pg3_6.png); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center;}
-    
+#mixImg6{background-image:url(../img/pg3_1.png); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center;}    
         
         /* Contact*/
         #contlst{margin-top: 55px;}
