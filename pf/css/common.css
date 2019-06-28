@@ -1,28 +1,41 @@
 @charset "utf-8";
 
-.section {clear:both; position:relative; width:100%; height:100%; box-sizing:border-box;}
+.page {clear:both; position:relative; width:100%; height:100vh; box-sizing:border-box;}
 .con_box{width: 1280px; height: 100%; margin: 0 auto;}
-.section h1 { font-size:40px; color:#fff; margin-bottom:10px; }
-#menu{position: fixed; top: 30px; right: 0; height: 50px; z-index: 70; width: 500px; padding: 0; margin: 0;}
-#menu li{float: left; margin-right: 35px;}
-#menu li a{display: block; color: #fff; font-size: 23px; font-family: 'Inconsolata';}
-#menu li.active a{color: #fbff7c; font-weight: bold;}
-#menu li a:hover{color: #fbff7c;}
-.con_tit{color: #fff; margin-top: 150px; font-family:'Inconsolata'; font-size: 40px}
+.menu{position: fixed; top: 30px; right: 0; height: 50px; z-index: 70; width: 500px; padding: 0; margin: 0;}
+.menu li{float: left; margin-right: 35px;}
+.menu li a{display: block; color: #fff; font-size: 23px; font-family: 'Inconsolata';}
+.menu li a:hover{color: #fbff7c;}
+.con_tit{color: #fff; font-family:'Inconsolata'; font-size: 40px; padding-top: 80px;}
+.mn_lst li.on a { color: #fbff7c; }
 
 /* 메인페이지 */
-#section0{width: 100%; position: relative;}
-.logo{position: absolute; top: 20px; left: calc(10% - 25px); width: 50px; height: 50px;}
 .main_box{position: relative; width: 150px; height: 180px; margin: 0 auto;}
 .main_img{margin-left: 20px;}
-#section0 #scroll{position: fixed; bottom: 50px;  left: calc(50% - 25px); margin-left: -25px; width: 50px; height: 50px;}
-#section0 #scroll img{width: 50px;height: auto;display: block;}
+#page1 #scr{position: fixed; bottom: 80px;  left: calc(50% - 25px); margin-left: -25px; width: 50px; height: 50px;}
+#page1 #scr img{width: 50px;height: auto;display: block;}
 .img_box{width: 1280px; height: 700px; margin: 0 auto; position: relative;}
 .img_lst{width: 800px; height: 480px; background-image: url("../img/main.png"); background-position: center center; background-repeat: no-repeat; margin: 0 auto; margin-top: 100px;}
 .main_txt{width: 500px; height: 111px; margin: 0 auto; margin-left: 160px; margin-top: 180px;}
 
-/* 포트폴리오 */
-#section2 { width:100%; height: 100%; position:relative; transition: 0.6s;}        
+
+
+/* 스킬 */
+.logo{position: relative; top: 25px; margin: 0 auto;}
+.content{width: 900px; margin: 0 auto; padding-top: 50px;}
+.icons{clear: both; padding: 30px;}
+.img{float: left; padding-right: 30px;}
+.bar {float: left; width:700px; height:80px; padding-top: 30px; margin:0 auto;}
+.fullbar {width:100%; height:50px; background: #efefef; border-radius: 5px; position: relative; overflow: hidden;}
+.occupy {background: #6b76ff; height:100%; border-radius: 5px; color:#fff; position: absolute; top: 0; left:-100%;}
+.occupy>span {float: right; margin-right: 10px; line-height: 50px; font-size: 18px;}
+#ps .occupy{width: 90%;}
+#ai .occupy{width: 80%;}
+#ht .occupy{width: 80%;}
+#jv .occupy{width: 70%;}
+
+
+/* 포트폴리오 */       
 .controls{width: 90%; margin: 0 auto; margin-top: 80px; padding: 1%; background-color: #fff; color: #eee; border-radius: 20px 20px 0 0;}
 .filter{width: 10%; height: 30px; background-color: transparent; border: 0; color: #363636; line-height: 30px; font-weight: 300; cursor: pointer; font-size: 18px; margin-left: 20px;}
 button:hover{background-color: #6b76ff; color: #fff;}
@@ -61,4 +74,63 @@ button:active{background-color: #6b76ff; color: #fff;}
         #footer{clear: both; background:#babec3; width:100%; height:55px; position:absolute; bottom:0px;left: 0;}
         .copy{width: 1280px; height: 100%; margin: 0 auto; text-align: center;}
         #footer p { color:#333; font-size:16px; line-height:55px; font-family:'Inconsolata'; }
+
+@media screen and (max-width: 767px){
+        .page{width: 100vw; height: 100vh;}
+        .con_tit{padding: 0; padding-top: 20px;}
+        .con_box{width: 90%; height: 100%; margin: 0 auto;}
+        .img_box{padding-top: 70px; width: 90%; height: 50%; margin: 0 auto;}
+        .img_lst{background-image: url("../img/main_m.png"); background-position: center center; background-repeat: no-repeat; width: 320px; height: 190px;}
+        .content{width: 90%; height: 100%; margin: 0 auto;}
+        .icons{padding: 0;}
+        .img{padding: 0;}
+        .img img{width: 60px; padding-right: 20px;}
+        .bar{width: 200px; padding-top: 20px;}
+        .fullbar{width: 200px; height: 30px; }
+        .occupy>span{line-height: 30px;}
+        .filter{font-size: 14px; width: 16%;}
+        .container .mix{width: 140px; height: 100px; }
+        .hovertitle{font-size: 14px; padding: 0; padding-top: 20px; text-align: center;}
+        .hoverlink img{width: 25px; height: 25px;}
+        #contlst{ width: 90%; height: 100; margin: 0 auto;}
+        #contact1{margin: 0 auto; width: 150px; height: auto;}
+        #contact1 img{width: 150px; height: auto; margin-left: 55%;}
+        #contact2{width: 100%; height:200px;}
+        .cont_box{margin-top: -50px; }
+        .l_lst{float: left; margin: 0; margin-left: 20px; line-height: 32px;}
+        .l_lst img{width: 20px; height: auto;}
+        .r_lst{float: none; font-size: 12px; line-height: 31px; margin-left: 20%}
+        #footer {width: 100%; height: 50px;}
+        .copy{width: 100%; height: 100%; margin: 0; text-align: center;}
+        #footer p{line-height: 50px;font-size: 13px;}
+    }
+    @media screen and (min-width:768px) and (max-width:1024px){
+        .page{width: 100vw; height: 100vh;}
+        .con_tit{padding: 0; padding-top: 20px;}
+        .con_box{width: 90%; height: 100%; margin: 0 auto;}
+        .img_box{padding-top: 70px; width: 90%; height: 50%; margin: 0 auto;}
+        .img_lst{background-image: url("../img/main_t.png"); background-position: center center; background-repeat: no-repeat; width: 500px; height: 300px;}
+        .content{width: 90%; height: 100%; margin: 0 auto;}
+        .icons{padding: 0;}
+        .img{padding: 0;}
+        .img img{width: 110px; padding: 20px;}
+        .bar{width: 400px; margin-top: 20px; padding-left: 20px;}
+        .fullbar{width: 400px; height: 40px; }
+        .occupy>span{line-height: 40px; font-size: 20px;}
+        .filter{font-size: 20px; width: 15%;}
+        .container .mix{width: 290px; height: 150px; }
+        .hovertitle{font-size: 18px; padding: 0; padding-top: 40px; text-align: center;}
+        .hoverlink img{width: 35px; height: 35px;}
+        #contlst{ width: 90%; height: 100; margin: 0 auto;}
+        #contact1{margin: 0 auto; width: 300px; height: auto;}
+        #contact1 img{width: 300px; height: auto; margin-left: 50%;}
+        #contact2{width: 100%; height: 350px; border-radius: 15%;}
+        .cont_box{margin-top: -30px; }
+        .l_lst{float: left; margin: 0; margin-left: 15%; line-height: 40px; margin-top: 2%;}
+        .l_lst img{width: 32px; height: auto;}
+        .r_lst{float: none; font-size: 18px; line-height: 48px; margin-left: 30%}
+        #footer {width: 100%; height: 60px;}
+        .copy{width: 100%; height: 100%; margin: 0; text-align: center;}
+        #footer p{line-height: 60px;font-size: 17px; }
+    }
         
