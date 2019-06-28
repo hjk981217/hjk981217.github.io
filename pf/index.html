@@ -1,174 +1,171 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet">
     <title>HJ PORTFOLIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="shortcut icon" href="./img/favicon.png">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
-    <link rel="stylesheet" href="./css/chart.css">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
-    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:1024px)">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans+KR&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="./css/reset.css">
     <script src="./js/jquery-1.12.4.min.js"></script>
-    <script src="./js/jquery.fullPage.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="./js/jquery.mixitup.min.js"></script>
     <script src="./js/mixFilter.js"></script>
-<!--    <script src="./js/modernizr.custom.min.js"></script>-->
-    <script src="./js/menu.js"></script>
-    <script src="./js/chart.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-                sectionsColor: ['#a5aeff', '#a5aeff', '#a5aeff', '#a5aeff'],
-                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage','lastPage'],
-                menu: '#menu',
-                afterLoad: function(anchorLink, index) {
-                     //section 2
-                     if (index == 3) {
-                         //moving the image
-                         $('#section2').find('.intro').delay(500).animate({
-                             left: '0%'
-                         }, 500, 'easeOutExpo');
-
-                         $('#section2').find('p').first().fadeIn(1800, function() {
-                             $('#section2').find('p').last().fadeIn(1800);
-                         });
-                     }
-                    //section 3
-                    if (anchorLink == '4thPage') {
-                        //moving the image
-                        $('#section3').find('.intro').delay(0).animate({
-                            left: '0%'
-                        }, 500, 'easeOutExpo');
-                    }
-                }
-            });            
-        });
-        
-    </script>
-    <style>
-        
-        
-    </style> 
+    
 </head>
+<style>
+    
+</style>
+
+<script>
+    window.onload = function () {
+//            var elm = ".page";
+            $(".page").each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(".page").eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });        
+        }
+    $(function(){
+        var $window = $(window);
+        var cHeight,startPoint,scrollHeight;
+        
+        $window.on('scroll',function(){
+            scrollHeight = $window.scrollTop();
+            cHeight = $('#page2').offset().top;
+            startPoint = cHeight-500;
+            if(scrollHeight>startPoint){
+            $('.occupy').animate({'left':'0'},1000);
+            };
+            
+        });
+//        $window.trigger('scroll');
+        
+        
+    });
+    
+    $(document).ready(function(){
+       $(window).scroll(function(){
+            var win_h = $(window).height();
+            var cur_page = 0;
+            cur_page = parseInt($(window).scrollTop()/win_h);
+            $("mn_lst li").removeClass("on");
+            $("mn_lst li").eq(cur_page).addClass("on");
+        }); 
+    });
+
+    
+</script>
 <body>
-<nav id="menubox">
-    <ul id="menu">
-        <li data-menuanchor="firstPage"><a href="#firstPage" onfocus="this.blur();">INTRO</a>
-         <li data-menuanchor="secondPage"><a href="#secondPage" onfocus="this.blur();">SKILLS</a></li>
-         <li data-menuanchor="3rdPage"><a href="#3rdPage" onfocus="this.blur();">PORTFOLIO</a></li>
-         <li data-menuanchor="4thPage"><a href="#4thPage" nfocus="this.blur();">CONTACT</a></li>
-    </ul>
-</nav>
-<div id="fullpage">
-    <div class="section" id="section0">
-        <div class="logo"><a href="index.html"><img src="./img/logo.png" alt="로고"></a></div> 
-        <div class="img_box">
-            <div class="img_lst">
-                <img src="./img/main_text2.gif" alt="화이트보드" class="main_txt">
+    <div class="mn">
+        <nav class="menu">
+            <ul class="mn_lst">
+                <li class="item on"><a href="#page1">INTRO</a></li>
+                <li class="item2"><a href="#page2">SKILLS</a></li>
+                <li class="item"><a href="#page3">PORTFOLIO</a></li>
+                <li class="item"><a href="#page4">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="page" id="page1">
+        <div class="con_box">
+            <div class="logo"><a href="index.html"><img src="./img/logo.png" alt="로고"></a></div> 
+            <div class="img_box">
+                <div class="img_lst">
+
+                </div>
+            </div>
+            <div id="scr">
+                <img src="img/scrolldown.gif" alt="스크롤">
             </div>
         </div>
-        <div id="scroll">
-            <img src="img/scrolldown.gif" alt="스크롤">
-        </div>
     </div>
-    <div class="section" id="section1">
+    <div class="page" id="page2">
         <div class="con_box">
-            <h1 class="con_tit">SKILLS</h1>
-            <div id="scene-2-content">
-                <div class="charts clearfix">
-                    <div class="chart" id="water">
-                        <div class="circle-mask-outer left">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
+           <h1 class="con_tit">SKILLS</h1>
+            <div class="content">
+                <div class="icon">
+                    <div id="ps" class="icons">
+                        <div class="img"><img src="img/skill_ps.png" alt=""></div>
+                        <div class="bar">
+                            <div class="fullbar">
+                                <div class="occupy"><span>90%</span></div>
                             </div>
                         </div>
-                        <div class="circle-mask-outer right">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
+                    </div>
+                    <div id="ai" class="icons">
+                        <div class="img"><img src="img/skill_ai.png" alt=""></div>
+                        <div class="bar">
+                            <div class="fullbar">
+                                <div class="occupy"><span>80%</span></div>
                             </div>
                         </div>
-                        <div class="chart-content">
-                            <img class="icon" src="./img/ps.png" alt="포토샵">
-                            <p class="text">
-                                <span class="percent-number">90</span><span class="percent-symbol">%</span>
-                            </p>
-                        </div>
-                    </div><!-- /.chart -->
-
-                    <div class="chart" id="sunshine">
-                        <div class="circle-mask-outer left">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
+                    </div>
+                    <div id="ht" class="icons">
+                        <div class="img"><img src="img/skill_ht.png" alt=""></div>
+                        <div class="bar">
+                            <div class="fullbar">
+                                <div class="occupy"><span>80%</span></div>
                             </div>
                         </div>
-                        <div class="circle-mask-outer right">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
+                    </div>
+                    <div id="jv" class="icons">
+                        <div class="img"><img src="img/skill_jv.png" alt=""></div>
+                        <div class="bar">
+                            <div class="fullbar">
+                                <div class="occupy"><span>70%</span></div>
                             </div>
                         </div>
-                        <div class="chart-content">
-                            <img class="icon" src="img/ai.png" alt="일러스트">
-                            <p class="text">
-                                <span class="percent-number">90</span><span class="percent-symbol">%</span>
-                            </p>
-                        </div>
-                    </div><!-- /.chart -->
-
-                    <div class="chart" id="birds">
-                        <div class="circle-mask-outer left">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
-                            </div>
-                        </div>
-                        <div class="circle-mask-outer right">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
-                            </div>
-                        </div>
-                        <div class="chart-content">
-                            <img class="icon" src="img/html.png" alt="html">
-                            <p class="text">
-                                <span class="percent-number">80</span><span class="percent-symbol">%</span>
-                            </p>
-                        </div>
-                    </div><!-- /.chart -->
-
-                    <div class="chart" id="woods">
-                        <div class="circle-mask-outer left">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
-                            </div>
-                        </div>
-                        <div class="circle-mask-outer right">
-                            <div class="circle-mask-inner">
-                                <div class="circle-body"></div>
-                            </div>
-                        </div>
-                        <div class="chart-content">
-                            <img class="icon" src="img/js.png" alt="제이쿼리">
-                            <p class="text">
-                                <span class="percent-number">75</span><span class="percent-symbol">%</span>
-                            </p>
-                        </div>
-                    </div><!-- /.chart -->
+                    </div>
                 </div>
-            </div><!-- /#scene-2-content -->    
+            </div>
         </div>
     </div>
-    <div class="section" id="section2">
+    <div class="page" id="page3">
         <div class="con_box">
             <h1 class="con_tit">PORTFOLIO</h1>
             <div class="controls">
                 <button class="filter" data-filter="all">All</button>
-                <button class="filter" data-filter=".Responsive">Responsive</button>
-                <button class="filter" data-filter=".mobile">Mobile</button>
+                <button class="filter" data-filter=".Responsive">반응형</button>
+                <button class="filter" data-filter=".mobile">모바일</button>
             </div>
             <div class="container" id="mixItUp">
                     <div id="mixImg1" class="mix Responsive" data-myorder="">
@@ -203,7 +200,7 @@
                         <div class="hover">
                             <h2 class="hovertitle">클리오 모바일 리뉴얼</h2>
                             <div class="hoverline"></div>
-                            <a href="http://hjk981217.github.github.io/m2" class="hoverlink" target="_blank"><img src="./img/plus.png" alt="more"></a>
+                            <a href="http://hjk981217.github.io/m2" class="hoverlink" target="_blank"><img src="./img/plus.png" alt="more"></a>
                         </div>
                     </div>
                     <div id="mixImg6" class="mix mobile">
@@ -217,8 +214,8 @@
               </div>
           </div>
     </div>
-    <div class="section" id="section3">
-       <div class="con_box">
+    <div class="page" id="page4">
+        <div class="con_box">
             <div class="itr">
                 <h1 class="con_tit">CONTACT</h1>
                 <div id="contlst">
@@ -263,6 +260,5 @@
             </div>
        </div>
     </div>
-</div>
 </body>
 </html>
