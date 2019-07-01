@@ -67,7 +67,6 @@
     $(function(){
         var $window = $(window);
         var cHeight,startPoint,scrollHeight;
-        
         $window.on('scroll',function(){
             scrollHeight = $window.scrollTop();
             cHeight = $('#page2').offset().top;
@@ -77,24 +76,21 @@
             };
             
         });
-//        $window.trigger('scroll');
-        
-        
     });
-    
     $(document).ready(function(){
        $(window).scroll(function(){
             var win_h = $(window).height();
             var cur_page = 0;
             cur_page = parseInt($(window).scrollTop()/win_h);
-            $("mn_lst li").removeClass("on");
-            $("mn_lst li").eq(cur_page).addClass("on");
+            $(".mn_lst li").removeClass("on");
+            $(".mn_lst li").eq(cur_page).addClass("on");
         }); 
     });
 
     
 </script>
 <body>
+   <input type="checkbox" class="ck_item" id="lst_ck">
     <div class="mn">
         <nav class="menu">
             <ul class="mn_lst">
@@ -103,11 +99,14 @@
                 <li class="item"><a href="#page3">PORTFOLIO</a></li>
                 <li class="item"><a href="#page4">CONTACT</a></li>
             </ul>
+            <label for="lst_ck" class="mob close_btn"></label>
         </nav>
     </div>
     <div class="page" id="page1">
         <div class="con_box">
-            <div class="logo"><a href="index.html"><img src="./img/logo.png" alt="로고"></a></div> 
+            <div class="logo"><a href="index.html"><img src="./img/logo.png" alt="로고"></a></div>
+            <label for="lst_ck" class="mob lst_btn"></label>
+            
             <div class="img_box">
                 <div class="img_lst">
 
@@ -124,7 +123,7 @@
             <div class="content">
                 <div class="icon">
                     <div id="ps" class="icons">
-                        <div class="img"><img src="img/skill_ps.png" alt=""></div>
+                        <div class="img"><img src="img/skill_ps.png" alt="ps"></div>
                         <div class="bar">
                             <div class="fullbar">
                                 <div class="occupy"><span>90%</span></div>
@@ -132,7 +131,7 @@
                         </div>
                     </div>
                     <div id="ai" class="icons">
-                        <div class="img"><img src="img/skill_ai.png" alt=""></div>
+                        <div class="img"><img src="img/skill_ai.png" alt="ai"></div>
                         <div class="bar">
                             <div class="fullbar">
                                 <div class="occupy"><span>80%</span></div>
@@ -140,7 +139,7 @@
                         </div>
                     </div>
                     <div id="ht" class="icons">
-                        <div class="img"><img src="img/skill_ht.png" alt=""></div>
+                        <div class="img"><img src="img/skill_ht.png" alt="ht"></div>
                         <div class="bar">
                             <div class="fullbar">
                                 <div class="occupy"><span>80%</span></div>
@@ -148,7 +147,7 @@
                         </div>
                     </div>
                     <div id="jv" class="icons">
-                        <div class="img"><img src="img/skill_jv.png" alt=""></div>
+                        <div class="img"><img src="img/skill_jv.png" alt="jv"></div>
                         <div class="bar">
                             <div class="fullbar">
                                 <div class="occupy"><span>70%</span></div>
