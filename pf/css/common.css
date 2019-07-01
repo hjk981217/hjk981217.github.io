@@ -8,6 +8,8 @@
 .menu li a:hover{color: #fbff7c;}
 .con_tit{color: #fff; font-family:'Inconsolata'; font-size: 40px; padding-top: 80px;}
 .mn_lst li.on a { color: #fbff7c; }
+.lst_btn{background-repeat: no-repeat; background-image: url(../img/menu.png); width: 32px; height: 32px; position: fixed; right: 20px; top: 30px; z-index: 70;}
+.close_btn{background-repeat: no-repeat; background-image: url(../img/close.png); width: 32px; height: 32px; position: absolute; right: 20px; top: 30px; z-index: 70;}
 
 /* 메인페이지 */
 .main_box{position: relative; width: 150px; height: 180px; margin: 0 auto;}
@@ -65,7 +67,7 @@ button:active{background-color: #6b76ff; color: #fff;}
         #contact1{float: left; margin-top: 65px;width: 400px; height: 400px;}
         #contact1 img{box-shadow: 5px 5px 10px #444; border-radius: 50%; text-align: center; margin-left: 50px;}
         #contact2{width:600px; height: 400px; margin: 0 auto; padding-top: 50px; margin-top: 45px; float: right; font-family: 'Inconsolata',"Noto Sans KR"; font-size: 17px; font-weight: 600; background-color: rgba(255,255,255,0.5); border-radius: 23%; box-shadow: 5px 5px 10px 0 #555}
-        .l_lst{float: left; line-height: 41px; margin-left: 80px; margin-top: 34px; }
+        .l_lst{float: left; line-height: 40px; margin-left: 80px; margin-top: 34px; text-align: center;}
         .r_lst{float: left; line-height: 41px; margin-top: 30px; margin-left: 80px;}
         .r_lst li a{font-family: 'Inconsolata'; color: #222;}
         .r_lst li a:hover{text-decoration: underline; color:  #6b76ff;}
@@ -77,9 +79,16 @@ button:active{background-color: #6b76ff; color: #fff;}
 
 @media screen and (max-width: 767px){
         .page{width: 100vw; height: 100vh;}
+    .mob{display: block; }
+    .menu{clear: both; position: fixed; z-index: 90; background-color: #efefef; width: 80%; height: 100vh; margin-top: 0; top: 0; right: -100%; transition: 0.7s;}
+    .mn_lst{margin-left: 10%; margin-top: 50%;}
+    .menu li{float: none; padding-bottom: 10%;}
+    .menu li a{color: #6b76ff; font-size: 26px; font-weight: 600;}
+    .mn_lst li.on a { color: #6b76ff; }
+    #lst_ck:checked ~ .mn .menu{right: 0%;}
         .con_tit{padding: 0; padding-top: 20px;}
         .con_box{width: 90%; height: 100%; margin: 0 auto;}
-    #scr{display: none;}
+        #scr{display: none;}
         .img_box{padding-top: 70px; width: 90%; height: 50%; margin: 0 auto;}
         .img_lst{background-image: url("../img/main_m.png"); background-position: center center; background-repeat: no-repeat; width: 320px; height: 190px;}
         .content{width: 90%; height: 100%; margin: 0 auto;}
@@ -98,7 +107,7 @@ button:active{background-color: #6b76ff; color: #fff;}
         #contact1 img{width: 150px; height: auto; margin-left: 55%;}
         #contact2{width: 100%; height:200px;}
         .cont_box{margin-top: -50px; }
-        .l_lst{float: left; margin: 0; margin-left: 20px; line-height: 31px; font-size: 12px;}
+        .l_lst{float: left; margin: 0; margin-left: 20px; line-height: 32px;}
         .l_lst img{width: 20px; height: auto;}
         .r_lst{float: none; font-size: 12px; line-height: 31px; margin-left: 20%}
         #footer {width: 100%; height: 50px;}
