@@ -83,7 +83,7 @@ button:active{background-color: #6b76ff; color: #fff;}
     .menu{clear: both; position: fixed; z-index: 90; background-color: #efefef; width: 80%; height: 100vh; margin-top: 0; top: 0; right: -100%; transition: 0.7s;}
     .mn_lst{margin-left: 10%; margin-top: 50%;}
     .menu li{float: none; padding-bottom: 10%;}
-    .menu li a{color: #6b76ff; font-size: 26px; font-weight: 600;}
+    .menu li a{color: #6b76ff; font-size: 24px; font-weight: 600;}
     .mn_lst li.on a { color: #6b76ff; }
     #lst_ck:checked ~ .mn .menu{right: 0%;}
         .con_tit{padding: 0; padding-top: 20px;}
